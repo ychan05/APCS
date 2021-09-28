@@ -1,3 +1,3 @@
 to HelloWorld
-  print "Hello, world!"
+  print "Hello, world!";
 end
