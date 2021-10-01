@@ -1,5 +1,5 @@
 /*
-Russell Goychayev
+Yat Long Chan
 APCS
 HW07: Saving Your Class
 2021-09-15
