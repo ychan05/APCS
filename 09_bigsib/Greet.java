@@ -1,5 +1,5 @@
 /*
-BDY: Yat Long Chan, Ben Balodis, David Chen, Eugene, Bob, TwoFace
+BDY: Yat Long Chan, Ben Belotser, David Chen, Eugene, Bob, TwoFace
 APCS
 HW09: What Are BigSibs Good For?
 2021-10-01
