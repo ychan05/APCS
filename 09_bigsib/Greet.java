@@ -6,7 +6,7 @@ HW09: What Are BigSibs Good For?
 */
 
 /* DISCOVERIES
-You can use a method in another .java file as long as the two files are in the same directory.
+You can use a class in another .java file as long as the two files are in the same directory.
 UNRESOLVED QUESTIONS
 none
 */
