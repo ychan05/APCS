@@ -1,5 +1,5 @@
 /*
-BDY: Yat Long Chan, Ben Belotser, David Chen, Eugene, Bob, TwoFace
+Yat Long Chan and ?
 APCS
 HW10: On Elder Individuality and the Elimination of Radio Fuzz
 2021-10-05
