@@ -1,13 +1,12 @@
 /*
 BDY: Yat Long Chan, Ben Belotser, David Chen, Eugene, Bob, TwoFace
 APCS
-HW10: Refactor Big Sib One
+HW10: On Elder Individuality and the Elimination of Radio Fuzz
 2021-10-05
 
-
-DISCOVERIES
+DISCO
 Instance vars can only be used in non static methods.
-UNRESOLVED QUESTIONS
+QCC
 none
 */
 
