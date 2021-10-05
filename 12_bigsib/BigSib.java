@@ -13,8 +13,8 @@ none
 public class BigSib{
 	String HelloMsg;
  
-	public String setHelloMsg(String msg){
-		return HelloMsg = msg;
+	public void setHelloMsg(String msg){
+		 HelloMsg = msg;
 	}
 	public String greet(String name){
 		return (HelloMsg + " " +  name);
