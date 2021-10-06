@@ -1,5 +1,5 @@
 /*
-Yat Long Chan and ?
+Chicken Noodle Soup: Yat Long Chan and Courtney Huang
 APCS
 HW12: On Elder Individuality and the Elimination of Radio Fuzz
 2021-10-05
