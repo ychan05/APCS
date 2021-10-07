@@ -5,7 +5,8 @@ HW13: Where do BigSibs Come From?
 2021-10-06
 
 DISCO
-Constructors are used to initialize objects/set initial values for objects.
+Constructors are a special method used to initialize objects/set initial values for objects. 
+Should be the first method in class.
 QCC
 none
 */
