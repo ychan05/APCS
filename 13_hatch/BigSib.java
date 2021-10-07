@@ -14,8 +14,8 @@ none
 public class BigSib{
 	String HelloMsg;
  	
-	public BigSib(){
-		setHelloMsg("Word up");
+	public BigSib(String s){
+		setHelloMsg(s);
 	}
 	public void setHelloMsg(String msg){
 		 HelloMsg = msg;
