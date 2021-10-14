@@ -16,7 +16,7 @@ A2: A .java file will still compile correctly if you create an instance of a cla
 
 Q3: Describe a test to determine whether Java provides a mean of outping a STRING REPRESENTATION of an OBJECT?
 
-A3: Print the instance. 
+A3: Print the object. 
  
 */
 public class BankAccount {
