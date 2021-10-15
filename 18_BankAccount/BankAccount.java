@@ -1,5 +1,4 @@
-/*
-Quad Puffs: Yat Long Chan, David Deng, Samantha Hua, Lindsay Phung
+/* Quad Puffs: Yat Long Chan, David Deng, Samantha Hua, Lindsay Phung
 APCS
 HW18 -- CPA-One/Codify bank account
 2021-10-14
@@ -16,9 +15,8 @@ A2: A .java file will still compile correctly if you create an instance of a cla
 
 Q3: Describe a test to determine whether Java provides a mean of outping a STRING REPRESENTATION of an OBJECT?
 
-A3: Print the object. 
- 
-*/
+A3: Print the object. */
+
 public class BankAccount {
 	private String holderName;
 	private String password;
@@ -75,6 +73,4 @@ public class BankAccount {
 		joseph.deposit(1000000);
 		joseph.withdraw(1);
 	}
-	
-
 }
