@@ -58,35 +58,35 @@ public class BankAccount {
 
 	public void deposit(float deposit, int aNum, int pin) {
 		if (aNum != accNum && pin != PIN){
-			System.out. println(“Wrong Account Number and PIN”);
+			System.out. println("Wrong Account Number and PIN");
 		}
 		else if (pin != PIN){
-			System.out.println(“Wrong PIN”);
+			System.out.println("Wrong PIN");
 		}
 		else if (aNum != accNum){
-			System.out. println(“Wrong Account Number”);
+			System.out. println("Wrong Account Number");
 		}
 		else {
 		balance += deposit;
 		System.out.println("Your deposit was successful!");
-		System.out.println("Your new balance is: $" +balance);
+		System.out.println("Your new balance is: $" + balance);
 		}
 	}
 
 	public void withdraw(float withdrawal,  int aNum, int pin) {
 		if (aNum != accNum && pin != PIN){
-			System.out. println(“Wrong Account Number and PIN”);
+			System.out. println("Wrong Account Number and PIN");
 		}
 		else if (pin != PIN){
-			System.out.println(“Wrong PIN”);
+			System.out.println("Wrong PIN");
 		}
 		else if (aNum != accNum){
-			System.out. println(“Wrong Account Number”);
+			System.out. println("Wrong Account Number");
 		}
 		else{
 		balance -= withdrawal;
 		System.out.println("Your withdrawal was successful!");
-		System.out.println("Your new balance is: $" +balance);
+		System.out.println("Your new balance is: $" + balance);
 		}
 	}
 
@@ -95,6 +95,9 @@ public class BankAccount {
 		joseph.printInfo();
 		joseph.deposit(1000000, 123456789, 1234);
 		joseph.withdraw(1, 123456789, 1234);
+		joseph.deposit(1000000, 123456789, 1233); //Wrong PIN
+		joseph.withdraw(1, 123456783, 1232); // Wrong PIN and accNum
+		joseph.deposit(1000000, 123456729, 1234); //Wrong accNum
 	}
 
 }
