@@ -102,7 +102,7 @@ public class BankAccount {
 
 	public static void main(String[] args) {
 		BankAccount joseph = new BankAccount("joseph","password", 1234, 123456789, 1000000);
-		joseph.printInfo();
+		joseph.printInfo(123456789, "password");
 		joseph.deposit(1000000, 123456789, 1234);
 		joseph.withdraw(1, 123456789, 1234);
 		joseph.deposit(1000000, 123456789, 1233); //Wrong PIN
