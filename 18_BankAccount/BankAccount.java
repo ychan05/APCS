@@ -12,7 +12,7 @@ none
 
 Q2: How do you know BEFORE you wrote your own constructor, that Java provides one for you?
 
-A2: A .java file will still compile correctly if you create an instance of a class if you don't have a constructor in said class.
+A2: A .java file will still compile correctly if you create an instance of a class without having a constructor in said class.
 
 Q3: Describe a test to determine whether Java provides a mean of outping a STRING REPRESENTATION of an OBJECT?
 
