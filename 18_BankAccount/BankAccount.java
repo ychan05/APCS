@@ -48,7 +48,17 @@ public class BankAccount {
 		balance = bal;
 	}
 
-	public void printInfo() {
+	public void printInfo(int aNum, String pass) {
+		if (aNum != accNum && pass != password){
+			System.out. println("Wrong Account Number and Password");
+		}
+		else if (pass != password){
+			System.out.println("Wrong Password");
+		}
+		else if (aNum != accNum){
+			System.out. println("Wrong Account Number");
+		}
+		else{
 		System.out.println("Full name: " + holderName);
 		System.out.println("Account Number: " + accNum);
 		System.out.println("Your PIN: " + PIN);
