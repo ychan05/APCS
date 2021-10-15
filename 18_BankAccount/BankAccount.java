@@ -64,7 +64,7 @@ public class BankAccount {
 			System.out.println(“Wrong PIN”);
 		}
 		else if (aNum != accNum){
-			System.out. println(“Wrong Account Number);
+			System.out. println(“Wrong Account Number”);
 		}
 		else {
 		balance += deposit;
@@ -81,7 +81,7 @@ public class BankAccount {
 			System.out.println(“Wrong PIN”);
 		}
 		else if (aNum != accNum){
-			System.out. println(“Wrong Account Number);
+			System.out. println(“Wrong Account Number”);
 		}
 		else{
 		balance -= withdrawal;
