@@ -11,11 +11,11 @@ none
 
 Q2: How do you know BEFORE you wrote your own constructor, that Java provides one for you?
 
-A2: A .java file will still compile correctly if you create an instance of a class without having a constructor in said class.
+A2: We know that Java provides a default constructor because when we initialized variables without explicitly stating a constructor, the program still ran without error.
 
 Q3: Describe a test to determine whether Java provides a mean of outping a STRING REPRESENTATION of an OBJECT?
 
-A3: Print the object. */
+A3: Create a method that returns said object and expects String. If there is no error, it means Java converted the object to a String. */
 
 public class BankAccount {
 	private String holderName;
