@@ -7,15 +7,13 @@ HW18 -- CPA-One / codified the UML diagram <BankAccount>
 DISCO
 - UML diagrams are very useful.
 QCC
-- 
+- Is there a way we can use user input to create different accounts?
 
-Q2: How do you know BEFORE you wrote your own constructor, that Java provides one for you?
+Team Quad puffs’ Latest and Greatest Q2 Response: An instance of a class can still be initialized even if it does not contain a constructor. 
+This means that Java provides a blank constructor if one is not declared.
 
-A2: An instance of a class can still be initialized even if it does not contain a constructor. This means that Java provides a blank constructor if one is not declared.
-
-Q3: Describe a test to determine whether Java provides a means of outping a STRING REPRESENTATION of an OBJECT?
-
-A3: Make a method with a String as the return type and return the object inside said method. If the file is compiled without error, it means that Java has provided a string representation of the object. 
+Team Quad puffs’ Latest and Greatest Q3 Response: Make a method with a String as the return type and return the object inside said method. 
+If the file is compiled without error, it means that Java has provided a string representation of the object. 
 */
 
 public class BankAccount {
