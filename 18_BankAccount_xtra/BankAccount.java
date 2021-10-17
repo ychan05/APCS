@@ -1,4 +1,6 @@
 /*
+This version has conditionals to put PIN, accNUm, and password to use.
+
 Quad Puffs -- David Deng / Yat long Chan / Samantha Hua / Lindsay Phung
 APCS
 HW18 -- CPA-One / codified the UML diagram <BankAccount>
