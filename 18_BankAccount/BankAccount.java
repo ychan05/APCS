@@ -52,14 +52,14 @@ public class BankAccount {
 		
 	}
 
-	public void deposit(float deposit, int aNum, int pin) {
+	public void deposit(float deposit) {
 		balance += deposit;
 		System.out.println("Your deposit was successful!");
 		System.out.println("Your new balance is: $" + balance);
 	}
 	
 
-	public void withdraw(float withdrawal,  int aNum, int pin) {
+	public void withdraw(float withdrawal) {
 		balance -= withdrawal;
 		System.out.println("Your withdrawal was successful!");
 		System.out.println("Your new balance is: $" + balance);
