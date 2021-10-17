@@ -62,6 +62,7 @@ public class BankAccount {
 		System.out.println("Your PIN: " + PIN);
 		System.out.println("Password: " + password);
 		System.out.println("Balance: " + balance);
+		}
 	}
 
 	public void deposit(float deposit, int aNum, int pin) {
