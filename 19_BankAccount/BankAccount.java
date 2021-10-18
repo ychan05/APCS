@@ -12,10 +12,10 @@ QCC
 public class BankAccount {
     private String holderName;
     private String password;
-    private int PIN;
+    private short PIN;
     private int accNum;
     private double balance;
-    public BankAccount(String n, String p, int pin, int accNumber, double b) {
+    public BankAccount(String n, String p, short pin, int accNumber, double b) {
         setName(n);
         setPass(p);
         setPIN(pin);
@@ -29,7 +29,7 @@ public class BankAccount {
     private void setPass(String pass) {
         password = pass;
     }
-    private void setPIN(int p) {
+    private void setPIN(short p) {
         if (p >= 1000 && p <= 9998) {
             PIN = p;
         } else {
@@ -49,15 +49,16 @@ public class BankAccount {
         balance = bal;
     }
 
-    public void printInfo() {
-        System.out.println("Full name: " + holderName);
-        System.out.println("Account Number: " + accNum);
-        System.out.println("Your PIN: " + PIN);
-        System.out.println("Password: " + password);
-        System.out.println("Balance: " + balance);
-
-    }
-
+    public String toString() {
+    	String infoStr = "\nAccount info:\n=======================";
+    	infoStr = infoStr + "\nName: " + holderName;
+    	infoStr = infoStr + "\nPassword: " + password;
+    	infoStr = infoStr + "\nPIN: " + PIN;
+    	infoStr = infoStr + "\nAccount Number: " + accNum;
+    	infoStr = infoStr + "\nBalance: " + balance;
+    	infoStr = infoStr + "\n=======================";
+    	return infoStr;
+  	}
     public void deposit(double deposit) {
         balance += deposit;
         System.out.println("Your deposit was successful!");
@@ -87,13 +88,13 @@ public class BankAccount {
         }
     }
     public static void main(String[] args) {
-        BankAccount outOfBounds = new BankAccount("Out Bounds", "uh oh", 999, 1, 10); // out of bounds PIN and accNum
-        outOfBounds.printInfo(); // check if PIN and accNum set properly
+        BankAccount outOfBounds = new BankAccount("Out Bounds", "uh oh", (short) 999, 1, 10); // out of bounds PIN and accNum
+        System.out.println(outOfBounds.toString()); // check if PIN and accNum set properly
 
 	System.out.println(""); // put empty line between 2 instances.
 
-        BankAccount joseph = new BankAccount("joseph", "password", 1234, 123456789, 1000000);
-        joseph.printInfo();
+        BankAccount joseph = new BankAccount("joseph", "password", (short) 1234, 123456789, 1000000);
+        System.out.println(joseph.toString());
         System.out.println(joseph.withdraw(1000001)); // over balance - should print false
         joseph.deposit(1000000);
         System.out.println(joseph.authenticate(123456780, "pass")); // incorrect pass and accNum - should print false
