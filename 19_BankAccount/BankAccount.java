@@ -68,37 +68,39 @@ public class BankAccount {
 
 	public boolean withdraw(float withdrawal) {
 		if (withdrawal > balance){
-      return False; 
+      return false; 
 		}
 		else{
       balance -= withdrawal;
       System.out.println("Your withdrawal was successful!");
       System.out.println("Your new balance is: $" + balance);
-      return True;
+      return true;
 		}
 	}
 
   public void authenticate(int authAccNum, String authPass){
     if (authAccNum != accNum && authPass != password){
-      return False;
+      return false;
     }
     else if(authPass != password){
-      return False;
+      return false;
     }
     else if(authAccNum != accNum){
-      return False;
+      return false;
     }
     else{
-      return True;
+      return true;
     }
   }
 	public static void main(String[] args) {
-    BankAccount outOfBounds = new BankAccount("Out Bounds", "uh oh", 999, 1, 10);
-    outOfBounds.printInfo();
-		BankAccount joseph = new BankAccount("joseph","password", 1234, 123456789, 1000000);
-		joseph.printInfo();
+    BankAccount outOfBounds = new BankAccount("Out Bounds", "uh oh", 999, 1, 10); // out of bounds PIN and accNum
+    outOfBounds.printInfo(); // check if PIN and accNum set properly
+    
+		
+    BankAccount joseph = new BankAccount("joseph","password", 1234, 123456789, 1000000);
+    joseph.printInfo();
     System.out.println(joseph.withdraw(1000001)); // over balance
-		joseph.deposit(1000000);
+    joseph.deposit(1000000);
     System.out.println(joseph.authenticate(123456780, "pass")); // incorrect pass and accNum
     System.out.println(joseph.authenticate(123456780, "password")); // incorrect accNum, correct pass
     System.out.println(joseph.authenticate(123456789, "pass")); // incorrect pass, correct accNum
