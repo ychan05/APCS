@@ -14,8 +14,8 @@ public class BankAccount {
     private String password;
     private int PIN;
     private int accNum;
-    private float balance;
-    public BankAccount(String n, String p, int pin, int accNumber, float b) {
+    private double balance;
+    public BankAccount(String n, String p, int pin, int accNumber, double b) {
         setName(n);
         setPass(p);
         setPIN(pin);
@@ -45,7 +45,7 @@ public class BankAccount {
             System.out.println("You account number is invalid. Please set a 9 digit number less than 999999999");
         }
     }
-    private void setBalance(float bal) {
+    private void setBalance(double bal) {
         balance = bal;
     }
 
@@ -58,13 +58,13 @@ public class BankAccount {
 
     }
 
-    public void deposit(float deposit) {
+    public void deposit(double deposit) {
         balance += deposit;
         System.out.println("Your deposit was successful!");
         System.out.println("Your new balance is: $" + balance);
     }
 
-    public boolean withdraw(float withdrawal) {
+    public boolean withdraw(double withdrawal) {
         if (withdrawal > balance) {
             return false;
         } else {
@@ -90,6 +90,7 @@ public class BankAccount {
         BankAccount outOfBounds = new BankAccount("Out Bounds", "uh oh", 999, 1, 10); // out of bounds PIN and accNum
         outOfBounds.printInfo(); // check if PIN and accNum set properly
 
+	System.out.println(""); // put empty line between 2 instances.
 
         BankAccount joseph = new BankAccount("joseph", "password", 1234, 123456789, 1000000);
         joseph.printInfo();
