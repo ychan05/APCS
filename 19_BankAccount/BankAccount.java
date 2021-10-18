@@ -102,4 +102,4 @@ public class BankAccount {
         System.out.println(joseph.authenticate(123456789, "password")); // both correct - should print true
     }
 
-}
+} 
