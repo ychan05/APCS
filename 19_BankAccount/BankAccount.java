@@ -91,8 +91,6 @@ public class BankAccount {
     BankAccount outOfBounds = new BankAccount("Out Bounds", "uh oh", (short) 999, 1, 10); // out of bounds PIN and accNum
     System.out.println(outOfBounds.toString()); // check if PIN and accNum set properly
 
-    System.out.println(""); // put empty line between 2 instances.
-
     BankAccount joseph = new BankAccount("joseph", "password", (short) 1234, 123456789, 1000000);
     System.out.println(joseph.toString());
     System.out.println("withdrawTest, over balance (ret false): " + joseph.withdraw(1000001)); // over balance - should print false
