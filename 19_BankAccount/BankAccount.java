@@ -95,13 +95,13 @@ public class BankAccount {
 
     BankAccount joseph = new BankAccount("joseph", "password", (short) 1234, 123456789, 1000000);
     System.out.println(joseph.toString());
-    System.out.println(joseph.withdraw(1000001)); // over balance - should print false
+    System.out.println("withdrawTest, over balance (ret false): " + joseph.withdraw(1000001)); // over balance - should print false
     System.out.println(joseph.withdraw(1)); //within balance - should print statement and true
     joseph.deposit(1000000);
-    System.out.println(joseph.authenticate(123456780, "pass")); // incorrect pass and accNum - should print false
-    System.out.println(joseph.authenticate(123456780, "password")); // incorrect accNum, correct pass - should print false
-    System.out.println(joseph.authenticate(123456789, "pass")); // incorrect pass, correct accNum - should print false
-    System.out.println(joseph.authenticate(123456789, "password")); // both correct - should print true
+    System.out.println("authTest, incorrect pass and accNum (ret false): " + joseph.authenticate(123456780, "pass")); // incorrect pass and accNum - should print false
+    System.out.println("authTest, incorrect accNum (ret false): " + joseph.authenticate(123456780, "password")); // incorrect accNum, correct pass - should print false
+    System.out.println("authTest, incorrect pass (ret false) " + joseph.authenticate(123456789, "pass")); // incorrect pass, correct accNum - should print false
+    System.out.println("authTest, correct pass and accNum (ret true): " + joseph.authenticate(123456789, "password")); // both correct - should print true
   }
 
 }
