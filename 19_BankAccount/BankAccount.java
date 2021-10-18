@@ -94,12 +94,12 @@ public class BankAccount {
 
         BankAccount joseph = new BankAccount("joseph", "password", 1234, 123456789, 1000000);
         joseph.printInfo();
-        System.out.println(joseph.withdraw(1000001)); // over balance
+        System.out.println(joseph.withdraw(1000001)); // over balance - should print false
         joseph.deposit(1000000);
-        System.out.println(joseph.authenticate(123456780, "pass")); // incorrect pass and accNum
-        System.out.println(joseph.authenticate(123456780, "password")); // incorrect accNum, correct pass
-        System.out.println(joseph.authenticate(123456789, "pass")); // incorrect pass, correct accNum
-        System.out.println(joseph.authenticate(123456789, "password")); // both correct
+        System.out.println(joseph.authenticate(123456780, "pass")); // incorrect pass and accNum - should print false
+        System.out.println(joseph.authenticate(123456780, "password")); // incorrect accNum, correct pass - should print false
+        System.out.println(joseph.authenticate(123456789, "pass")); // incorrect pass, correct accNum - should print false
+        System.out.println(joseph.authenticate(123456789, "password")); // both correct - should print true
     }
 
 }
