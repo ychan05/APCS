@@ -2,11 +2,13 @@
 Quad Puffs -- David Deng / Yat long Chan / Samantha Hua / Lindsay Phung
 APCS
 HW19 -- Mo Money Mo Problems ...MORE AWESOME / add conditionals to BankAccount
-2021-10-14
+2021-10-18
 DISCO
-- 
+- Java automatically sets whole numbers as an int, so you must typecast the number when using short as a param. 
+Type Casting Format: (<DESIREDDATATYPE>) <NUMBER>
+This is required when the data type you want to convert to holds less information than the previous data type. This conversion must be forced so Java knows not to bring up a loss of data error during complilation.
 QCC
-- 
+- PIN is currently not being used, what will it be used for?
 */
 
 public class BankAccount {
@@ -16,30 +18,44 @@ public class BankAccount {
   private int accNum;
   private double balance;
 
-  public void setName(String name) {
+  public String setName(String name) {
+    String oldName = holderName; 
     holderName = name;
+    return oldName;
   }
-  public void setPass(String pass) {
+
+  public String setPass(String pass) {
+    String oldPass = password; 
     password = pass;
+    return oldPass;
   }
-  public void setPIN(short p) {
+  
+  public short setPIN(short p) {
+    short oldPin = PIN;
     if (p >= 1000 && p <= 9998) {
       PIN = p;
     } else {
       PIN = 9999;
-      System.out.println("Your PIN is invalid. Please set a 4 digit number less than 9999");
+      System.out.println("Your PIN is invalid. Please enter a 4 digit number less than 9999");
     }
+    return oldPin;
   }
-  public void setAccNum(int num) {
+  
+  public int setAccNum(int num) {
+    int oldAccNum = accNum;
     if (num >= 100000000 && num <= 999999998) {
       accNum = num;
     } else {
       accNum = 999999999;
-      System.out.println("Your account number is invalid. Please set a 9 digit number less than 999999999");
+      System.out.println("Your account number is invalid. Please enter a 9 digit number less than 999999999");
     }
+    return oldAccNum;
   }
-  public void setBalance(double bal) {
+  
+  public double setBalance(double bal) {
+    double oldBal = balance;
     balance = bal;
+    return oldBal;
   }
 
   public String toString() {
@@ -52,6 +68,7 @@ public class BankAccount {
     infoStr = infoStr + "\n=======================";
     return infoStr;
   }
+  
   public void deposit(double deposit) {
     balance += deposit;
     System.out.println("Your deposit was successful!");
@@ -70,14 +87,10 @@ public class BankAccount {
   }
 
   public boolean authenticate(int authAccNum, String authPass) {
-    if (authAccNum != accNum && authPass != password) {
-      return false;
-    } else if (authPass != password) {
-      return false;
-    } else if (authAccNum != accNum) {
-      return false;
-    } else {
+    if (authAccNum == accNum && authPass == password){
       return true;
+    } else {
+      return false;
     }
   }
   public static void main(String[] args) {
@@ -87,7 +100,6 @@ public class BankAccount {
     outOfBounds.setAccNum(100); // out of bounds accNum
     outOfBounds.setPIN((short) 1); //out of bounds PIN
     outOfBounds.setBalance(10.00);
-    
     System.out.println(outOfBounds.toString()); // check if PIN and accNum set properly
   
     BankAccount joseph = new BankAccount();
