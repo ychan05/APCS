@@ -27,7 +27,7 @@ public class BankAccount {
       PIN = p;
     } else {
       PIN = 9999;
-      System.out.println("You PIN is invalid. Please set a 4 digit number less than 9999");
+      System.out.println("Your PIN is invalid. Please set a 4 digit number less than 9999");
     }
   }
   public void setAccNum(int num) {
@@ -35,7 +35,7 @@ public class BankAccount {
       accNum = num;
     } else {
       accNum = 999999999;
-      System.out.println("You account number is invalid. Please set a 9 digit number less than 999999999");
+      System.out.println("Your account number is invalid. Please set a 9 digit number less than 999999999");
     }
   }
   public void setBalance(double bal) {
