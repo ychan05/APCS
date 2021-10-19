@@ -15,21 +15,14 @@ public class BankAccount {
   private short PIN;
   private int accNum;
   private double balance;
-  public BankAccount(String n, String p, short pin, int accNumber, double b) {
-    setName(n);
-    setPass(p);
-    setPIN(pin);
-    setAccNum(accNumber);
-    setBalance(b);
 
-  }
-  private void setName(String name) {
+  public void setName(String name) {
     holderName = name;
   }
-  private void setPass(String pass) {
+  public void setPass(String pass) {
     password = pass;
   }
-  private void setPIN(short p) {
+  public void setPIN(short p) {
     if (p >= 1000 && p <= 9998) {
       PIN = p;
     } else {
@@ -37,7 +30,7 @@ public class BankAccount {
       System.out.println("You PIN is invalid. Please set a 4 digit number less than 9999");
     }
   }
-  private void setAccNum(int num) {
+  public void setAccNum(int num) {
     if (num >= 100000000 && num <= 999999998) {
       accNum = num;
     } else {
@@ -45,7 +38,7 @@ public class BankAccount {
       System.out.println("You account number is invalid. Please set a 9 digit number less than 999999999");
     }
   }
-  private void setBalance(double bal) {
+  public void setBalance(double bal) {
     balance = bal;
   }
 
@@ -88,10 +81,21 @@ public class BankAccount {
     }
   }
   public static void main(String[] args) {
-    BankAccount outOfBounds = new BankAccount("Out Bounds", "uh oh", (short) 999, 1, 10); // out of bounds PIN and accNum
+    BankAccount outOfBounds = new BankAccount();
+    outOfBounds.setName("Out Bounds");
+    outOfBounds.setPass("uh oh");
+    outOfBounds.setAccNum(100); // out of bounds accNum
+    outOfBounds.setPIN((short) 1); //out of bounds PIN
+    outOfBounds.setBalance(10.00);
+    
     System.out.println(outOfBounds.toString()); // check if PIN and accNum set properly
-
-    BankAccount joseph = new BankAccount("joseph", "password", (short) 1234, 123456789, 1000000);
+  
+    BankAccount joseph = new BankAccount();
+    joseph.setName("Joseph");
+    joseph.setPass("password");
+    joseph.setAccNum(123456789); 
+    joseph.setPIN((short) 1234);
+    joseph.setBalance(1000000);
     System.out.println(joseph.toString());
     System.out.println("withdrawTest, over balance (ret false): " + joseph.withdraw(1000001)); // over balance - should print false
     System.out.println(joseph.withdraw(1)); //within balance - should print statement and true
