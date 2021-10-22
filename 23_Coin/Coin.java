@@ -132,7 +132,7 @@ public class Coin {
     flipCtr += 1;
     bias = Math.random();
     double flipProb = Math.random();
-    if (flipProb < bias) {
+    if (flipProb <= bias) {
       upFace = "heads";
       headsCtr += 1;
       return "heads";
