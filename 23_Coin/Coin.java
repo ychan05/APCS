@@ -166,8 +166,7 @@ public class Coin {
    * postcond: Return String comprised of name and current face
    ***/
   public String toString() {
-    String retStr = "Name: " + name;
-    retStr += "\nFace: " + upFace;
+    String retStr = name + " -- " + upFace;
     return retStr
   }
 
