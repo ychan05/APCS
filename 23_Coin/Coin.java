@@ -13,7 +13,7 @@ public class Coin {
   private int flipCtr;
   private int headsCtr;
   private int tailsCtr;
-  private float bias;
+  private double bias;
 
   /***
    *  Coin() -- default constuctor
@@ -22,6 +22,7 @@ public class Coin {
    ***/
   public Coin() {
     bias = 0.5;
+    upFace = "heads";
   }
 
   /***
@@ -37,6 +38,7 @@ public class Coin {
   ***/
   public Coin(String s) {
     name = s;
+    upFace = "heads";
   }
 
   /***
@@ -80,7 +82,7 @@ public class Coin {
    ***/
   private double assignValue(String s) {
     if (s == "penny") {
-      value == 0.01;
+      value = 0.01;
       return value;
     } else if (s == "nickel") {
       value = 0.05;
@@ -98,8 +100,8 @@ public class Coin {
       value = 1.0;
       return value;
     } else {
-      return 999999;
       System.out.println("Enter valid coin name in lowercase");
+      return 999999;
     }
   }
 
@@ -127,6 +129,7 @@ public class Coin {
    * Returns "heads" or "tails"
    ***/
   public String flip() {
+    flipCtr += 1;
     bias = Math.random();
     double flipProb = Math.random();
     if (flipProb < bias) {
@@ -138,7 +141,6 @@ public class Coin {
       tailsCtr += 1;
       return "tails";
     }
-    flipCtr += 1;
   }
 
   /***
@@ -149,7 +151,7 @@ public class Coin {
    ***/
   public boolean equals(Coin other) {
     if (other == null) {
-      System.out.println((String) other + " does not exist");
+      System.out.println("Param object does not exist");
       return false;
     } else {
       if (other.upFace == "tails" && upFace == "tails" || other.upFace == "heads" && upFace == "heads") {
@@ -167,7 +169,7 @@ public class Coin {
    ***/
   public String toString() {
     String retStr = name + " -- " + upFace;
-    return retStr
+    return retStr;
   }
 
 } //end class
