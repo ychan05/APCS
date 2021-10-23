@@ -1,5 +1,5 @@
 /**
- *David Deng, Yat Long Chan
+ *TNPG: DIY (David Deng, Yat Long Chan)
  *APCS
  *HW23 -- What Does Equality Look Like? / Comparing Variables from Different Objects
  *2021-10-22
@@ -46,7 +46,7 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
-  bias = 0.5;
+  	bias = 0.5;
 	name = s;
 	upFace = "heads";
   }
@@ -59,7 +59,7 @@ public class Coin {
   ***/
   public Coin( String s, String nowFace ) {
 	bias = 0.5;
-  name = s;
+  	name = s;
 	upFace = nowFace;
   }
 
@@ -139,7 +139,7 @@ public class Coin {
   ***/
   public void reset( String s, double d ) {
   	if ((s == "heads" || s == "tails") && (d >= 0.0 && d <= 1.0)){
-  		upFace = "";
+  		upFace = "heads";
   		bias = 0.5;
   	}
   	else{
