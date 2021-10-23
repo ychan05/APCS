@@ -187,7 +187,7 @@ public class Coin {
 		return false;
 	}
 
-	if (other.upFace.equals(upFace)) {
+	else if (other.upFace.equals(upFace)) {
 		return true;
 	}
 	else {
