@@ -2,7 +2,7 @@
  *TNPG: DIY (David Deng, Yat Long Chan)
  *APCS
  *HW24 -- Get It While You Can / Using while loops with class Coin.
- *2021-10-23
+ *2021-10-25
  *Time Spent: 0.5 hrs
  *
  *DISCO
