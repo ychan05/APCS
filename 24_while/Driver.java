@@ -12,7 +12,7 @@
  **/
 
 public class Driver {
-  public static void matchCount(Coin c1, Coin c2, int x, int y, int birthyear){
+  public static void loop(Coin c1, Coin c2, int x, int y, int birthyear){
      int matchCtr = 0;
      boolean start = true;
      int headsCt = c1.getHeadsCtr() + c2.getHeadsCtr();
