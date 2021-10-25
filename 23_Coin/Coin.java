@@ -3,7 +3,7 @@
  *APCS
  *HW23 -- What Does Equality Look Like? / Comparing Variables from Different Objects
  *2021-10-22
- *Time Spent: 11 minutes
+ *Time Spent: 0.2 hours
  *
  *DISCOS
  *If a variable in another class is named exactly the same as a variable in your current class, use the Java keyword `this` to refer to the local variable.
