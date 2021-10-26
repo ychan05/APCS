@@ -31,21 +31,21 @@ public class Repeater {
     if (numPosts == 1) {
       fence += "|";
       return fence;
-    } else {
-      fence += "|--";
-    }
+    } 
+    fence += "|--";
     return fence + fenceR(numPosts - 1);
   }
 
   public static void main(String[] args) {
-    //While loop testing
+    System.out.println("===while loop testing===");
     System.out.println(fenceW(1));
     System.out.println(fenceW(2));
     System.out.println(fenceW(3));
 
-    //recursive testing
+    System.out.println("===recursive testing===");
     System.out.println(fenceR(1));
     System.out.println(fenceR(2));
     System.out.println(fenceR(3));
   }
 }
+ 
