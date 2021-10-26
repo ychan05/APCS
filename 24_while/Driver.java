@@ -94,7 +94,7 @@ public class Driver {
       ====================BOTTOM======================*/
      Coin coin1 = new Coin("penny", "heads");
      Coin coin2 = new Coin("quarter", "heads");
-     headCount(coin1, 10);
+     headCount(coin1, coin2, 10);
      matchCount(coin1, coin2, 10);
      yearMatch(coin1, coin2, 2005);
   }//end main()
