@@ -23,15 +23,14 @@ public class Repeater {
         fence += "--|";
       }
     }
-  }
   return fence;
 }
 //recursive method
 public static String fenceR(int numPosts) {
   String fence = "";
-
   if (numPosts == 1) {
     fence += "|";
+    return fence;
   } else {
     fence += "|--";
   }
@@ -39,13 +38,14 @@ public static String fenceR(int numPosts) {
 }
 
 public static void main(String[] args) {
-  //While loop testing 
+  //While loop testing
   System.out.println(fenceW(1));
   System.out.println(fenceW(2));
   System.out.println(fenceW(3));
 
-  //recursive testing 
+  //recursive testing
   System.out.println(fenceR(1));
   System.out.println(fenceR(2));
   System.out.println(fenceR(3));
+}
 }
