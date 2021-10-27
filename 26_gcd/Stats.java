@@ -9,10 +9,14 @@
    QCC
    - Which method would be the quickest or most efficient?
    ALGO
-    public static int gcdER(int a, int b){
-     if (a == b){return a;}
-     else if (a > b){return gcdER( (a - b), b);}
-     else { return gcdER( (b - a), a);}
+    public static int gcdER(int a, int b) {
+        if (a == b) {
+            return a;
+        } else if (a > b) {
+            return gcdER((a - b), b);
+        } else {
+            return gcdER((b - a), a);
+        }
     }
  */
 
@@ -52,17 +56,14 @@ public class Stats {
     }
 
     public static int gcdEW(int a, int b) {
-        int ans = 0;
         while (a != b) {
             if (a > b) {
                 a -= b;
-                ans = a;
             } else {
                 b -= a;
-                ans = b;
             }
         }
-        return ans;
+        return a;
     }
     /* ===================OLD STATS==========================
      public static int mean(int a, int b) {
