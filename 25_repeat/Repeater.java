@@ -32,8 +32,8 @@ public class Repeater {
       fence += "|";
       return fence;
     } 
-    fence = "|--" + fenceR(numPosts - 1);
-    return fence;
+    fence += "|--";
+    return fence + fenceR(numPosts - 1);
   }
 
   public static void main(String[] args) {
