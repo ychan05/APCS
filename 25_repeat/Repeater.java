@@ -25,14 +25,13 @@ public class Repeater {
 }
 
 public static String fenceR(int numPosts) {
-  String fence = "";
+  String fence = "|";
   if (numPosts == 1) {
-    fence += "|";
     return fence;
-  } else {
-    fence += "|--";
-    return fence + fenceR(numPosts - 1);
-  }
+  } 
+  fence += "|--";
+  return fence + fenceR(numPosts - 1);
+  
 
 }
 public static void main(String[] args) {
