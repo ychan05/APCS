@@ -21,30 +21,29 @@ public class Repeater {
       fence += "--|";
       counter++;
     }
-  return fence;
-}
-
-public static String fenceR(int numPosts) {
-  String fence = "";
-  if (numPosts == 1) {
-    fence += "|";
     return fence;
-  } 
-  fence += "|--";
-  return fence + fenceR(numPosts - 1);
-  
+  }
 
-}
-public static void main(String[] args) {
-  System.out.println("===while loop testing===");
-  System.out.println(fenceW(1));
-  System.out.println(fenceW(2));
-  System.out.println(fenceW(3));
+  public static String fenceR(int numPosts) {
+    String fence = "";
+    if (numPosts == 1) {
+      fence += "|";
+      return fence;
+    }
+    fence += "|--";
+    return fence + fenceR(numPosts - 1);
 
-  System.out.println("===recursive testing===");
-  System.out.println(fenceR(1));
-  System.out.println(fenceR(2));
-  System.out.println(fenceR(3));
-}
+  }
+  public static void main(String[] args) {
+    System.out.println("===while loop testing===");
+    System.out.println(fenceW(1));
+    System.out.println(fenceW(2));
+    System.out.println(fenceW(3));
+
+    System.out.println("===recursive testing===");
+    System.out.println(fenceR(1));
+    System.out.println(fenceR(2));
+    System.out.println(fenceR(3));
+  }
 
 }
