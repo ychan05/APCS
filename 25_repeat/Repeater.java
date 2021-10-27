@@ -7,7 +7,7 @@ time spent: 0.3 hours
 DISCO
 The recursive method requires less lines and variables than the method using a while loop.
 QCC
-none
+Which is better to prioritize: readable and easy to understand code or more efficient code
 **/
 public class Repeater {
   //while loop method
