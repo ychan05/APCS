@@ -22,9 +22,10 @@ public class Repeater {
     return fence;
   }
   //recursive method
-  public static String fenceR(int numPosts) {
-    String fence = "|";
+public static String fenceR(int numPosts) {
+    String fence = "";
     if (numPosts == 1) {
+      fence += "|";
       return fence;
     } 
     fence += "|--";
