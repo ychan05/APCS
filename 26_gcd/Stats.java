@@ -24,17 +24,15 @@ public class Stats {
 
     public static int gcd(int a, int b) {
         int i = 1;
-        int ans = 0;
-        if (a == b) {
-            return a;
-        } else if (a > b) {
+        int ans = a;
+        if (a > b) {
             while (i < b) {
                 if (((b % i) == 0) && ((a % i) == 0)) {
                     ans = i;
                 }
                 i++;
             }
-        } else {
+        } else if (a < b) {
             while (i < a) {
                 if (((b % i) == 0) && ((a % i) == 0)) {
                     ans = i;
