@@ -12,16 +12,12 @@ Which is better to prioritize: readable and easy to understand code or more effi
 public class Repeater {
   //while loop method
   public static String fenceW(int numPosts) {
-    int count = 0;
-    String fence = "";
-
-    while (count < numPosts) {
-      count++;
-      if (count == 1) {
-        fence += "|";
-      } else {
-        fence += "--|";
-      }
+    int counter = 1;
+    String fence = "|";
+    while (counter < numPosts) {
+      fence += "--|";
+      counter++;
+    }
     }
     return fence;
   }
