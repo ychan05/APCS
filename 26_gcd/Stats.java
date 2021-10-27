@@ -64,7 +64,7 @@ public class Stats {
         }
         return ans;
     }
-    /* === OLD STATS ===
+    /* ===================OLD STATS==========================
      public static int mean(int a, int b) {
        return (a+b)/2; 
      }
@@ -186,7 +186,7 @@ public class Stats {
        //harmonic mean is the reciprocal of the arithmetic mean of the reciprocals
        double __ = ((1/a)+(1/b)+(1/c))/3
      }
-    === OLD STATS === */
+    ===================OLD STATS========================== */
 
     public static void main(String[] args) {
        //should all print 3, so six 3s in terminal
