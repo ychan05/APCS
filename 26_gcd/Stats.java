@@ -23,14 +23,14 @@ public class Stats {
     int i = 1;
     int ans = a;
     if (a > b) {
-      while (i < b) {
+      while (i <= b) {
         if (((b % i) == 0) && ((a % i) == 0)) {
           ans = i;
         }
         i++;
       }
     } else if (a < b) {
-      while (i < a) {
+      while (i <= a) {
         if (((b % i) == 0) && ((a % i) == 0)) {
           ans = i;
         }
