@@ -1,5 +1,5 @@
 /*
- <PENDING TNPG> -- Yat long Chan / Samantha Hua / Lindsay Phung
+ Interesting Pandas -- Yat long Chan / Samantha Hua / Lindsay Phung
    APCS
    HW26 -- GCD Three Ways
    2021-10-27
