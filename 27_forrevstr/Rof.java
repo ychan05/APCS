@@ -43,6 +43,6 @@ public class Rof {
   public static void main( String [] args) {
     System.out.println(fenceF(5));
     System.out.println(reverseF("stressed"));
-		System.out.println(reverseR("stressed"));
+    System.out.println(reverseR("stressed"));
   }
 }
