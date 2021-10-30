@@ -131,6 +131,7 @@ public static void main(String[] args){
   System.out.println(endOther("Hiabc", "abc"));
   System.out.println(endOther("AbC", "HiaBc"));
   System.out.println(endOther("abc", "abXabc"));
+  //xyzthere test
   System.out.println(xyzThere("abcxyz"));
   System.out.println(xyzThere("abc.xyz"));
   System.out.println(xyzThere("xyz.abc")); 
