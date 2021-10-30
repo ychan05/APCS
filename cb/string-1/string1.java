@@ -12,6 +12,7 @@ public class string1{
  }
 
  public static void main(String[] args){
+   //helloName test
    System.out.println(helloName("Bob"));
    System.out.println(helloName("Alice"));
    System.out.println(helloName("X"));
