@@ -65,41 +65,27 @@ public class string2 {
     int bLength = b.length();
     int aLength = a.length();
     if (aLength < bLength) {
-      if (lowerB.substring(bLength - aLength, bLength).equals(lowerA)) {
-        return true;
-      } else {
-        return false;
-      }
-    } else if (bLength < aLength) {
-      if (lowerA.substring(aLength - bLength, aLength).equals(lowerB)) {
-        return true;
-      } else {
-        return false;
-      }
+      return (lowerB.substring(bLength - aLength, bLength).equals(lowerA));
     } else {
-      if (lowerA.equals(lowerB)) {
-        return true;
-      } else {
-        return false;
-      }
+      return (lowerA.substring(aLength - bLength, aLength).equals(lowerB));
     }
   }
+
   /* Return true if the given string contains an appearance of "xyz"
   where the xyz is not directly preceeded by a period (.).
   So "xxyz" counts but "x.xyz" does not.
   */
   public static boolean xyzThere(String str) {
-    boolean ans = false;
     for (int i = 0; i < str.length() - 2; i++) {
       if (i == 0) {
         if (str.substring(i, i + 3).equals("xyz")) {
-          ans = true;
+          return true;
         }
       } else if (str.substring(i, i + 3).equals("xyz") && !str.substring(i - 1, i).equals(".")) {
-        ans = true;
+        return true;
       }
     }
-    return ans;
+    return false;
   }
   // Return true if the given string contains a "bob" string, but where the middle 'o' char can be any char.
 
