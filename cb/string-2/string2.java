@@ -101,6 +101,48 @@ public class string2 {
     }
     return ans;
   }
+  // Return true if the given string contains a "bob" string, but where the middle 'o' char can be any char.
+
+  public static boolean bobThere(String str) {
+    boolean ans = false;
+    for (int i = 0; i < str.length() - 2; i++) {
+      if (str.substring(i, i + 1).equals("b") && str.substring(i + 2, i + 3).equals("b")) {
+        ans = true;
+      }
+    }
+    return ans;
+  }
+  /*We'll say that a String is xy-balanced if for all the 'x' chars in the string, 
+  there exists a 'y' char somewhere later in the string. So "xxy" is balanced, but "xyx" is not. 
+  One 'y' can balance multiple 'x's. Return true if the given string is xy-balanced.
+  */
+  public boolean xyBalance(String str) {
+    int y = -1;
+    for (int i = 0; i < str.length(); i++) {
+      if (str.substring(i, i + 1).equals("y")) {
+        y = i;
+      }
+    }
+
+    for (int i = 0; i < str.length(); i++) {
+      if (str.substring(i, i + 1).equals("x") && i > y) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /* Given two strings, a and b, create a bigger string made of the first char of a, the first char of b, the second char of a, 
+  the second char of b, and so on. Any leftover chars go at the end of the result. */
+
+  public String mixString(String a, String b) {
+    String newStr = "";
+    int len = Math.min(a.length(), b.length());
+    for (int i = 0; i < len; i++) {
+      newStr += a.substring(i, i + 1) + b.substring(i, i + 1);
+    }
+    return newStr + a.substring(len) + b.substring(len);
+  }
 
   public static void main(String[] args) {
     //doubleChar test
