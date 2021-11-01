@@ -1,13 +1,17 @@
 public class Commafier{
   public static String commafyF(int n){
     String ans = "";
-    int reversed = 0;
-    int temp = n;
+    String strInt = "" + n;
 
     if (n < 1000){
       ans += n;
     } else {
-      //do stuff, not sure what
+      for (int i = 0; i < strInt.length(); i ++){
+        if ((strInt.length() - i) % 3 == 0){
+          ans += ",";
+        }
+        ans += strInt.substring(i, i + 1);
+      }
     }
     return ans;
   }
@@ -15,5 +19,6 @@ public class Commafier{
     System.out.println(commafyF(1));
     System.out.println(commafyF(101));
     System.out.println(commafyF(1000));
+    System.out.println(commafyF(12345));
   }
 }
