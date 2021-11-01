@@ -2,7 +2,7 @@ public class Commafier{
 
   public static String commafyF(int n){
     String ans = "";
-    String strInt = "" + n;
+    String strInt = Integer.toString(n);
 
     if (strInt.length() < 4){
       ans += n;
@@ -19,7 +19,7 @@ public class Commafier{
 
   //doesnt work with zeros currently.
   public static String commafyR(int n){
-    String strInt = "" + n;
+    String strInt = Integer.toString(n);
     if (strInt.length() < 4){
       return strInt;
     } else if (strInt.length() % 3 == 0){
