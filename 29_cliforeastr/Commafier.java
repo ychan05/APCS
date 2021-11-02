@@ -1,3 +1,16 @@
+/*
+QUAD PUFFS: Yat Long Chan, Lindsay Phung, David Deng, Samantha Hua
+APCS
+HW29 -- Which Way Do You Roll? // commafy an int iteratively and recursively
+2021-11-01
+time spent: 0.8 hrs
+DISCO:
+- Wrapper classes have a variety of methods including coverting between variable types.
+- FOREACH loops go through every single element in an array, similar to Python's FOR loop.
+QCC:
+- Recursive methods are sometimes very unintuitive. e.g. commafyR() 
+*/
+
 public class Commafier{
 
   public static String commafyF(int n){
