@@ -35,8 +35,8 @@ public class Commafier{
     if (strInt.length() < 4){
       return strInt;
     }
-    int newN = Integer.parseInt(strInt.substring(0, strInt.length() - 3));
-    return commafyR(newN) + "," + strInt.substring(strInt.length() - 3);
+    int newNum = Integer.parseInt(strInt.substring(0, strInt.length() - 3));
+    return commafyR(newNum) + "," + strInt.substring(strInt.length() - 3);
   }
   public static void main (String[] args){
     /* System.out.println(commafyF(1));
