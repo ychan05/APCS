@@ -54,7 +54,7 @@ public class Commafier{
     System.out.println(commafyR(100000000)); */
     for(String s : args){
       System.out.println("RECURSIVE TEST: " + commafyR(Integer.parseInt(s)) + "\n");
-      System.out.println("ITERATIVE TEST: " + commafyR(Integer.parseInt(s)) + "\n");
+      System.out.println("ITERATIVE TEST: " + commafyF(Integer.parseInt(s)) + "\n");
     }
   }
 }
