@@ -7,6 +7,7 @@ time spent: 0.8 hrs
 DISCO:
 - Wrapper classes have a variety of methods including converting between variable types.
 - FOREACH loops go through every single element in an array, similar to Python's FOR loop.
+- A FOREACH loop can be used in main to take test params directly from the console.
 QCC:
 - Recursive methods are sometimes very unintuitive. e.g. commafyR() 
 */
