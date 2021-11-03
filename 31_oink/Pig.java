@@ -24,7 +24,7 @@
 
 public class Pig{
   //Q: How does this initialization make your life easier?
-  private static final String VOWELS = "aeiouAEIOU";
+  private static final String VOWELS = "aeiou";
 
 
   /*=====================================
@@ -48,10 +48,7 @@ public class Pig{
     precondition: letter.length() == 1
     =====================================*/
   public static boolean isAVowel( String letter ){
-    if (VOWELS.indexOf(letter) != -1){
-      return true;
-    }
-    return false;
+    return (hasA(VOWELS, letter));
   }
 
 
@@ -94,9 +91,9 @@ public class Pig{
     =====================================*/
   public static String allVowels( String w ){
     String ans = "";
-    if(hasAVowel(w)){
+    if (hasAVowel(w)){
       for (int i = 0; i < w.length(); i ++){
-        if(isAVowel(w.substring(i, i + 1))){
+        if (isAVowel(w.substring(i, i + 1))){
           ans += w.substring(i, i + 1);
         }
       }
@@ -104,8 +101,8 @@ public class Pig{
     return ans;
   }
 
-
   public static void main( String[] args ){
+    System.out.println(hasA("cat", "a"));
     System.out.println(isAVowel("a"));
     System.out.println(countVowels("meatball"));
     System.out.println(hasAVowel("cat"));
