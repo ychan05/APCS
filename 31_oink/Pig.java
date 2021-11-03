@@ -34,12 +34,7 @@ public class Pig{
     hasA("cat", "p")       -> false
     =====================================*/
   public static boolean hasA( String w, String letter ){
-    for(int i = 0; i < w.length(); i ++){
-      if (w.substring(i, i + 1).equals(letter)){
-        return true;
-      }
-    }
-    return false;
+    return (w.indexOf(letter) != -1);
   }//end hasA()
 
 
@@ -58,13 +53,13 @@ public class Pig{
     post: countVowels("meatball") -> 3
     =====================================*/
   public static int countVowels( String w ){
-    int ans = 0;
+    int count = 0;
     for(int i = 0; i < w.length(); i++){
       if(isAVowel(w.substring(i, i + 1))){
-        ans ++;
+        count ++;
       }
     }
-    return ans;
+    return count;
   }
 
 
@@ -75,12 +70,7 @@ public class Pig{
     hasAVowel("zzz")       -> false
     =====================================*/
   public static boolean hasAVowel( String w ){
-    for (int i = 0; i < w.length(); i ++){
-      if(isAVowel(w.substring(i, i + 1))){
-        return true;
-      }
-    }
-    return false;
+    return (countVowels(w) > 0);
   }
 
 
@@ -91,13 +81,11 @@ public class Pig{
     =====================================*/
   public static String allVowels( String w ){
     String ans = "";
-    if (hasAVowel(w)){
       for (int i = 0; i < w.length(); i ++){
         if (isAVowel(w.substring(i, i + 1))){
           ans += w.substring(i, i + 1);
         }
       }
-    }
     return ans;
   }
 
