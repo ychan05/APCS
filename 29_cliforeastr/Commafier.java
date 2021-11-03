@@ -9,7 +9,7 @@ DISCO:
 - FOREACH loops go through every single element in an array, similar to Python's FOR loop.
 - A FOREACH loop can be used in main to take test params directly from the console.
 QCC:
-- Recursive methods are sometimes very unintuitive. e.g. commafyR() 
+- Recursive methods are sometimes very unintuitive. e.g. commafyR()
 */
 
 public class Commafier{
