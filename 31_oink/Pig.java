@@ -5,8 +5,9 @@
  * 2021-11-03
  * time spent: 0.2 hrs
  * DISCO
- * The keyword final indicates that the variable can no longer be changed.
- *
+ * The word final indicates that the value of the variable can not be changed
+ * You can put boolean expressions in return statements and a boolean will be returned
+ * 
  * QCC
  * No questions unresolved
  *
