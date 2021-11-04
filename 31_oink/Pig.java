@@ -4,6 +4,11 @@
  * HW31 -- Otnay Ybay ethay Airhay Onway Ymay Inneechay Inchay Inchay
  * 2021-11-03
  * time spent: 0.2 hrs
+ * DISCO
+ * The keyword final indicates that the variable can no longer be changed.
+ *
+ * QCC
+ * No questions unresolved
  *
  * class Pig
  * a Pig Latin translator
