@@ -101,10 +101,15 @@ public class Pig{
 
   public static void main( String[] args ){
     System.out.println(hasA("cat", "a"));
+    System.out.println(hasA("cat", "p"));
+    System.out.println(isAVowel("c"));
     System.out.println(isAVowel("a"));
+    System.out.println(countVowels("meetbaall"));
     System.out.println(countVowels("meatball"));
     System.out.println(hasAVowel("cat"));
+    System.out.println(hasAVowel("zzz"));
     System.out.println(allVowels("meatball"));
+    System.out.println(allVowels("meetbaall"));
   }//end main()
 
 }//end class Pig
