@@ -70,7 +70,12 @@ public class Pig{
     hasAVowel("zzz")       -> false
     =====================================*/
   public static boolean hasAVowel( String w ){
-    return (countVowels(w) > 0);
+      for (int i = 0; i < w.length(); i ++){
+        if (isAVowel(w.substring(i, i + 1))){
+          return true;
+        }
+      }
+     return false;
   }
 
 
