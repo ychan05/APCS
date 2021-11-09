@@ -1,3 +1,16 @@
+/* Yat Long Chan, David Chen, Jason Yang
+APCS
+L00 -- Etterbay Odingcay Oughthray Ollaborationcay
+11-08-21
+time spent: 10 minutes
+DISCO
+- Making many methods makes it easier on the eyes
+QCC
+- none
+NEW IN v1
+- add punc and uppercase checks
+*/
+
 public class Pig {
 
     private static final String VOWELS = "aeiouy";
