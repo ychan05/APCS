@@ -4,7 +4,7 @@ L00 -- Etterbay Odingcay Oughthray Ollaborationcay
 11-09-21
 time spent: 20 minutes
 DISCO
-- Making many methods makes it easier on the eyes
+- the String wrapper class has methods for making a string uppercase and lowercase.
 QCC
 - none
 NEW IN v3
@@ -13,7 +13,7 @@ NEW IN v3
 
 public class Pig {
 
-  private static final String VOWELS = "aeiouy";
+  private static final String VOWELS = "aeiouyAEIOUY";
   private static final String CAPS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   private static final String PUNCS = ".,:;!?";
 
@@ -156,9 +156,20 @@ public class Pig {
     return ans;
   }
 
+  public static String totalTranslate(String p){
+    String ans = "";
+    while (p.indexOf(" ") != -1){
+      String w = p.substring(0, p.indexOf(" "));
+      ans = ans + wordTranslate(w) + " ";
+      p = p.substring(p.indexOf(" ") + 1);
+    }
+    return ans + wordTranslate(p);
+  }
+
   public static boolean isPunc( String symbol ) {
     return PUNCS.indexOf( symbol ) != -1;
   }
+
   /*=====================================
   boolean isUpperCase(String) -- tells whether a letter is uppercase
   pre:  letter.length() == 1
@@ -200,14 +211,6 @@ public class Pig {
 
 
   public static void main (String[] args){
-
-    for( String word : args ) {
-      System.out.println( "allVowels \t" + allVowels(word) );
-      System.out.println( "firstVowels \t" + firstVowel(word) );
-      System.out.println( "countVowels \t" + countVowels(word) );
-      System.out.println( "wordTranslate \t" + wordTranslate(word) );
-      System.out.println("hasPunc \t" + hasPunc(word));
-      System.out.println( "---------------------" );
-    }
+    System.out.println(totalTranslate("Hello, World!"));
   }
 }//end class Pig
