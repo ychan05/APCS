@@ -152,12 +152,15 @@ public class Pig {
 
   public static String wordTranslate(String w){
     String ans = "";
+    String word = "";
     if (puncIndex(w) == (w.length() - 1)){
       ans = puncTranslate(w);
     }
-    else {ans = engToPig(w);}
+    else {
+      ans = engToPig(w);
+    }
     if (beginsWithUpper(w)){
-      ans = ans.substring(0,1).toUpperCase() + ans.substring(1, ans.length()).toLowerCase();
+      ans = ans.substring(0,1).toUpperCase() + ans.substring(1,w.length() - 1) + ans.substring(w.length() - 1).toLowerCase();
     }
     return ans;
   }
