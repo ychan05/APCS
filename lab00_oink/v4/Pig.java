@@ -6,13 +6,13 @@ time spent: 20 minutes
 DISCO
 - the String wrapper class has methods for making a string uppercase and lowercase.
 QCC
-- none
+- How to tell when Y is a vowel
 HOW WE UTILIZED SCANNER DEMO
 - We used scanner to test our program with inputs in the terminal as well as test cases in words.in.
 WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO
 - words.in runs out of inputs for the program.
 NEW IN v4
-- Scanner
+- Scanner and accounting for uppercase in middle of words.
 */
 
 import java.util.Scanner;
@@ -152,12 +152,15 @@ public class Pig {
 
   public static String wordTranslate(String w){
     String ans = "";
+    String word = "";
     if (puncIndex(w) == (w.length() - 1)){
       ans = puncTranslate(w);
     }
-    else {ans = engToPig(w);}
+    else {
+      ans = engToPig(w);
+    }
     if (beginsWithUpper(w)){
-      ans = ans.substring(0,1).toUpperCase() + ans.substring(1, ans.length()).toLowerCase();
+      ans = ans.substring(0,1).toUpperCase() + ans.substring(1,w.length() - 1) + ans.substring(w.length() - 1).toLowerCase();
     }
     return ans;
   }
