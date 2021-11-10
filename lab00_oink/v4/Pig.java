@@ -6,7 +6,7 @@ time spent: 0.5 hour + class time
 DISCO
 - the String wrapper class has methods for making a string uppercase and lowercase.
 QCC
-- How to tell when Y is a vowel
+- The program will not run correctly if there is an extra space at the end of a string.
 HOW WE UTILIZED SCANNER DEMO
 - We used scanner to test our program with inputs in the terminal as well as test cases in words.in.
 WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO
@@ -159,7 +159,7 @@ public class Pig {
     else {
       ans = engToPig(w);
     }
-    if (beginsWithUpper(w)){
+    if (beginsWithUpper(w) && w.length() > 1){
       ans = ans.substring(0,1).toUpperCase() + ans.substring(1,w.length() - 1) + ans.substring(w.length() - 1).toLowerCase();
     }
     return ans;
@@ -221,10 +221,10 @@ public class Pig {
 
   public static void main (String[] args){
     Scanner sc = new Scanner( System.in );
-    while( sc.hasNext() ) {
-      String line = sc.next();
-      String pigLine = totalTranslate(line);
-      System.out.println(line + ": " + pigLine);
+    while (sc.hasNextLine()) {
+      String line = sc.nextLine();
+      String translatedLine = totalTranslate(line);
+      System.out.println(line + " -> " + translatedLine);
     }
   }
 }//end class Pig
