@@ -2,7 +2,7 @@
 APCS
 L00 -- Etterbay Odingcay Oughthray Ollaborationcay
 11-09-21
-time spent: 20 minutes
+time spent: 0.5 hour + class time
 DISCO
 - the String wrapper class has methods for making a string uppercase and lowercase.
 QCC
@@ -12,7 +12,7 @@ HOW WE UTILIZED SCANNER DEMO
 WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO
 - words.in runs out of inputs for the program.
 NEW IN v4
-- Scanner
+- Scanner and accounting for uppercase in middle of words.
 */
 
 import java.util.Scanner;
