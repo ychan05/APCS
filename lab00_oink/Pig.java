@@ -6,7 +6,7 @@ time spent: 20 minutes
 DISCO
 - the String wrapper class has methods for making a string uppercase and lowercase.
 QCC
-- none
+- How to tell when Y is a vowel
 HOW WE UTILIZED SCANNER DEMO
 - We used scanner to test our program with inputs in the terminal as well as test cases in words.in.
 WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO
