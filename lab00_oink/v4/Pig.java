@@ -2,7 +2,7 @@
 APCS
 L00 -- Etterbay Odingcay Oughthray Ollaborationcay
 11-09-21
-time spent: 20 minutes
+time spent: 0.5 hour + class time
 DISCO
 - the String wrapper class has methods for making a string uppercase and lowercase.
 QCC
