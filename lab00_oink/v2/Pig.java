@@ -1,3 +1,16 @@
+/* Yat Long Chan, David Chen, Jason Yang
+APCS
+L00 -- Etterbay Odingcay Oughthray Ollaborationcay
+11-09-21
+time spent: 20 minutes
+DISCO
+- the String wrapper class has methods for making a string uppercase and lowercase.
+QCC
+- none
+NEW IN v2
+- translate words with punc and capitals.
+*/
+
 public class Pig {
 
   private static final String VOWELS = "aeiouy";
