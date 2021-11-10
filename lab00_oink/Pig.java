@@ -221,8 +221,8 @@ public class Pig {
 
   public static void main (String[] args){
     Scanner sc = new Scanner( System.in );
-    while( sc.hasNextLine() ) {
-      String line = sc.nextLine();
+    while( sc.hasNext() ) {
+      String line = sc.next();
       String pigLine = totalTranslate(line);
       System.out.println(line + ": " + pigLine);
     }
