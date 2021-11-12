@@ -86,8 +86,8 @@ public class Loopier{
     } else{
       a = subarray(a, 1, a.length);
       return 0 + freqRec(a, target);
+    }
   }
-}
 
   public static void main(String[] args){
     int[] x = new int[]{};
