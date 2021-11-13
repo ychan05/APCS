@@ -13,14 +13,7 @@ QCC
 import java.util.Arrays;
 
 public class Loopier{
-  // Gets a section of array. Used in freqRec
-  public static int[] subarray (int[] a, int start, int end){
-    int[] sub = new int[end - start];
-    for (int i = start; i < end; i ++){
-      sub[i - start] = a[i];
-    }
-    return sub;
-  }
+
   //populate array with randInts
   public static void randArr(int[] a){
     for(int i=0; i<a.length; i++){
@@ -52,7 +45,12 @@ public class Loopier{
   }
 
   // Linear search recursively.
-  public static int linSearchR(int[] a, int index, int target){
+  public static int linSearchR(int[] a, int target){
+    return linSearchRHelper(a, 0, target);
+  }
+
+  // So you don't have to enter index when calling linSearchR() itself.
+  public static int linSearchRHelper(int[] a, int index, int target){
     int end = a.length -1;
     if (a[index] == target){
       return index;
@@ -60,7 +58,7 @@ public class Loopier{
     if (end <= index){
       return -1;
     }
-    return linSearchR(a, index + 1, target);
+    return linSearchRHelper(a, index + 1, target);
   }
 
   //iterative frequency of target
@@ -74,24 +72,33 @@ public class Loopier{
     return count;
   }
 
+  // Gets a section of array. Used in freqRec
+  public static int[] subarray (int[] a, int start, int end){
+    int[] sub = new int[end - start];
+    for (int i = start; i < end; i ++){
+      sub[i - start] = a[i];
+    }
+    return sub;
+  }
+
   //recursive frequency of a target
   public static int freqRec(int[] a, int target){
     if (a.length == 0){
       return 0;
     }
+    int[] newA = subarray(a, 1, a.length);
     if (a[0] == target){
-      a = subarray(a, 1, a.length);
-      return 1 + freqRec(a, target);
+      return 1 + freqRec(newA, target);
     } else{
-      a = subarray(a, 1, a.length);
-      return 0 + freqRec(a, target);
+      return 0 + freqRec(newA, target);
   }
 }
 
   public static void main(String[] args){
     int[] x = new int[]{};
-    Loopier hi = new Loopier();
     int[] y = new int[]{1, 2, 2};
+    Loopier hi = new Loopier();
+    System.out.println(hi.linSearchR(y, 2)); //print 1
     System.out.println(hi.freq(x, 1)); //print 0
     System.out.println(hi.freqRec(x, 1)); //print 0
     System.out.println(hi.freq(y, 2)); //print 2
