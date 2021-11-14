@@ -6,11 +6,15 @@ HW34 -- A Pirate's life for Me // methods using int arrays
 time spent: 0.7 hours
 DISCO
 - array.length does not have parentheses at the end, meaning it is not a method.
-- Recursive methods are sometimes more complex than iterative methods.
+- Arrays.copyOf() is used to make a copy of an array or a section of an array starting from index 0
+
 QCC
-- We had to insert another param into linSearchR().
+- We had to use a helper method for linSearchR().
 - What should be the range in randArr() or method that populates the array randomly?
 **/
+
+import java.util.Arrays;
+
 public class Loopier{
 
   //populate array with randInts
@@ -26,7 +30,7 @@ public class Loopier{
     for(int i=0; i<a.length; i++){
       if (i == a.length - 1){
         arrStr = arrStr + a[i] + "]";
-      } else{
+      } else {
         arrStr = arrStr + a[i] + ", ";
       }
     }
@@ -71,32 +75,26 @@ public class Loopier{
     return count;
   }
 
-  // Gets a section of array. Used in freqRec
-  public static int[] subarray (int[] a, int start, int end){
-    int[] sub = new int[end - start];
-    for (int i = start; i < end; i ++){
-      sub[i - start] = a[i];
-    }
-    return sub;
-  }
-
   //recursive frequency of a target
   public static int freqRec(int[] a, int target){
     if (a.length == 0){
       return 0;
     }
-    int[] newA = subarray(a, 1, a.length);
-    if (a[0] == target){
+
+    int[] newA = Arrays.copyOf(a, a.length -1);
+
+    if (a[a.length -1] == target){
       return 1 + freqRec(newA, target);
-    } else{
+    } else {
       return 0 + freqRec(newA, target);
+    }
   }
- }
 
   public static void main(String[] args){
     int[] x = new int[]{};
     int[] y = new int[]{1, 2, 2};
     Loopier hi = new Loopier();
+    System.out.println(hi.linSearchR(y, 3)); //print -1
     System.out.println(hi.linSearchR(y, 2)); //print 1
     System.out.println(hi.freq(x, 1)); //print 0
     System.out.println(hi.freqRec(x, 1)); //print 0
