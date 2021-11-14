@@ -8,7 +8,6 @@ DISCO
 - array.length does not have parentheses at the end, meaning it is not a method.
 - Recursive methods are sometimes more complex than iterative methods.
 QCC
-- We had to insert another param into linSearchR().
 - What should be the range in randArr() or method that populates the array randomly?
 **/
 public class Loopier{
