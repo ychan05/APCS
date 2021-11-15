@@ -13,8 +13,6 @@ QCC
 - What should be the range in randArr() or method that populates the array randomly?
 **/
 
-import java.util.Arrays;
-
 public class Loopier{
 
   //populate array with randInts
@@ -63,6 +61,8 @@ public class Loopier{
     }
     return linSearchRHelper(a, index + 1, target);
   }
+  
+  
 
   //iterative frequency of target
   public static int freq(int[] a, int target){
@@ -74,21 +74,28 @@ public class Loopier{
     }
     return count;
   }
-
-  //recursive frequency of a target
+  
+  // Gets a section of array. Used in freqRec
+  public static int[] subarray (int[] a, int start, int end){
+    int[] sub = new int[end - start];
+    for (int i = start; i < end; i ++){
+      sub[i - start] = a[i];
+    }
+    return sub;
+  }
+  
+  // recursive frequency of target
   public static int freqRec(int[] a, int target){
     if (a.length == 0){
       return 0;
     }
-
-    int[] newA = Arrays.copyOf(a, a.length -1);
-
-    if (a[a.length -1] == target){
+    int[] newA = subarray(a, 1, a.length);
+    if (a[0] == target){
       return 1 + freqRec(newA, target);
-    } else {
+    } else{
       return 0 + freqRec(newA, target);
-    }
   }
+ }
 
   public static void main(String[] args){
     int[] x = new int[]{};
