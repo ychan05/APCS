@@ -42,8 +42,7 @@ public class array2{
     while(i<nums.length){
       if(nums[i] != 13){
         sum+= nums[i];
-      }
-      if(nums[i] == 13){
+      } else {
         i++;
       }
       i++;
