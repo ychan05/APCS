@@ -50,13 +50,8 @@ public class Slots {
     post: returns String of elements in slots 0 thru 2, separated by tabs
     =====================================*/
   public String toString()
-  {
-    String s = "";
-    for(int i=0; i<2; i++){
-      s+=_fruits[i] + "\t";
-    }
-    s += _fruits[2];
-    return s;
+  {;
+    return _fruits[0] + "\t" + _fruits[1] + "\t" + _fruits[2];
   }
 
 
