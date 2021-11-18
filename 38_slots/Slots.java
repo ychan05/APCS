@@ -3,7 +3,7 @@
  * APCS pd07
  * HW38 -- Spin Class
  * 2021-11-17
- * Time spent: 0.1 hours + class time
+ * Time spent: 0.2 hours + class time
  * DISCO
  * Nothing new discovered
  * QCC
