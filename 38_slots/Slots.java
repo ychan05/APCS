@@ -93,7 +93,7 @@ public class Slots {
   public boolean jackpot()
   {
     boolean retBoo = false;
-    if(_fruits[0] == _fruits[1] && _fruits[0] == _fruits[2]){
+    if(_fruits[0].equals(_fruits[1]) && _fruits[0].equals(_fruits[2])){
       retBoo = true;
     }
 
@@ -113,7 +113,8 @@ public class Slots {
     boolean retBoo = false;
     if (jackpot()){
       retBoo = true;
-    } else if(_fruits[0] != _fruits[1] && _fruits[0] != _fruits[2] && _fruits[1] != _fruits[2]){
+    } else if(! _fruits[0].equals(_fruits[1]) &&
+    ! _fruits[0].equals(_fruits[2]) && ! _fruits[1].equals(_fruits[2])){
       retBoo = true;
     }
 
