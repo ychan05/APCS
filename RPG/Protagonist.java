@@ -10,8 +10,8 @@ public class Protagonist{
     heroName = name;
     str = modifier();
     precision = modifier();
-    health = 30 + modifier();
-    ac = 13 + modifier();
+    health = 40 + modifier();
+    ac = 14 + modifier();
   }
 
   public String getName(){

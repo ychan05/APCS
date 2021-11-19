@@ -16,7 +16,7 @@ public class Monster{
   }
 
   public int modifier(){
-    return (int) (Math.random() * 5);
+    return (int) (Math.random() * 4);
   }
 
   public int getAC(){ //used in Protagonist
@@ -37,12 +37,12 @@ public class Monster{
     if (! p.getSpecial()){
       // attack roll. 1d20 + precision. Greater than opponent AC = hit.
       if (rollDie(20) + precision > p.getAC()){
-        damage = rollDie(6) + str; //dmg roll. 1d6 + str
+        damage = rollDie(4) + str; //dmg roll. 1d4 + str
       }
     // special attack
     } else {
       if (rollDie(20) + precision > p.getAC()){
-        damage = (rollDie(6) + rollDie(6) + str); //dmg roll. 2d6 + str
+        damage = (rollDie(4) + rollDie(4) + str); //dmg roll. 2d4 + str
       }
     }
     p.takeDamage(damage); //protag takes damage
