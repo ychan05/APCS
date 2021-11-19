@@ -27,7 +27,7 @@ public class Protagonist{
   }
 
   public int modifier(){
-    return (int) (Math.random() * 5);
+    return (int) (Math.random() * 6);
   }
 
   public boolean isAlive(){
