@@ -19,8 +19,11 @@ Run-time errors:
 
   Use print statements as a way to trace a method or loop.
   Use temporary variables to avoid complex expressions.
-  Check recursive function if StackOverflowError
+  Check recursive methods if StackOverflowError
   Check the lines in which exceptions occur.
+  Remove print statements that don't help or combine print statements.
+  Scale down the program.
+  Clean up code.
 
 
 
