@@ -42,14 +42,12 @@ public class Protagonist{
     return ac;
   }
 
-  public boolean specialize(){
+  public void specialize(){
     special = true;
-    return special;
   }
 
-  public boolean normalize(){
+  public void normalize(){
     special = false;
-    return special;
   }
 
   public int attack(Monster m){
