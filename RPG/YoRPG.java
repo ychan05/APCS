@@ -12,7 +12,7 @@
  *
  * DISCO:
  *
- * QCC:
+ * QCC: Game uses a simple d20 system.
  *
  **********************************************/
 

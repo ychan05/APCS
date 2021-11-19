@@ -1,9 +1,9 @@
 public class Protagonist{
-  private int health; //just a default num
-  private int str;
-  private int precision;
+  private int health;
+  private int str; // modifier for damage rolls
+  private int precision; //modifier for attack rolls
   private String heroName;
-  private int ac;
+  private int ac; // Armor Class. Used to determine if attack misses.
   private boolean special;
 
   public Protagonist(String name){
@@ -11,11 +11,15 @@ public class Protagonist{
     str = modifier();
     precision = modifier();
     health = 30 + modifier();
-    ac = 14 + modifier();
+    ac = 13 + modifier();
   }
 
   public String getName(){
     return heroName;
+  }
+
+  public boolean getSpecial(){
+    return special;
   }
 
   public int rollDie(int sideNum){
@@ -30,14 +34,11 @@ public class Protagonist{
     return health > 0;
   }
 
-  public int getHP(){
-    return health;
-  }
-  public void takeDamage(int d){
+  public void takeDamage(int d){ //used in Monster
     health -= d;
   }
 
-  public int getAC(){
+  public int getAC(){ //used in Monster
     return ac;
   }
 
@@ -53,18 +54,21 @@ public class Protagonist{
 
   public int attack(Monster m){
     int damage = 0;
+    // regular attack
     if (!special){
-      if (rollDie(20) > m.getAC()){
-        damage = rollDie(10) + str;
+      // attack roll. 1d20 + precision. Greater than opponent AC = hit.
+      if (rollDie(20) + precision > m.getAC()){
+        damage = rollDie(8) + str; //dmg roll. 1d8 + str
       }
+    // special attack
     } else{
-      if (rollDie(20) > m.getAC()){
-        damage = (rollDie(10) + str) * 2;
+      // attack roll. 1d20 + precision. Greater than opponent AC = hit.
+      if (rollDie(20) + precision > m.getAC()){
+        damage = (rollDie(8) + rollDie(8) + str) ; //dmg roll. 2d8 + str
       }
     }
-    m.takeDamage(damage);
-    return damage;
+    m.takeDamage(damage); // monster takes damage after hit
+    return damage; // used to show amount of damage dealt
   }
-
 
 }

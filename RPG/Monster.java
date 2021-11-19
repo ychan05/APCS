@@ -1,8 +1,8 @@
 public class Monster{
-  private int health; //just a default num
-  private int str;
-  private int precision;
-  private int ac;
+  private int health;
+  private int str; // modifier for damage rolls
+  private int precision; //modifier for attack rolls
+  private int ac; // Armor Class. Used to determine if attack misses.
 
   public Monster(){
     str = modifier();
@@ -16,10 +16,10 @@ public class Monster{
   }
 
   public int modifier(){
-    return (int) (Math.random() * 4);
+    return (int) (Math.random() * 5);
   }
 
-  public int getAC(){
+  public int getAC(){ //used in Protagonist
     return ac;
   }
 
@@ -27,26 +27,26 @@ public class Monster{
     return health > 0;
   }
 
-  public int getHP(){
-    return health;
-  }
-  public void takeDamage(int d){
+  public void takeDamage(int d){ //used in Protagonist
     health -= d;
   }
 
   public int attack(Protagonist p){
     int damage = 0;
-    if (p.normalize()){
-      if (rollDie(20) > p.getAC()){
-        damage = rollDie(6) + str;
+    // regular attack
+    if (! p.getSpecial()){
+      // attack roll. 1d20 + precision. Greater than opponent AC = hit.
+      if (rollDie(20) + precision > p.getAC()){
+        damage = rollDie(6) + str; //dmg roll. 1d6 + str
       }
-    } else if (p.specialize()){
-      if (rollDie(20) > p.getAC()){
-        damage = (rollDie(6) + str) * 2;
+    // special attack
+    } else {
+      if (rollDie(20) + precision > p.getAC()){
+        damage = (rollDie(6) + rollDie(6) + str); //dmg roll. 2d6 + str
       }
     }
-    p.takeDamage(damage);
-    return damage;
+    p.takeDamage(damage); //protag takes damage
+    return damage; //show damage dealt.
   }
 
 
