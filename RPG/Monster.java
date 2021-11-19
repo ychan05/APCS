@@ -16,7 +16,7 @@ public class Monster{
   }
 
   public int modifier(){
-    return (int) (Math.random() * 5);
+    return (int) (Math.random() * 5) + 1;
   }
 
   public int getAC(){ //used in Protagonist
