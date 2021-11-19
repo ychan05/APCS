@@ -11,7 +11,7 @@ public class Protagonist{
     str = modifier();
     precision = modifier();
     health = 30 + modifier();
-    ac = 13 + modifier();
+    ac = 14 + modifier();
   }
 
   public String getName(){
@@ -53,13 +53,13 @@ public class Protagonist{
 
   public int attack(Monster m){
     int damage = 0;
-    if (special){
+    if (!special){
       if (rollDie(20) > m.getAC()){
-        damage = rollDie(8) + str;
+        damage = rollDie(10) + str;
       }
     } else{
       if (rollDie(20) > m.getAC()){
-        damage = (rollDie(8) + str) * 2;
+        damage = (rollDie(10) + str) * 2;
       }
     }
     m.takeDamage(damage);

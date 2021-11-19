@@ -8,7 +8,7 @@ public class Monster{
     str = modifier();
     precision = modifier();
     health = 15 + modifier();
-    ac = 12 + modifier();
+    ac = 10 + modifier();
   }
 
   public int rollDie(int sideNum){
@@ -16,7 +16,7 @@ public class Monster{
   }
 
   public int modifier(){
-    return (int) (Math.random() * 3);
+    return (int) (Math.random() * 4);
   }
 
   public int getAC(){
@@ -40,7 +40,7 @@ public class Monster{
       if (rollDie(20) > p.getAC()){
         damage = rollDie(6) + str;
       }
-    } else{
+    } else if (p.specialize()){
       if (rollDie(20) > p.getAC()){
         damage = (rollDie(6) + str) * 2;
       }
