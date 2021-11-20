@@ -37,12 +37,12 @@ public class Monster{
     if (! p.getSpecial()){
       // attack roll. 1d20 + precision. Greater than opponent AC = hit.
       if (rollDie(20) + precision > p.getAC()){
-        damage = rollDie(6) + str; //dmg roll. 1d4 + str
+        damage = rollDie(6) + str; //dmg roll. 1d6 + str
       }
     // special attack
     } else {
       if (rollDie(20) + precision > p.getAC()){
-        damage = (rollDie(6) + rollDie(6) + str); //dmg roll. 2d4 + str
+        damage = (rollDie(6) + rollDie(6) + str); //dmg roll. 2d6 + str
       }
     }
     p.takeDamage(damage); //protag takes damage
