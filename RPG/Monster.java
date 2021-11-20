@@ -8,7 +8,7 @@ public class Monster{
     str = modifier();
     precision = modifier();
     health = 15 + modifier();
-    ac = 11 + modifier();
+    ac = 12 + modifier();
   }
 
   public int rollDie(int sideNum){
@@ -16,7 +16,7 @@ public class Monster{
   }
 
   public int modifier(){
-    return (int) (Math.random() * 6);
+    return (int) (Math.random() * 5);
   }
 
   public int getAC(){ //used in Protagonist
