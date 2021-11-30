@@ -9,7 +9,7 @@
   HW40 -- Demand A Raise -- 2D arrays
   2021-11-29
   DISCO
-  2 for loops are required to traveres a 2D array
+  2 for loops are required to traverse a 2D array
   QCC
   none
 */
