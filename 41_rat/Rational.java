@@ -11,8 +11,8 @@
 */
 
 public class Rational{
-  protected int numerator;
-  protected int denominator;
+  private int numerator;
+  private int denominator;
 
   public String toString(){
     return numerator + "/" + denominator;
