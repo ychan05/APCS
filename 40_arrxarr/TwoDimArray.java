@@ -8,6 +8,7 @@
   APCS pd7
   HW40 -- Demand A Raise -- 2D arrays
   2021-11-29
+  time spent: 0.5 hrs
   DISCO
   2 for loops are required to traverse a 2D array
   QCC
