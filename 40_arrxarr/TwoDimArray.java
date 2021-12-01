@@ -1,19 +1,21 @@
 /******************************
  * class TwoDimArray
- * (skeleton)
  * practice working with 2D arrays
  ******************************/
 /*
-  Yat Long Chan, Lawrence Joa, Joshua Gao.
-  APCS pd7
-  HW40 -- Demand A Raise -- 2D arrays
-  2021-11-29
-  time spent: 0.5 hrs
-  DISCO
-  2 for loops are required to traverse a 2D array
-  QCC
-  none
-*/
+ * Team Incredibly Cohesive (David Chen, Jaylen Zeng, Orion Roven)
+ * APCS pd7
+ * HW40 -- 2D arrays
+ * 2021-11-29
+ * time spent: 0.1 hrs
+ * DISCO:
+ * -In a for-each loop, you can implement another for-each loop that uses
+ * parameters found in the first loop. This is very helpful when you're working
+ * with 2D arrays.
+ * QCC:
+ * -Do 3D Arrays exist? How deep does the rabbit hole go in Java? In other
+ * words, how many arrays can we stack?
+ */
 
 public class TwoDimArray
 {
