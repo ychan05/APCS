@@ -33,7 +33,7 @@ public class Rational{
     }
   }
 
-  public double floatVal(){
+  public double floatValue(){
     return (double)numerator/denominator;
   }
 
@@ -82,9 +82,9 @@ public class Rational{
 
   public int compareTo(Rational r){
     int greater = 0;
-     if ((this.numerator * r.denominator) > (r.numerator * this.denominator)){
+     if (this.floatValue() > r.floatValue()){
       greater = 1;
-    } else if ((this.numerator * r.denominator) > (r.numerator * this.denominator)){
+    } else if (this.floatValue() > r.floatValue()){
       greater = -1;
     }
     return greater;
