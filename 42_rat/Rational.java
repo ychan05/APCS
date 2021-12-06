@@ -14,6 +14,18 @@ public class Rational{
   private int numerator;
   private int denominator;
 
+
+  public static int gcd(int x, int y){
+    while (x != y){
+      if (x > y){
+        x -= y;
+      } else {
+        y -= x;
+      }
+    }
+    return x;
+  }
+
   public String toString(){
     return numerator + "/" + denominator;
   }
@@ -54,14 +66,7 @@ public class Rational{
   public int gcd(){
     int n = this.numerator;
     int d = this.denominator;
-    while (n != d){
-      if (n > d){
-        n -= d;
-      } else {
-        d -= n;
-      }
-    }
-    return n;
+    return gcd(n,d);
   }
 
   public void add(Rational r){
