@@ -26,8 +26,8 @@ public class SuperArray
 
   //default constructor – initializes 10-item array
   public SuperArray() {
-      _data = new int[10];
-      _size = _data.length;
+      this._data = new int[10];
+      this._size = this._data.length;
   }
 
 
@@ -35,10 +35,10 @@ public class SuperArray
   public String toString() {
       String s = "[";
       for (int i = 0; i < _size; i ++){
-          if (i != _size - 1) {
-              s = s + _data[i] + ", ";
+          if (i != this._size - 1) {
+              s = s + this._data[i] + ", ";
             } else {
-              s = s + _data[i] + "]";
+              s = s + this._data[i] + "]";
             }
         }
         return s;
@@ -47,19 +47,19 @@ public class SuperArray
 
   //double capacity of SuperArray
   private void expand() {
-      int[] tempA = new int[_size * 2];
+      int[] tempA = new int[this._size * 2];
       for (int i = 0; i < _size; i ++){
-          tempA[i] = _data[i];
+          tempA[i] = this._data[i];
       }
-      _data = tempA;
-      _size = _size * 2;
+      this._data = tempA;
+      this._size = this._size * 2;
     }
 
 
   //accessor -- return value at specified index
   public int get( int index )
   {
-    return _data[index];
+    return this._data[index];
   }
 
 
@@ -67,8 +67,8 @@ public class SuperArray
   //           return old value at index
   public int set( int index, int newVal )
   {
-    int oldVal = _data[index];
-    _data[index] = newVal;
+    int oldVal = this._data[index];
+    this._data[index] = newVal;
     return oldVal;
   }
 
