@@ -3,7 +3,7 @@
 // APCS1 pd7
 // HW45 -- Array of Titanium / interfaces and implements
 // 2021-12-09
-// Time spent: 0.3 hours
+// Time spent: 0.2 hours
 
 /***************************
  DISCO
