@@ -1,8 +1,8 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
-// HW47 -- ?
+// LYJ: Lawrence Joa, Yat Long Chan, Joshua Gao
+// APCS pd7
+// HW47 -- Guess Again
 // 2021-12-15w
-// time spent: _ hrs
+// time spent: 0.2 hrs
 
 /***
  * class GuessNumber -- fun fun fun!
@@ -21,7 +21,9 @@
 
 /***
     DISCO:
+    - break; to exit loop, return; to exit a method as a whole.
     QCC:
+    - none
  ***/
 import java.util.Scanner;
 
@@ -44,10 +46,8 @@ public class GuessNumber
     _lo = Math.min(a,b);
     _hi = Math.max(a,b);
     _guessCtr = 1;
-
     _target = (int) (Math.random() * (_hi - _lo + 1)) + _lo;
 
-    /* YOUR CODE HERE */
   }
 
 
@@ -80,9 +80,6 @@ public class GuessNumber
       _guessCtr ++;
       playRec();
     }
-
-
-    /* YOUR CODE HERE */
   }
 
 
