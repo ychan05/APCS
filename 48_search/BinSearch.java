@@ -1,4 +1,15 @@
 /**
+   LYJ: Yat Long Chan, Joshua Gao, Lawrence Joa
+   APCS
+   HW48: Halving the Halves / fill BinSearch and LinSearch skeles
+   2021-12-16
+   time spent: 0.4 hrs
+   
+   DISCOS: nothing new discovered
+   QCC: none
+**/
+
+/**
    class BinSearch
    Binary search on array of Comparables
 **/
