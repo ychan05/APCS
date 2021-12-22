@@ -82,24 +82,25 @@ public class Rational implements Comparable{
   }
 
   public int compareTo(Object other){
-      if (other instanceof Rational) {
-          Rational r = (Rational) other;
-          //use cross multiplication
-          return (this.numerator * r.denominator) - (this.denominator * r.numerator);
-        }
-        throw new ClassCastException("\n CompareTo() input not a Rational");
+    if (other instanceof Rational) {
+      Rational r = (Rational) other;
+      //use cross multiplication
+      return (this.numerator * r.denominator) - (this.denominator * r.numerator);
     }
 
+    throw new ClassCastException("\n CompareTo() input not a Rational");
+  }
+
   public boolean equals(Object other) {
-      if (other instanceof Rational) {
-          Rational r = (Rational) other;
-          // check if values are equal
-          if (this.compareTo(r) == 0) {
-              return true;
-          }
+    if (other instanceof Rational) {
+      Rational r = (Rational) other;
+      // check if values are equal
+      if (this.compareTo(r) == 0) {
+        return true;
       }
-      return false;
-   }
+    }
+    return false;
+  }
 }
 
 
