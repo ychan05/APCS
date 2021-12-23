@@ -87,7 +87,6 @@ public class Rational implements Comparable{
       //use cross multiplication
       return (this.numerator * r.denominator) - (this.denominator * r.numerator);
     }
-
     throw new ClassCastException("\n CompareTo() input not a Rational");
   }
 
@@ -95,9 +94,7 @@ public class Rational implements Comparable{
     if (other instanceof Rational) {
       Rational r = (Rational) other;
       // check if values are equal
-      if (this.compareTo(r) == 0) {
-        return true;
-      }
+      return this.compareTo(r) == 0;
     }
     return false;
   }
