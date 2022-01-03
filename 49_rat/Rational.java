@@ -12,101 +12,92 @@
 */
 
 public class Rational implements Comparable{
-  private int numerator;
-  private int denominator;
-
-  public String toString(){
-    return numerator + "/" + denominator;
-  }
-
-  public Rational(){
-    numerator=0;
-    denominator=1;
-  }
-
-  public Rational(int x, int y){
-    this();
-    if (y == 0){
-      System.out.println("ERROR: denominator cannot be 0");
-    } else {
-      numerator = x;
-      denominator = y;
+    private int numerator;
+    private int denominator;
+  
+    public String toString(){
+      return numerator + "/" + denominator;
     }
-  }
-
-  public double floatValue(){
-    return (double)numerator/denominator;
-  }
-
-  public void multiply(Rational n){
-    this.numerator *= n.numerator;
-    this.denominator *= n.denominator;
-  }
-
-  public void divide(Rational n){
-    if (n.numerator == 0){
-      System.out.println("ERROR: Dividing by 0");
-    } else {
-      this.numerator *= n.denominator;
-      this.denominator *= n.numerator;
+  
+    public Rational(){
+      numerator=0;
+      denominator=1;
     }
-  }
-
-  public int gcd(){
-    int n = this.numerator;
-    int d = this.denominator;
-    while (n != d){
-      if (n > d){
-        n -= d;
+  
+    public Rational(int x, int y){
+      this();
+      if (y == 0){
+        System.out.println("ERROR: denominator cannot be 0");
       } else {
-        d -= n;
+        numerator = x;
+        denominator = y;
       }
     }
-    return n;
-  }
-
-  public void add(Rational r){
-     this.numerator = (this.numerator * r.denominator) + (r.numerator * this.denominator);
-     this.denominator = this.denominator * r.denominator;
-  }
-
-  public void subtract(Rational r){
-     this.numerator = (this.numerator * r.denominator) - (r.numerator * this.denominator);
-     this.denominator = this.denominator * r.denominator;
-  }
-
-  public void reduce(){
-    int tempGCD = gcd();
-     this.numerator = this.numerator / tempGCD;
-     this.denominator = this.denominator / tempGCD;
-  }
-
-  public int compareTo(Object other){
-    if (other instanceof Rational) {
-      Rational r = (Rational) other;
-      //use cross multiplication
-      if ( (this.numerator * r.denominator) > (this.denominator * r.numerator) ) {
-        return 1;
-      } 
-      if ( (this.numerator * r.denominator) < (this.denominator * r.numerator) ) {
-        return - 1;
-      }
-      return 0;
+  
+    public double floatValue(){
+      return (double)numerator/denominator;
     }
-
-    throw new ClassCastException("\n CompareTo() input not a Rational");
-  }
-
-  public boolean equals(Object other) {
-    if (other instanceof Rational) {
-      Rational r = (Rational) other;
-      // check if values are equal
-      if (this.compareTo(r) == 0) {
-        return true;
+  
+    public void multiply(Rational n){
+      this.numerator *= n.numerator;
+      this.denominator *= n.denominator;
+    }
+  
+    public void divide(Rational n){
+      if (n.numerator == 0){
+        System.out.println("ERROR: Dividing by 0");
+      } else {
+        this.numerator *= n.denominator;
+        this.denominator *= n.numerator;
       }
     }
-    return false;
+  
+    public int gcd(){
+      int n = this.numerator;
+      int d = this.denominator;
+      while (n != d){
+        if (n > d){
+          n -= d;
+        } else {
+          d -= n;
+        }
+      }
+      return n;
+    }
+  
+    public void add(Rational r){
+       this.numerator = (this.numerator * r.denominator) + (r.numerator * this.denominator);
+       this.denominator = this.denominator * r.denominator;
+    }
+  
+    public void subtract(Rational r){
+       this.numerator = (this.numerator * r.denominator) - (r.numerator * this.denominator);
+       this.denominator = this.denominator * r.denominator;
+    }
+  
+    public void reduce(){
+      int tempGCD = gcd();
+       this.numerator = this.numerator / tempGCD;
+       this.denominator = this.denominator / tempGCD;
+    }
+  
+    public int compareTo(Object other){
+      if (other instanceof Rational) {
+        Rational r = (Rational) other;
+        //use cross multiplication
+        return (this.numerator * r.denominator) - (this.denominator * r.numerator);
+      }
+      throw new ClassCastException("\n CompareTo() input not a Rational");
+    }
+  
+    public boolean equals(Object other) {
+      if (other instanceof Rational) {
+        Rational r = (Rational) other;
+        // check if values are equal
+        return this.compareTo(r) == 0;
+      }
+      return false;
+    }
   }
-}
-
-
+  
+  
