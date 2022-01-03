@@ -1,7 +1,7 @@
 public class Driver{
     public static void main(String[] args){
-      Rational r = new Rational(4,5);
-      Rational s = new Rational(-5,-3);
+      Rational r = new Rational(-1,2);
+      Rational s = new Rational(1,-3);
       Rational t = new Rational(10, -25);
       Rational r1 = new Rational(4,5);
       Rational r2 = r;
