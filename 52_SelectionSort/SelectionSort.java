@@ -2,7 +2,7 @@
 // APCS pd7
 // HW52 -- implementing selection sort
 // 2022-01-05w
-// time spent:  0.3 hrs
+// time spent:  0.5 hrs
 
 /******************************
  *   class SelectionSort -- implements SelectionSort algorithm
@@ -17,11 +17,11 @@
  *
  * QCC
  * q0: How many passes to sort n elements?
- * a0: n - 1 passes
+ * a0: n-1 passes
  * q1: What do you know after pass p?
  * a1: p elements are correctly sorted
  * q2: How do you know if sorted?
- * a2: when n - 1 swaps are done? 
+ * a2: When n-1 passes are completed
  * q3: What does a pass boil down to?
  * a3: swapping most extreme element in array with end index. 
  ******************************/
