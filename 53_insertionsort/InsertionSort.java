@@ -1,6 +1,6 @@
 // dot_gitignore : David Chen, Jaylen Zeng, Yat Long Chan
 // APCS pd7
-// HW53 -- implementing selection sort
+// HW53 -- implementing insertion sort
 // 2022-01-06r
 // time spent:  0.1 hrs
 
