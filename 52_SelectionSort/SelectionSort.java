@@ -76,8 +76,8 @@ public class SelectionSort
       maxPos = pass;
       System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
 
-      //iterate thru next-to-last to first element and compare with last.
-      for(int i = pass - 1; i >= 0 ; i--  ) {
+      //iterate thru first element to next-to-last and compare with last.
+      for (int i = 0; i < pass; i++) {
 
         //if element at i > element at maxPos, new maxPos = i
         if (data.get(i).compareTo(data.get(maxPos)) > 0) {
