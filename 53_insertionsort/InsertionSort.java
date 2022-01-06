@@ -66,14 +66,14 @@ public class InsertionSort
   // postcondition: data's elements sorted in ascending order
   public static void insertionSortV( ArrayList<Comparable> data )
   {
-    for( int partition = 0; partition < data.size() - 1; partition++ ) {
+    for( int partition = 1; partition < data.size(); partition++ ) {
       //partition marks first item in unsorted region
 
       System.out.println( "\npartition: " + partition + "\tdataset:"); //diag
       System.out.println( data );
 
       //traverse sorted region from right to left
-      for( int i = partition + 1; i > 0; i-- ) {
+      for( int i = partition; i > 0; i-- ) {
 
         // "walk" the current item to where it belongs
         // by swapping adjacent items
