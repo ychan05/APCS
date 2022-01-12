@@ -3,7 +3,13 @@
 // APCS pd7
 // HW55 - Time complexities for oal methods
 // 2022-01-12
-// time spent:  0 hrs
+// time spent:  0.4 hrs
+/**
+ * DISCO
+ * Big-O is dependent on iterations
+ * QCC
+ * none
+ **/
 
 import java.util.ArrayList;
 
@@ -21,26 +27,28 @@ public class OrderedArrayList {
 
     // gets the value at the specified index
     // No best or worst case. 
-    // It will always take the same amount of time to get the value at index regardless of array size.
+    // O(1), it will always take the same amount of time to get the value at index regardless of array size.
     public Integer get(int index) {
         return _list.get(index);
     }
 
     // remove the value at the specified index
-    // Best case is when index is the last index of the array because then, no elements need to be shifted.
-    // Worst case is when index = 0 because then, size - 1 elements need to be shifted.
+    // Best case : O(1), removed element is last element of OrderedArrayList because no shifts are required.
+    // Worst case: O(n), removed element is first element of OrderedArrayList because n - 1 elements need to be shifted.
     public Integer remove(int index) {
         return _list.remove(index);
     }
 
     // returns the size of the list
     // no best or worst case.
+    // O(1), method only makes one operation to return the size of OrderedArrayList.
     public int size() {
         return _list.size();
     }
 
-    // Best case is when value is placed at index 0 or at index length - 1.
-    // No worst case
+    // If added element belongs at index 0 of OrderedArrayList. Only 1 comparison needs to be made but array need to be shifted.
+    // If added element belongs at end of OrderedArrayList. Must iterate thru entire OrderedArrayList but only one element shifted. 
+    // No best or worst case. Time complexity: O(n) 
     public boolean addLinear(Integer value) {
         int i = 0;
         while (i < _list.size()) {
@@ -57,12 +65,8 @@ public class OrderedArrayList {
 
     // use binary search to find the correct index and add newVal
     
-    // Best case is when newVal can be inserted into the middle of the array. 
-    // In this case binary search can just terminate after 1 iteration and only half of the elements need to be moved.
-    
-    // Worst case is when newVal needs to be placed at index 0. 
-    // This is the worst case for both binary search and the ArrayList add method, making it the worst case for addBinary.
-
+    // Best case: O(n), element belongs at middle of OrderedArrayList. Only one comparison needs to be made but array needs to be shifted.
+    // Worst case: O(n), element belongs at end or beginning of OrderedArrayList. log_2(n) searches must be made and all elements must be shifted right.   
     public boolean addBinary(Integer newVal) {
         int low = 0;
         int high = _list.size() - 1;
