@@ -1,7 +1,0 @@
-Java for loops are similar to while loops with a set increment.
-
-For loops written in the form of:
-
-for (INITIALIZATION, TEST, INCREMENT) {
-  do stuff;
-}

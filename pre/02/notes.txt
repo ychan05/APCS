@@ -1,1 +1,0 @@
-Unlike in Python, data types must be declare variable types before assigning them. 

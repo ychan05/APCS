@@ -1,8 +1,0 @@
-Methods are like Python functions.
-
-Typical method anatomy:
-public static RETURNTYPE NAME(ARGUMENTS){
- BODY
-}
-
-Add void after static to return no value.
