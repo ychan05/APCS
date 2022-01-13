@@ -1,0 +1,2 @@
+Methods can call other methods
+add return type if method retuns any values

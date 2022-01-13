@@ -1,0 +1,1 @@
+Use a combination of a terminal and text editor to write code

@@ -1,0 +1,4 @@
+A main class and method must be created in order to run a Java program. 
+Use ; to mark end of instruction.
+A .java file must be compiled using Javac [filename].java in a terminal. This creates a .class file.
+Use java [filename] to run the file.

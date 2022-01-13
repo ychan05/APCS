@@ -1,0 +1,2 @@
+variable types have to be declared for arrays. 
+The number of items also have to be specified. 
