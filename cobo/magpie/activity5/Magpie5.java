@@ -1,3 +1,15 @@
+// dot_gitignore : David Chen, Jaylen Zeng, Yat Long Chan
+// APCS pd7
+// HW56 - cobo magpie lab
+// 2022-01-13
+// time spent: 0.5 hrs
+/**
+ * DISCO
+ * none
+ * QCC
+ * none
+ **/
+
 import java.util.Random;
 
 /**
