@@ -1,3 +1,5 @@
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.RestoreAction;
+
 // dot_gitignore : David Chen, Jaylen Zeng, Yat Long Chan
 // APCS pd7
 // HW56 - cobo magpie lab
@@ -132,6 +134,9 @@ public class Magpie4
 		}
 		int psn = findKeyword (statement, "I want", 0);
 		String restOfStatement = statement.substring(psn + 6).trim();
+		if (restOfStatement.equals("you")) {
+			restOfStatement = "me";
+		}
 		return "Would you really be happy if you had " + restOfStatement + "?";
 	}
 
