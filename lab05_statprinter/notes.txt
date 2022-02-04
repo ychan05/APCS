@@ -13,11 +13,12 @@ DISCO
 
 QCC
 ------------------------------------------------
+* Is printHistogram's time complexity O(n) or O(n^2)? The second for loop is not dependent on the size of the data set, but rather the values of the data set.
 * What other methods can we add to display more features of the data set?
 ================================================
 
 
 MISC
 ------------------------------------------------
-* N/A
+* N/A.
 ================================================
