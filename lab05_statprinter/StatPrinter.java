@@ -146,7 +146,7 @@ public class StatPrinter
         barSize = longestBar;
       }
       else {
-        barSize = (int)(longestBar / max(_frequency)) * _frequency.get(i);
+        barSize = (longestBar / max(_frequency)) * _frequency.get(i);
       }
       for (int j = 0; j < barSize; j++) {
         System.out.print("*");
