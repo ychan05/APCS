@@ -1,4 +1,4 @@
-// Hand Sanitizers (Yat Long Chan + Diana Akhmedova)
+// Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen)
 // APCS pd8
 // L05 -- pulling it together
 // 2022-02-03r
@@ -38,11 +38,9 @@ public class StatPrinterApp
 
     StatPrinter sp1 = new StatPrinter( al1 );
 
-    /*
-      System.out.println( "sp1 testing... " );
-      sp1.max( al1 );
-      sp1.printHistogram( 50 );
-    */
+    System.out.println( "sp1 testing... " );
+    sp1.max( al1 );
+    sp1.printHistogram( 50 );
 
 
     //construct data [2,3,2,5,2,3]
