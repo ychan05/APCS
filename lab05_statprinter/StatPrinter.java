@@ -135,7 +135,7 @@ public class StatPrinter
   //*************** QUESTION 05 **************************
   //precond:  longestBar > 0
 
-  //time complexity: O(n)
+  //time complexity: O(n^2)
   public void printHistogram( int longestBar )
   {
     int max = max(_frequency);
