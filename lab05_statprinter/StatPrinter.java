@@ -141,7 +141,7 @@ public class StatPrinter
     int max = max(_frequency);
     for (int i = 0; i < _frequency.size(); i++) {
       System.out.print(i + " : ");
-        for (int j = 0; j < (longestBar / max) * _frequency.get(i); j++) {
+        for (int j = 0; j < (longestBar * _frequency.get(i)) / max ; j++) {
           System.out.print("*");
       }
       System.out.println();
