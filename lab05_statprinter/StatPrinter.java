@@ -68,8 +68,9 @@ public class StatPrinter
   //time complexity: O(n)
   public StatPrinter( ArrayList <Integer> data )
   {
+    int max = max(data);
     _frequency = new ArrayList<Integer>();
-    while (_frequency.size() != max(data) + 1) {
+    while (_frequency.size() != max + 1) {
       _frequency.add(0);
     }
     for (Integer i : data) {
@@ -132,7 +133,7 @@ public class StatPrinter
   //*************** QUESTION 05 **************************
   //precond:  longestBar > 0
 
-  //time complexity: O(n^2)
+  //time complexity: O(n)
   public void printHistogram( int longestBar )
   {
     int max = max(_frequency);
