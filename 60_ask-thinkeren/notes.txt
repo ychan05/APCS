@@ -1,6 +1,6 @@
 Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen)
 APCS pd8
-HW60 -- Merge Sort Observations
+HW60 -- simple unit instructions -> powerful emergent behavior
 2022-02-07m
 time spent:  hrs
 
