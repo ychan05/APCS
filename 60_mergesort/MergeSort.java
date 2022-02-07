@@ -94,7 +94,7 @@ public class MergeSort {
       l = sort(l); 
       r = sort(r);
 
-      // merge the two halves together at the end
+      // merge the two halves together
       sorted = merge(l, r);
     }
     return sorted;
