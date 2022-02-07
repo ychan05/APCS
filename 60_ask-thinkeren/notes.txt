@@ -5,11 +5,16 @@ HW60 -- Merge Sort Observations
 time spent:  hrs
 
 DISCO:
+- Merge sort requires the splitting of the array
+- Merging begins when array is dvided into subarrays of size 1.
+- Basic algo:
+    1) split into n arrays of size 1
+    2) merge with adjacent arrays until 1 array of size n 
 
 QCC:
 
-THINKER FIRMWARE:
 
+THINKER FIRMWARE:
 1) Give: When > 1 card. Split deck in half and give to 2 other thinkeren. 
 2) Take: Receive cards if hands are empty
 3) Give (season 2): When == 1 card. Return card back to whence it came.
