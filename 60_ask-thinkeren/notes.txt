@@ -12,6 +12,7 @@ DISCO:
 
 QCC:
 - Algo appears to be a job for recursion.
+- Recursive method would involve two temp arrays
 
 THINKER FIRMWARE:
 1) Give: When > 1 card. Split deck in half and give to 2 other thinkeren. 
