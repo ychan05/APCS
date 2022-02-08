@@ -2,7 +2,7 @@ Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen)
 APCS pd8
 HW60 -- simple unit instructions -> powerful emergent behavior
 2022-02-07m
-time spent:  hrs
+time spent: 0.4 hrs
 
 DISCO:
 - Like outsourcing work. Give work to other people to do it, who then also give the work to others. Should eventually come back to you.  
@@ -16,4 +16,4 @@ QCC:
 THINKER FIRMWARE:
 1) Give: When > 1 card. Split deck in half and give to 2 other thinkeren. 
 2) Take: Receive cards if hands are empty
-3) Give (season 2): When == 1 card. Return card back whence it came. Ordered this time(?)
+3) Give (season 2): When == 1 card. Return card to whence it came. Ordered this time(?)
