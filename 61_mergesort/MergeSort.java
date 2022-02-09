@@ -31,7 +31,8 @@ public class MergeSort
     int j = 0; // index of b
     int k = 0; // index of mergedArr
 
-    while (i < a.length && j < b.length) {
+    // compare until shortest array no more elements in shorter array
+    while (i < a.length && j < b.length) { 
       if (a[i] <= b[j]) {
         mergedArr[k] = a[i];
         i++;
