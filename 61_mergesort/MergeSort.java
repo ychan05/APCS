@@ -2,7 +2,7 @@
 
   Hand Sanitizers (Yat Long Chan + Diana Akhmedova)
   APCS pd8
-  HW61 -- merge sort
+  HW61 -- Instructions so Simple...
   2022-02-08t
   time spent: 0.5 hrs
 
@@ -30,8 +30,8 @@ public class MergeSort
     int i = 0; // index of a
     int j = 0; // index of b
     int k = 0; // index of mergedArr
-
-    while (i < a.length && j < b.length) {
+    
+    while (i < a.length && j < b.length) { 
       if (a[i] <= b[j]) {
         mergedArr[k] = a[i];
         i++;
