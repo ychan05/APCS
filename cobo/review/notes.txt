@@ -1,0 +1,14 @@
+1a) public static double sentimentVal( String word )
+1b) The method requires a String param. 
+    Incompatible types error if param is not a String.
+1c) The method returns a double.
+
+2) 
+    abandoned : -0.09
+    ability : -0.03
+    account : 0.64
+    Pog : 0.0
+
+3a) Would compile. Params and varType are correct.
+3b) Would not compile. Params and varType incorrect.
+3c) Would not compile. There are 2 params instead of 1.
