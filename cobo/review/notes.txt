@@ -27,5 +27,7 @@
 6a) The student wrote his code so that any sentiment < 15 will return a 4 as that is the first boolean statement checked.
     He also made it so that anything > 15 returns a 0, which I assume isn't supposed to happen.
 6b) He can fix this by fliping the conditionals around. Starting from if (totalSentiment < 0) down to if (totalSentiment < 15)
+================End Activity 2============
+
 
 
