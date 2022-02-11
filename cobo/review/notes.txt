@@ -1,3 +1,5 @@
+================Activity 1================
+
 1a) public static double sentimentVal( String word )
 1b) The method requires a String param. 
     Incompatible types error if param is not a String.
@@ -9,6 +11,21 @@
     account : 0.64
     Pog : 0.0
 
-3a) Would compile. Params and varType are correct.
-3b) Would not compile. Params and varType incorrect.
+3a) Would compile. Param is compatible and varType is compatible w/ obj type.
+3b) Would not compile. Param not compatible and varType not compatible w/ obj type.
 3c) Would not compile. There are 2 params instead of 1.
+
+================End Activity 1============
+
+================Activity 2================
+4) totalSentiment() iterates through a string until there are no more spaces left.
+   Each iteration, the sentiment of the first word is added to total sentiment and then that word is removed from the string.
+
+5a) The ratings make sense. Reviews with more possitive words have higher ratings.
+5b) Maybe add points for punctuation or captials.
+
+6a) The student wrote his code so that any sentiment < 15 will return a 4 as that is the first boolean statement checked.
+    He also made it so that anything > 15 returns a 0, which I assume isn't supposed to happen.
+6b) He can fix this by fliping the conditionals around. Starting from if (totalSentiment < 0) down to if (totalSentiment < 15)
+
+

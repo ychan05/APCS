@@ -23,6 +23,8 @@ public class Review {
     System.out.println(sentimentVal("ability"));
     System.out.println(sentimentVal("account"));
     System.out.println(sentimentVal("Pog"));
+    System.out.println(totalSentiment("SimpleReview.txt"));
+    System.out.println(starRating("SimpleReview.txt"));
 
 
   }
@@ -67,6 +69,34 @@ public class Review {
     catch(Exception e){
       System.out.println("Error reading or parsing negativeAdjectives.txt");
     }   
+  }
+
+
+  // Star rating 
+  public static int starRating(String fileName) {
+    double sentiment = totalSentiment(fileName);
+    if (sentiment < 5) {
+      return 1;
+    } else if (sentiment < 15) {
+      return 2;
+    } else if (sentiment < 25) {
+      return 3;
+    } else if (sentiment < 35) {
+      return 4;
+    } 
+    return 5;
+  }
+  // Total sentiment
+  public static double totalSentiment (String fileName) {
+    String review = textToString("SimpleReview.txt");
+    double sentiment = 0;
+    while (review.indexOf(" ") >= 0) {
+      String word = review.substring(0, review.indexOf(" "));
+      word = removePunctuation(word);
+      sentiment += sentimentVal(word);
+      review = review.substring(review.indexOf(" ") + 1);
+    }
+    return sentiment + sentimentVal(review);
   }
   
   /** 
