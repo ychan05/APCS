@@ -15,7 +15,7 @@ time spent: 1.0 hrs
     abandoned : -0.09
     ability : -0.03
     account : 0.64
-    Pog : 0.0
+    og : 0.0
 
 3a. Would compile because the parameter type is correct and the return types match
 3b. Would not compile because the parameter type is not correct and varType is different from return type
