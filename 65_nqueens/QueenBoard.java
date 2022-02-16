@@ -75,9 +75,9 @@ public class QueenBoard
     for ( int[] arr: _board) {
       for (int pos: arr) {
         if (pos > 0) {
-          System.out.print("Q " + "\t");
+          System.out.print("Q ");
         } else {
-        System.out.print("_" + "\t");
+        System.out.print("_ ");
         }
       }
       System.out.println();
