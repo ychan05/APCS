@@ -59,7 +59,7 @@ public class KnightTour
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for fixed starting location, use line below:
-    tf.findTour( 2, 2, 1 );
+    tf.findTour( 2, 2, 1);
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,12 +92,20 @@ class TourFinder
     _sideLength = n;
 
     //init 2D array to represent square board with moat
-    _board = new int[n][n];
+    _board = new int[_sideLength + 4][_sideLength + 4];
 
     //SETUP BOARD --  0 for unvisited cell
     //               -1 for cell in moat
     //---------------------------------------------------------
-    ???
+    for (int x = 0; x < _board.length; x ++) {
+      for (int y = 0; y < _board.length; y ++) {
+        if (x == 0 || y == 0 || x == 1 || y == 1 || x == _board.length - 1 || y == _board.length - 1 || x == _board.length - 2 || y == _board.length - 2) {
+          _board[y][x] = -1;
+        } else {
+          _board[y][x] = 0;
+        }
+      }
+    }
     //---------------------------------------------------------
 
   }//end constructor
@@ -150,11 +158,12 @@ class TourFinder
     //delay(50); //slow it down enough to be followable
 
     //if a tour has been completed, stop animation
-    if ( ??? ) System.exit(0);
+    if ( moves == _sideLength * _sideLength + 1 ) System.exit(0);
 
     //primary base case: tour completed
-    if ( ??? ) {
-      ???
+    if ( moves == _sideLength * _sideLength + 1 ) {
+      System.out.println(toString());
+      _solved = true;
       System.out.println( this ); //refresh screen
       return;
     }
@@ -182,19 +191,20 @@ class TourFinder
        *     g . . . b
        *     . h . a .
       ******************************************/
-      findTour(x + 2, y + 1, moves + 1);
-      findTour(x - 2, y + 1, moves + 1);
-      findTour(x + 2, y - 1, moves + 1);
-      findTour(x - 2, y - 1, moves + 1);
-      findTour(x + 1, y + 2, moves + 1);
-      findTour(x + 1, y + 2, moves + 1);
-      findTour(x + 1, y + 2, moves + 1);
+      findTour(x + 1, y + 2, moves + 1); // a
+      findTour(x + 2, y + 1, moves + 1); // b
+      findTour(x + 2, y - 1, moves + 1); // c
+      findTour(x + 1, y - 2, moves + 1); // d 
+      findTour(x - 1, y - 2, moves + 1); // e
+      findTour(x - 2, y - 1, moves + 1); // f
+      findTour(x - 2, y + 1, moves + 1); // g
+      findTour(x - 1, y + 2, moves + 1); // h
 
 
 
       //If made it this far, path did not lead to tour, so back up...
       // (Overwrite number at this cell with a 0.)
-        ???
+      _board[x][y] = 0;
 
       System.out.println( this ); //refresh screen
     }
