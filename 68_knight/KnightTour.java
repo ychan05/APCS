@@ -1,8 +1,10 @@
-// Clyde Sinclair
-// APCS pd0
-// HW68 -- recursively probing for a closed cycle
-// 2022-02-28m
-// time spent:  hrs
+// APCS 
+// pd8 
+// Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen) 
+// HW68: ...and T-, Tr-, Tri-, Tries Again Until It's Done / Completed Knight's Tour class
+// 2022-03-02w 
+// time spent: 0.5 hr
+
 
 /***
  * SKELETON
@@ -15,14 +17,22 @@
  * $ java KnightTour [N]
  *
  * ALGO
+ * If all squares have been visited:
+ * Solution has been found.
  *
+ * Else:
+ * Check possible movement of the knight at current position.
+ * If the move is valid, recursively check the next positions for a solution.
+ * If a move is invalid, backtrack and check the alternatives.If all alternatives are invalid, no solution exists.
+
  * DISCO
- *
+ * A knight can make a total of 8 different L-shaped moves.
+ * The execution time appears to increase by a factor of 40.6.
  * QCC
- *
+ * How do we calculate the number of possible solutions for any board size?
  * Mean execution times for boards of size n*n:
- * n=5   __s    across __ executions
- * n=6   __s    across __ executions
+ * n=5   6.761s    across 5 executions
+ * n=6   274.488s    across 1 executions
  * n=7   __s    across __ executions
  * n=8   __s    across __ executions
  *
@@ -59,20 +69,27 @@ public class KnightTour
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for fixed starting location, use line below:
-    tf.findTour( 2, 2, 1);
+    //tf.findTour( 2, 2, 1);
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
     //for random starting location, use lines below:
-    //int startX = (int) (Math.random() * n);
-    //int startY = (int) (Math.random() * n);
-    //tf.findTour( startX, startY, 1 );   // 1 or 0 ?
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    int startX = (int) (Math.random() * n);
+    int startY = (int) (Math.random() * n);
+    while (startX == 0 || startX == 1 ) {
+      startX = (int) (Math.random() * n + 2);
+    }
+    while (startY == 0 || startY == 1) {
+      startY = (int) (Math.random() * n + 2);
+    }
+    tf.findTour( startX, startY, 1 );   // 1 or 0 ?
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    // PUSHING FARTHER...
-    // Systematically attempt to solve from every position on the board?
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    PUSHING FARTHER...
+    Systematically attempt to solve from every position on the board?
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   }//end main()
 
@@ -99,7 +116,8 @@ class TourFinder
     //---------------------------------------------------------
     for (int x = 0; x < _board.length; x ++) {
       for (int y = 0; y < _board.length; y ++) {
-        if (x == 0 || y == 0 || x == 1 || y == 1 || x == _board.length - 1 || y == _board.length - 1 || x == _board.length - 2 || y == _board.length - 2) {
+        if (x == 0 || y == 0 || x == 1 || y == 1 || x == _board.length - 1 || 
+            y == _board.length - 1 || x == _board.length - 2 || y == _board.length - 2) {
           _board[y][x] = -1;
         } else {
           _board[y][x] = 0;
@@ -158,10 +176,10 @@ class TourFinder
     //delay(50); //slow it down enough to be followable
 
     //if a tour has been completed, stop animation
-    if ( moves == _sideLength * _sideLength + 1 ) System.exit(0);
+    if ( moves == _sideLength * _sideLength + 1) System.exit(0);
 
     //primary base case: tour completed
-    if ( moves == _sideLength * _sideLength + 1 ) {
+    if ( moves == _sideLength * _sideLength + 1) {
       System.out.println(toString());
       _solved = true;
       System.out.println( this ); //refresh screen
