@@ -5,6 +5,11 @@
 // time spent:  hrs
 
 /***
+ Team Physical :: Weichen Liu, Anjini Katari, Yat long Chan 
+ APCS pd08
+ HW70 – Thinkers of the Corn / MazeSolver class
+ 2022-03-07m
+ time spent: 0.8 hours
  * SKEELTON for
  * class MazeSolver
  * Implements a blind depth-first exit-finding algorithm.
@@ -15,12 +20,17 @@
  * (mazefile is ASCII representation of a maze, using symbols below)
  *
  * ALGORITHM for finding exit from starting position:
- *  <INSERT YOUR SUMMARY OF ALGO HERE>
+ *  From the given position:
+ *  If the hero is at the end, the maze is solved. (primary base case)
+ *  If the cell that the hero is on has been traveled to or is a wall, the move is invalid. (other base case)
+ *  Otherwise, Recursively travel in all directions (up, down, left, right). If a move is invalid, undo move and back up. 
+ *
  *
  * DISCO
- * 
+ * Use System.exit() to exit the animation instead of just return when exit has been found
+ *  
  * QCC
- * 
+ * How to optimize if maze has more than 1 exit or more than a path to exit?
  ***/
 
 //enable file I/O
@@ -143,11 +153,11 @@ class MazeSolver
     //after marking current location
     else {
       _maze[x][y] = HERO;
+      System.out.println( this ); //refresh screen
 	    solve(x, y - 1); // move up
       solve(x, y + 1); // move down
       solve(x - 1, y); // move left
       solve(x + 1, y); // move right
-      System.out.println( this ); //refresh screen
       _maze[x][y] = VISITED_PATH;
       System.out.println( this ); //refresh screen
     }
@@ -186,13 +196,17 @@ public class Maze
 
     //drop hero into the maze (coords must be on path)
     // ThinkerTODO: comment next line out when ready to randomize startpos
-    ms.solve( 4, 3 );
+    // ms.solve( 4, 3 );
 
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //drop our hero into maze at random location on path
-    int startX = (int) (Math.random() *)
-    while (!onPath(startX, startY))
+    int startX = (int) (Math.random() * 80);
+    int startY = (int) (Math.random() * 25);
+    while (!ms.onPath(startX, startY)) {
+      startX = (int) (Math.random() * 80);
+      startY = (int) (Math.random() * 25);
+    }
     ms.solve( startX, startY );
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
