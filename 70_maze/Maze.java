@@ -1,15 +1,10 @@
-// Clyde Sinclair
-// APCS pd0
-// HW69 -- maze solving (blind, depth-first)
+// Team Physical :: Weichen Liu, Anjini Katari, Yat long Chan 
+// APCS pd08
+// HW70 – Thinkers of the Corn / MazeSolver class
 // 2022-03-03r
-// time spent:  hrs
+// time spent: 0.8 hours
 
 /***
- Team Physical :: Weichen Liu, Anjini Katari, Yat long Chan 
- APCS pd08
- HW70 – Thinkers of the Corn / MazeSolver class
- 2022-03-07m
- time spent: 0.8 hours
  * SKEELTON for
  * class MazeSolver
  * Implements a blind depth-first exit-finding algorithm.
@@ -139,12 +134,18 @@ class MazeSolver
   {
     delay( FRAME_DELAY ); //slow it down enough to be followable
 
+    // stop animation if maze is solved
+    if (_solved) {
+      System.exit(0);
+    }
+
     //primary base case
     if ( _maze[x][y] == EXIT ) {
-	_solved = true;
-  System.out.println(this);
-  System.exit(0);
+      _solved = true;
+      System.out.println(this); //refresh screen
+      return;
     }
+
     //other base cases
     else if ( _maze[x][y] != PATH  ) {
       return;
@@ -158,6 +159,8 @@ class MazeSolver
       solve(x, y + 1); // move down
       solve(x - 1, y); // move left
       solve(x + 1, y); // move right
+
+      // back up b/c path did not lead to solution
       _maze[x][y] = VISITED_PATH;
       System.out.println( this ); //refresh screen
     }
@@ -166,6 +169,14 @@ class MazeSolver
   //accessor method to help with randomized drop-in location
   public boolean onPath( int x, int y) {
       return _maze[x][y] == PATH;
+  }
+
+  public int getH() {
+    return h;
+  }
+
+  public int getW() {
+    return w;
   }
 
 }//end class MazeSolver
@@ -199,11 +210,11 @@ public class Maze
     // ms.solve( 4, 3 );
 
     //drop our hero into maze at random location on path
-    int startX = (int) (Math.random() * 80);
-    int startY = (int) (Math.random() * 25);
+    int startX = (int) (Math.random() * ms.getW());
+    int startY = (int) (Math.random() * ms.getH());
     while (!ms.onPath(startX, startY)) {
-      startX = (int) (Math.random() * 80);
-      startY = (int) (Math.random() * 25);
+       startX = (int) (Math.random() * ms.getW());
+       startY = (int) (Math.random() * ms.getH());
     }
     ms.solve( startX, startY );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
