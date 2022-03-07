@@ -33,7 +33,7 @@
  * QCC
  * 
  * q0: What does it do?
- * a0: Sorts an array (kind of)
+ * a0: It places c in the correct position 
  * 
  * q1: O(?)
  * a1: O(n)
@@ -88,22 +88,22 @@ public class Mysterion
    * DESCRIP
    * 
    * @param arr
-   * @param a
-   * @param b
-   * @param c
+   * @param lo | a: lo bound
+   * @param hi | b: hi bound
+   * @param c | c: index of element being put in its correct position
    * @return int 
    *
    */
-  public static int mysterion( int arr[], int a, int b, int c)
+  public static int mysterion( int arr[], int lo, int hi, int c)
   {
     int v = arr[c];
 
     int temp = arr[c];
-    arr[c] = arr[b];
-    arr[b] = temp;
+    arr[c] = arr[hi];
+    arr[hi] = temp;
 
-    int s = a;
-    for (int i = a; i < b - 1; i++) {
+    int s = lo;
+    for (int i = lo; i < hi - 1; i++) {
       if (arr[i] < v) {
         temp = arr[s];
         arr[s] = arr[i];
@@ -111,62 +111,61 @@ public class Mysterion
         s++;
       }
     }
-    temp = arr[b];
-    arr[b] = arr[s];
+    temp = arr[hi];
+    arr[hi] = arr[s];
     arr[s] = temp;
 
-    return ;
-
+    return ?;
   }//end mysterion
 
 
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+    
     //init test arrays of magic numbers
     int[] arr1 = {8,21,17,69,343};
     int[] arr3 = {1,28,33,4982,37};
     int[] arr4 = {5,4,17,9000,6};
     int[] arr5 = {3,0,16,599,1024};
-
-
+    
+    
     // run mysterion on each array,
     // holding a & b fixed, varying c...
     for( int testC = 0; testC < 5; testC++ ) {
-    System.out.println("arr1: ");
-    printArr(arr1);
-    mysterion(arr1,0,4,testC);
-    System.out.println("after mysterion w/ a=0,b=4,c=" 
-    + testC +"...");
-    printArr(arr1);
-    System.out.println("-----------------------");
-
-    System.out.println("arr3:");
-    printArr(arr3);
-    mysterion(arr3,0,4,testC);
-    System.out.println("after mysterion w/ a=0,b=4,c=" 
-    + testC +"...");
-    printArr(arr3);
-    System.out.println("-----------------------");
-
-    System.out.println("arr4:");
-    printArr(arr4);
-    mysterion(arr4,0,4,testC);
-    System.out.println("after mysterion w/ a=0,b=4,c=" 
-    + testC +"...");
-    printArr(arr4);
-    System.out.println("-----------------------");
-
-    System.out.println("arr5:");
-    printArr(arr5);
-    mysterion(arr5,0,4,testC);
-    System.out.println("after mysterion w/ a=0,b=4,c=" 
-    + testC +"...");
-    printArr(arr5);
-    System.out.println("-----------------------");
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+      System.out.println("arr1: ");
+      printArr(arr1);
+      mysterion(arr1,0,4,testC);
+      System.out.println("after mysterion w/ a=0,b=4,c=" 
+      + testC +"...");
+      printArr(arr1);
+      System.out.println("-----------------------");
+      
+      System.out.println("arr3:");
+      printArr(arr3);
+      mysterion(arr3,0,4,testC);
+      System.out.println("after mysterion w/ a=0,b=4,c=" 
+      + testC +"...");
+      printArr(arr3);
+      System.out.println("-----------------------");
+      
+      System.out.println("arr4:");
+      printArr(arr4);
+      mysterion(arr4,0,4,testC);
+      System.out.println("after mysterion w/ a=0,b=4,c=" 
+      + testC +"...");
+      printArr(arr4);
+      System.out.println("-----------------------");
+      
+      System.out.println("arr5:");
+      printArr(arr5);
+      mysterion(arr5,0,4,testC);
+      System.out.println("after mysterion w/ a=0,b=4,c=" 
+      + testC +"...");
+      printArr(arr5);
+      System.out.println("-----------------------");
+      /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    }
   }//end main
-
 }//end class Mysterion
