@@ -1,8 +1,8 @@
-// Clyde Sinclair
-// APCS pd0
+// Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen)
+// APCS pd8
 // HW71 -- Reading for intent, tracing for VICTORY
 // 2022-03-07m
-// time spent:  hrs
+// time spent: 0.9 hrs
 
 /***
  * SKEELTON for
@@ -29,14 +29,17 @@
  *     swap arr[b], arr[s] 
  * 
  * DISCO
+ * Algo creates a partition within the given array between elements smaller and larger than partition value.
+ * When c and b are the last index of the array, the algo swaps the last 2 values if arr[c-1] < arr[c] despite being already partitioned properly.
  * 
  * QCC
+ * Possibly run multiple partitions on each side of an array to eventually sort it.
  * 
  * q0: What does it do?
- * a0: It places c in the correct position 
+ * a0: Looks through a subarray from index a to b-1 and places all elements < arr[c] to the left and any elements >= arr[c] to the right.
  * 
  * q1: O(?)
- * a1: O(n)
+ * a1: O(n) b/c algo only iterates through a to b-1 once.
  * 
  ***/
 
@@ -84,39 +87,35 @@ public class Mysterion
 
 
   /**
-   * int mysterion(int[],int,int,int)
-   * DESCRIP
+   * int partition(int[],int,int,int)
+   * Change array so that each element from lo to hi < arr[partIndex] is on the left 
+   * and elements >= arr[partIndex] is on the right.
    * 
    * @param arr
-   * @param lo | a: lo bound
-   * @param hi | b: hi bound
-   * @param c | c: index of element being put in its correct position
+   * @param lo | lower bound
+   * @param hi | upper bound
+   * @param partIndex | index of value to form partition
    * @return int 
    *
    */
-  public static int mysterion( int arr[], int lo, int hi, int c)
+  public static int partition( int arr[], int lo, int hi, int partIndex)
   {
-    int v = arr[c];
+    int partition = arr[partIndex];
 
-    int temp = arr[c];
-    arr[c] = arr[hi];
-    arr[hi] = temp;
+    swap(partIndex, hi, arr);
 
-    int s = lo;
+    int swapIndex = lo;
     for (int i = lo; i < hi - 1; i++) {
-      if (arr[i] < v) {
-        temp = arr[s];
-        arr[s] = arr[i];
-        arr[i] = temp;
-        s++;
+      if (arr[i] < partition) {
+        swap(swapIndex, i, arr);
+        swapIndex++;
       }
     }
-    temp = arr[hi];
-    arr[hi] = arr[s];
-    arr[s] = temp;
+    swap(hi, swapIndex, arr);
 
-    return ?;
-  }//end mysterion
+
+    return swapIndex;
+  }//end partition
 
 
   //main method for testing
@@ -124,43 +123,42 @@ public class Mysterion
   {
     
     //init test arrays of magic numbers
-    int[] arr1 = {8,21,17,69,343};
+    int[] arr1 = {7,21,17,69,343};
     int[] arr3 = {1,28,33,4982,37};
     int[] arr4 = {5,4,17,9000,6};
     int[] arr5 = {3,0,16,599,1024};
     
-    
-    // run mysterion on each array,
+    // run partition on each array,
     // holding a & b fixed, varying c...
     for( int testC = 0; testC < 5; testC++ ) {
       System.out.println("arr1: ");
       printArr(arr1);
-      mysterion(arr1,0,4,testC);
-      System.out.println("after mysterion w/ a=0,b=4,c=" 
+      partition(arr1,0,4,testC);
+      System.out.println("after partition w/ a=0,b=4,c=" 
       + testC +"...");
       printArr(arr1);
       System.out.println("-----------------------");
       
       System.out.println("arr3:");
       printArr(arr3);
-      mysterion(arr3,0,4,testC);
-      System.out.println("after mysterion w/ a=0,b=4,c=" 
+      partition(arr3,0,4,testC);
+      System.out.println("after partition w/ a=0,b=4,c=" 
       + testC +"...");
       printArr(arr3);
       System.out.println("-----------------------");
       
       System.out.println("arr4:");
       printArr(arr4);
-      mysterion(arr4,0,4,testC);
-      System.out.println("after mysterion w/ a=0,b=4,c=" 
+      partition(arr4,0,4,testC);
+      System.out.println("after partition w/ a=0,b=4,c=" 
       + testC +"...");
       printArr(arr4);
       System.out.println("-----------------------");
       
       System.out.println("arr5:");
       printArr(arr5);
-      mysterion(arr5,0,4,testC);
-      System.out.println("after mysterion w/ a=0,b=4,c=" 
+      partition(arr5,0,4,testC);
+      System.out.println("after partition w/ a=0,b=4,c=" 
       + testC +"...");
       printArr(arr5);
       System.out.println("-----------------------");
