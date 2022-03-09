@@ -81,8 +81,9 @@ public class Partition
    * @return int position of 
    *
    */
-  public static int partition( int arr[], int loPos, int hiPos, int pvtPos)
+  public static int partition( int arr[], int loPos, int hiPos)
   {
+    int pvtPos = hiPos;
     int v = arr[pvtPos];
 
     swap( pvtPos, hiPos, arr);
