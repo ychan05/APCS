@@ -6,25 +6,25 @@
 
 /***
  * class Parition (née Mysterion)
- * 
+ *
  * <h1>MYSTERION is PARTITION</h1>
- * The Mysterion method ... <YOUR TRIO'S DESCRIPTION HERE> 
+ * The Mysterion method ... <YOUR TRIO'S DESCRIPTION HERE>
  * <p>
  * <b>Note:</b> BLAH blah blah, yakkety schmakketty...
  * @author  Trey Parker, Matt Stone
  * @version 3.1415926535897932384626433
- * @since   2022-03-08t 
+ * @since   2022-03-08t
  *
  * algo as pseudocode:
  * ------------------------------
  *     v = arr[c]
- *     swap arr[c], arr[b]  
+ *     swap arr[c], arr[b]
  *     s = a
  *     for i in [a..b-1]
  *         if arr[i] < v
  *             swap arr[s], arr[i]
  *             s+=1
- *     swap arr[b], arr[s] 
+ *     swap arr[b], arr[s]
  **/
 
 
@@ -39,7 +39,7 @@ public class Partition
     o[y] = tmp;
   }
 
-  //print input array 
+  //print input array
   public static void printArr( int[] a )
   {
     for ( int o : a )
@@ -73,17 +73,17 @@ public class Partition
   /**
    * int partition(int[],int,int,int)
    * DESCRIP
-   * 
+   *
    * @param arr input array of ints
-   * @param loPos   
+   * @param loPos
    * @param hiPos
    * @param pvtPos
-   * @return int position of 
+   * @return int position of
    *
    */
   public static int partition( int arr[], int loPos, int hiPos)
   {
-    int pvtPos = hiPos;
+    int pvtPos = (int)(Math.random() * (hiPos - loPos + 1)) + loPos;
     int v = arr[pvtPos];
 
     swap( pvtPos, hiPos, arr);
@@ -116,32 +116,32 @@ public class Partition
     for( int testPIVOT = 0; testPIVOT < 5; testPIVOT++ ) {
       System.out.println("arr1: ");
       printArr(arr1);
-      partition(arr1,0,4,testPIVOT);
-      System.out.println("after partition w/ loPos=0, hiPos=4, pvtPos=" 
+      //partition(arr1,0,4,testPIVOT);
+      System.out.println("after partition w/ loPos=0, hiPos=4, pvtPos="
                          + testPIVOT +"...");
       printArr(arr1);
       System.out.println("-----------------------");
 
       System.out.println("arr3:");
       printArr(arr3);
-      partition(arr3,0,4,testPIVOT);
-      System.out.println("after partition w/ loPos=0, hiPos=4, pvtPos=" 
+      //partition(arr3,0,4,testPIVOT);
+      System.out.println("after partition w/ loPos=0, hiPos=4, pvtPos="
                          + testPIVOT +"...");
       printArr(arr3);
       System.out.println("-----------------------");
 
       System.out.println("arr4:");
       printArr(arr4);
-      partition(arr4,0,4,testPIVOT);
-      System.out.println("after partition w/ loPos=0, hiPos=4, pvtPos=" 
+      //partition(arr4,0,4,testPIVOT);
+      System.out.println("after partition w/ loPos=0, hiPos=4, pvtPos="
                          + testPIVOT +"...");
       printArr(arr4);
       System.out.println("-----------------------");
 
       System.out.println("arr5:");
       printArr(arr5);
-      partition(arr5,0,4,testPIVOT);
-      System.out.println("after partition w/ loPos=0, hiPos=4, pvtPos=" 
+      //partition(arr5,0,4,testPIVOT);
+      System.out.println("after partition w/ loPos=0, hiPos=4, pvtPos="
                          + testPIVOT +"...");
       printArr(arr5);
       System.out.println("-----------------------");
@@ -151,4 +151,3 @@ public class Partition
   }//end main
 
 }//end class Partition
-  
