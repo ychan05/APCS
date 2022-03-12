@@ -1,3 +1,4 @@
+
 /***
  * class LLNode
  * Implements a node, for use in lists and other container classes.
@@ -49,9 +50,9 @@ public class LLNode
   // override inherited toString
   public String toString()
   {
-      if (nextNode != null) return this.cargo + ", "  + nextNode.toString();
-
-      return this.cargo;
+      String retString = "[" + this.cargo;
+      if (nextNode != null) retString = retString + ", " + nextNode.toString();
+      return retString + "]";
   }
 
 
@@ -79,17 +80,17 @@ public class LLNode
         first = first.getNext();
     }
     */
+
     //Q: when head ptr moves to next node in list, what happens to the node it just left? 
-    //A: It becomes null
+    //A: It is erased.
     
     //...so better: ?
-    //make a clone of list
-    LLNode clone = first;
-    while( clone != null ) {
-        System.out.println( clone );
-        clone = clone.getNext();
+    //make a shallow copy of head ptr
+    LLNode ptr = first;
+    while (ptr != null) {
+        System.out.println(ptr);
+        ptr = ptr.getNext();
     }
-
   }//end main
 
 }//end class LLNode
