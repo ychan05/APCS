@@ -1,3 +1,8 @@
+//Under Pressure: Julia Kozak, Yat Long Chan, Anjini Katari
+//APCS pd08
+//HW75 -- Nodal Recall
+//2022-03-14
+//time spent: 0.5h
 
 /***
  * class LLNode
@@ -9,25 +14,25 @@ public class LLNode
 {
   //instance vars
   private String cargo;
-  private LLNode nextNode;
+  private LLNode next;
 
   // constructor
   public LLNode( String value, LLNode next )
   {
-      cargo = value;
-      nextNode = next;
+    cargo = value;
+    this.next = next;
   }
 
 
   //--------------v  ACCESSORS  v--------------
   public String getCargo()
   {
-      return cargo;
+    return cargo;
   }
 
   public LLNode getNext()
   {
-      return nextNode;
+    return next;
   }
   //--------------^  ACCESSORS  ^--------------
 
@@ -35,14 +40,16 @@ public class LLNode
   //--------------v  MUTATORS  v--------------
   public String setCargo( String newCargo )
   {
-      cargo = newCargo;
-      return cargo;
+    String ret = cargo;
+    this.cargo = newCargo;
+    return ret;
   }
 
   public LLNode setNext( LLNode newNext )
   {
-      nextNode = newNext;
-      return nextNode;
+    LLNode ret = next;
+    this.next = newNext;
+    return ret;
   }
   //--------------^  MUTATORS  ^--------------
 
@@ -50,9 +57,13 @@ public class LLNode
   // override inherited toString
   public String toString()
   {
-      String retString = "[" + this.cargo;
-      if (nextNode != null) retString = retString + ", " + nextNode.toString();
-      return retString + "]";
+    String ret = "[" + cargo;
+    if (next != null) {
+      ret += " ";
+      ret += this.next.toString();
+    }
+    ret += "] ";
+    return ret;
   }
 
 
@@ -64,33 +75,36 @@ public class LLNode
 
     //Create a node
     LLNode first = new LLNode( "cat", null );
-    //System.out.println(first);
 
     //Create a new node after the first
     first.setNext( new LLNode( "dog", null ) );
-    //System.out.println(first);
 
     //Create a third node after the second
     first.getNext().setNext( new LLNode( "cow", null ) );
-    //System.out.println(first);
 
     /* A naive list traversal, has side effects.... ??
-    while( first != null ) {
-        System.out.println( first );
-        first = first.getNext();
-    }
-    */
+       while( first != null ) {
+       System.out.print( first );
+       first = first.getNext();
+       }
+       */
+    //System.out.println(first.getNext());
 
-    //Q: when head ptr moves to next node in list, what happens to the node it just left? 
-    //A: It is erased.
-    
+
+    //Q: when head ptr moves to next node in list, what happens to the node it just left?
+    // That node becomes null (first gets set to null and you can no longer reference it)
+
     //...so better: ?
-    //make a shallow copy of head ptr
-    LLNode ptr = first;
-    while (ptr != null) {
-        System.out.println(ptr);
-        ptr = ptr.getNext();
+    // create a new reference
+    LLNode current = first;
+    while (current != null) {
+      System.out.println( current );
+      current = current.getNext();
     }
+    System.out.println(first);
+    System.out.println(first.getNext());
+    System.out.println(first.getNext().getNext());
+
   }//end main
 
 }//end class LLNode
