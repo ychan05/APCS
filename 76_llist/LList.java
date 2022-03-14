@@ -1,3 +1,10 @@
+// Under Pressure: Julia Kozak, Yat Long Chan, Anjini Katari
+// APCS pd08
+// HW76 -- We Got a Little Ol’ Convoy
+// 2022-03-15
+// time spent: 0.6hrs
+// KTS used: 3
+
 /***
  * class LList
  * Implements a linked list of LLNodes, each containing String data
@@ -25,61 +32,49 @@ public class LList implements List //interface def must be in this dir
     if (_head == null) {
       _head = new LLNode(newVal, null);
     } else {
+
       LLNode temp = _head;
-      while (temp.getNext() != null) {temp = temp.getNext();}
-      temp.setNext(new LLNode(newVal, null));
+      while (temp.getNext() != null) {
+        temp = temp.getNext();
+      }
+      temp.setNext( new LLNode(newVal, null) );
+
     }
-    _size ++;
+    _size++;
     return true;
   }
-
 
   public String get( int index )
   {
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
-    
-    if (index == 0) {return _head.getCargo();}
 
     int ctr = 0;
     LLNode temp = _head;
-
-    while (temp != null) {
-      if (ctr == index) {return temp.getCargo();}
+    while (ctr < index) {
       temp = temp.getNext();
       ctr++;
     }
-    return null;
+    return temp.getCargo();
   }
 
 
   public String set( int index, String newVal )
   {
-    String ret;
 
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
 
-    if (index == 0) {
-      ret = _head.getCargo();
-      _head.setCargo(newVal);
-      return ret;
-    }
-
     int ctr = 0;
     LLNode temp = _head;
-
-    while (temp != null) {
-      if (ctr == index) {
-        ret = temp.getCargo();
-        temp.setCargo(newVal);
-        return ret;
-      }
+    while (ctr < index) {
       temp = temp.getNext();
       ctr++;
     }
-    
-    return null;
+    String ret = temp.getCargo();
+    temp.setCargo(newVal);
+    return ret;
+
   }
 
 
@@ -96,12 +91,14 @@ public class LList implements List //interface def must be in this dir
   // override inherited toString
   public String toString()
   {
-    String ret = "";
+    String ret = "[";
     LLNode temp = _head;
     while (temp != null) {
-      ret = ret + temp.getCargo() + " ";
+      ret += temp.toString() + ", ";
       temp = temp.getNext();
     }
+    if (_size > 0) ret = ret.substring(0, (ret.length() - 2));
+    ret += "]";
     return ret;
   }
 
@@ -110,7 +107,6 @@ public class LList implements List //interface def must be in this dir
   public static void main( String[] args )
   {
     LList james = new LList();
-    
     System.out.println( james );
     System.out.println( "size: " + james.size() );
     
@@ -136,8 +132,8 @@ public class LList implements List //interface def must be in this dir
     System.out.println( "...and now 2nd item is: " + james.set(1,"got") );
     
     System.out.println( james );
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    //*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }
 
 }//end class LList
