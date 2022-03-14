@@ -96,8 +96,13 @@ public class LList implements List //interface def must be in this dir
   // override inherited toString
   public String toString()
   {
-    if (_head != null) return _head.toString();
-    return "";
+    String ret = "";
+    LLNode temp = _head;
+    while (temp != null) {
+      ret = ret + temp.getCargo() + " ";
+      temp = temp.getNext();
+    }
+    return ret;
   }
 
 

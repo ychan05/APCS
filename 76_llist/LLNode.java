@@ -57,12 +57,7 @@ public class LLNode
   // override inherited toString
   public String toString()
   {
-    String ret = cargo;
-    if (next != null) {
-      ret += " "; 
-      ret += this.next.toString();
-    }
-    return ret;
+    return cargo;
   }
 
 
