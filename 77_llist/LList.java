@@ -107,18 +107,21 @@ public class LList implements List // interface def must be in this dir
     }
 
     public void add(int index, String newVal) {
+        if (index < 0 || index >= size())
+            throw new IndexOutOfBoundsException();
+
         if (index == 0) {
             add(newVal);
-            return; 
+            return;
         }
 
         LLNode tmp = _head;
-        for (int i = 0; i < index - 1; i ++) {
+        for (int i = 0; i < index - 1; i++) {
             tmp = tmp.getNext();
         }
         LLNode newNode = new LLNode(newVal, tmp.getNext());
         tmp.setNext(newNode);
-        _size ++;
+        _size++;
 
     }
 
