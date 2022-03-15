@@ -1,3 +1,10 @@
+// Under Pressure: Julia Kozak, Yat Long Chan, Anjini Katari
+// APCS pd08
+// HW77 -- Insert|Remove
+// 2022-03-16w
+// time spent: 0.6hrs
+// KTS used: 2
+
 /***
  * class LLNode
  * Implements a node, for use in lists and other container classes.
@@ -7,26 +14,26 @@
 public class LLNode
 {
   //instance vars
-  private String cargo;
-  private LLNode next;
+  private String _cargo; 
+  private LLNode _nextNode;
 
   // constructor
   public LLNode( String value, LLNode next )
   {
-    cargo = value;
-    this.next = next;
+    _cargo = value;
+    _nextNode = next;
   }
 
 
   //--------------v  ACCESSORS  v--------------
   public String getCargo()
   {
-    return cargo;
+    return _cargo;
   }
 
   public LLNode getNext()
   {
-    return next;
+    return _nextNode;
   }
   //--------------^  ACCESSORS  ^--------------
 
@@ -34,16 +41,16 @@ public class LLNode
   //--------------v  MUTATORS  v--------------
   public String setCargo( String newCargo )
   {
-    String ret = cargo;
-    this.cargo = newCargo;
-    return ret;
+    String foo = getCargo();
+    _cargo = newCargo;
+    return foo;
   }
 
   public LLNode setNext( LLNode newNext )
   {
-    LLNode ret = next;
-    this.next = newNext;
-    return ret;
+    LLNode foo = getNext();
+    _nextNode = newNext;
+    return foo;
   }
   //--------------^  MUTATORS  ^--------------
 
@@ -51,12 +58,7 @@ public class LLNode
   // override inherited toString
   public String toString()
   {
-    String ret = cargo;
-    if (next != null) {
-      ret += " ";
-      ret += this.next.toString();
-    }
-    return ret;
+    return _cargo;
   }
 
 
@@ -77,26 +79,22 @@ public class LLNode
 
     /* A naive list traversal, has side effects.... ??
        while( first != null ) {
-       System.out.print( first );
+       System.out.println( first );
        first = first.getNext();
        }
-       */
-    //System.out.println(first.getNext());
-
+    */
 
     //Q: when head ptr moves to next node in list, what happens to the node it just left?
-    // That node becomes null (first gets set to null and you can no longer reference it)
+    //A: garbage collector reclaims that memory
 
-    //...so better: ?
-    // create a new reference
-    LLNode current = first;
-    while (current != null) {
-      System.out.println( current );
-      current = current.getNext();
+    //  so, better: (w/o moving first)
+    /*
+    LLNode temp = first;
+    while( temp != null ) {
+      System.out.println( temp );
+      temp = temp.getNext();
     }
-    System.out.println(first);
-    System.out.println(first.getNext());
-    System.out.println(first.getNext().getNext());
+    */
 
   }//end main
 
