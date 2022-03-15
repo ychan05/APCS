@@ -107,6 +107,11 @@ public class LList implements List // interface def must be in this dir
     }
 
     public void add(int index, String newVal) {
+        if (index == 0) {
+            add(newVal);
+            return; 
+        }
+
         LLNode tmp = _head;
         for (int i = 0; i < index - 1; i ++) {
             tmp = tmp.getNext();
@@ -162,7 +167,7 @@ public class LList implements List // interface def must be in this dir
         System.out.println(james);
         james.remove(1);
         System.out.println(james);
-        james.add(1, "got");
+        james.add(2, "got");
         System.out.println(james);
 
     }
