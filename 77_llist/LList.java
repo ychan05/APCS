@@ -157,7 +157,7 @@ public class LList implements List //interface def must be in this dir
       //names the node that the prev node should point to
       tmp.setNext(newNext);
     }
-      
+      _size--;
       return ret;
   }
 
