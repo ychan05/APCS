@@ -24,6 +24,7 @@ public class LList implements List //your List interface must be in same dir
   public boolean add( String newVal )
   {
     DLLNode tmp = new DLLNode( null, newVal, _head );
+    if (_size > 0) _head.setPrev(tmp);
     _head = tmp;
     _size++;
     return true;
@@ -194,7 +195,7 @@ public class LList implements List //your List interface must be in same dir
     james.add(4,"phat");
     System.out.println( "...after add(4,phat): " );
     System.out.println( james );
-
+    /*
     System.out.println( "...after remove last: " 
                         + james.remove( james._size-1) );
     System.out.println( james );
@@ -206,7 +207,7 @@ public class LList implements List //your List interface must be in same dir
     System.out.println( james );
 
     System.out.println( "...after remove(0): " + james.remove(0) );
-    System.out.println( james );
+    System.out.println( james ); */
   }
 
 }//end class LList
