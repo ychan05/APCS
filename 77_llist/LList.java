@@ -1,40 +1,35 @@
 // Under Pressure: Julia Kozak, Yat Long Chan, Anjini Katari
 // APCS pd08
 // HW77 -- Insert|Remove
-// 2022-03-16w
+// 2022-03-16
 // time spent: 0.6hrs
 // KTS used: 2
+
+/*
+  DISCO:    - Objects can be redefined in terms of themselves (ex. for add(newVal), you don't have
+            to create a temp and _head can be redefined in one line)
+            - We need to consider cases for adding the value at the first index separately in add-
+            at-index
+            - add(index) appends the new value to the front
+
+  QCC:      - Is there any way to work around NullPointerExceptions without creating a separate case?
+
+  algo add: If the index being added at is 0, call add(newVal). Otherwise, set LLNode temp as a new
+            reference to _head, and set it to the next node until it is at position index-1. Then
+            let temp direct to a new node with the newVal as its cargo, and let that new node direct
+            to the rest of the list. Lastly, increment _size.
+
+  algo rem: If the _size is 1, reset the _head to null and decrement _size. Otherwise, create a new
+            reference to _head, temp, and set it to each next node until it is at position index-1.
+            Set the next node for temp to the node two ahead of it, and decrement _size.
+
+*/
+
+
 
 /***
  * class LList
  * Implements a linked list of LLNodes, each containing String data
- * 
- * algo for remove:
- * if index is less than 0 or greater than the current size, return 
- *   an error
- * if the node you want to remove is at index 0, set ret to the 
- *   current cargo value and reassign head to the next node 
- * if the node you want to remove is the last one in the list, 
- *   set head to tmp, and set the current tmp value equal to the next 
- *   node until you reach the last node. Set ret to the current cargo, 
- *   and the next node to null 
- * If the node being removed is not the first or the last node in the 
- *   list, set temp to the current head value and and set the current 
- *   tmp value equal to the next node until you reach the last node. 
- *   Set ret to the current tmp cargo and names the node that is 2 
- *   nodes away from the current location and set that to be the next node  
- *   from the current location.
- * return ret
- * 
- * algo for add:
- * if index is less than 0 or greater than the current size, return 
- *   an error
- * if you're trying to add a node to the first position, add(newVal)
- * Otherwise create LLNode tmp and assign it the value of head before 
- *   having tmp equal the next node for every node until you reach one 
- *   before the targeted index. 
- * create a new node and set its contents to newVal and have it point to 
- *   the next node. Set temp to the new node and then increase the size. 
  **/
 
 public class LList implements List //interface def must be in this dir
@@ -47,22 +42,94 @@ public class LList implements List //interface def must be in this dir
   // constructor -- initializes instance vars
   public LList( )
   {
-    _head = null; //at birth, a list has no elements
+    _head = null;
     _size = 0;
   }
 
 
   //--------------v  List interface methods  v--------------
 
+  /*
   public boolean add( String newVal )
   {
-    //make a new node with cargo newVal and made it point to head
-    //change head to the new node and increase size
-    LLNode tmp = new LLNode( newVal, _head );
-    _head = tmp;
+    if (_head == null) {
+      _head = new LLNode(newVal, null);
+    } else {
+
+      LLNode temp = _head;
+      while (temp.getNext() != null) {
+        temp = temp.getNext();
+      }
+      temp.setNext( new LLNode(newVal, null) );
+
+    }
     _size++;
     return true;
   }
+  */
+
+
+
+  public boolean add( String newVal ) {
+    _head = new LLNode(newVal, _head);
+    _size++;
+    return true;
+  }
+
+  public void add( int index, String newVal ) {
+    if ( index < 0 || index > size() )
+      throw new IndexOutOfBoundsException();
+
+    if (index == 0) {
+
+      add(newVal);
+
+    } else {
+
+      int ctr = 0;
+      LLNode temp = _head;
+      while (ctr < index-1) {
+        temp = temp.getNext();
+        ctr++;
+      }
+      _size++;
+      temp.setNext( new LLNode(newVal, temp.getNext()) );
+      
+    }
+
+
+  }
+
+  public String remove( int index ) {
+    if ( index < 0 || index >= size() )
+      throw new IndexOutOfBoundsException();
+
+    if (_size == 1) {
+      String ret = _head.getCargo();
+      _head = null;
+
+      _size--;
+      return ret;
+    } else {
+      LLNode temp = _head;
+      int ctr = 0;
+      while (ctr < index-1) {
+        temp = temp.getNext();
+        ctr++;
+      }
+
+
+
+      String ret = temp.getNext().getCargo();
+      temp.setNext(temp.getNext().getNext());
+      _size--;
+      return ret;
+    }
+
+
+
+  }
+
 
 
   public String get( int index )
@@ -70,16 +137,13 @@ public class LList implements List //interface def must be in this dir
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
 
-    String retVal;
-    LLNode tmp = _head; //create alias to head
-
-    //walk to desired node and set temp to the next node 
-    for( int i=0; i < index; i++ )
-      tmp = tmp.getNext();
-
-    //check target node's cargo hold
-    retVal = tmp.getCargo();
-    return retVal;
+    int ctr = 0;
+    LLNode temp = _head;
+    while (ctr < index) {
+      temp = temp.getNext();
+      ctr++;
+    }
+    return temp.getCargo();
   }
 
 
@@ -89,129 +153,48 @@ public class LList implements List //interface def must be in this dir
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
 
-    LLNode tmp = _head; //create alias to head
+    int ctr = 0;
+    LLNode temp = _head;
+    while (ctr < index) {
+      temp = temp.getNext();
+      ctr++;
+    }
+    String ret = temp.getCargo();
+    temp.setCargo(newVal);
+    return ret;
 
-    //walk to desired node
-    for( int i=0; i < index; i++ )
-      tmp = tmp.getNext();
-
-    //store target node's cargo
-    String oldVal = tmp.getCargo();
-
-    //modify target node's cargo
-    tmp.setCargo( newVal );
-
-    return oldVal;
   }
 
 
   //return number of nodes in list
-  public int size() { return _size; }
-
-/* algo for remove 
-  * if index is less than 0 or greater than the current size, return 
-    an error
-  * if the node you want to remove is at index 0, set ret to the 
-    current cargo value and reassign head to the next node 
-  * if the node you want to remove is the last one in the list, 
-    set head to tmp, and set the current tmp value equal to the next 
-    node until you reach the last node. Set ret to the current cargo, 
-    and the next node to null 
-  * If the node being removed is not the first or the last node in the 
-    list, set temp to the current head value and and set the current 
-    tmp value equal to the next node until you reach the last node. 
-    Set ret to the current tmp cargo and names the node that is 2 
-    nodes away from the current location and set that to be the next node 
-    from the current location.
-  * return ret
-
-*/
-  public String remove( int index ){
-    if (index < 0 || index >= size())
-      throw new IndexOutOfBoundsException();
-
-    String ret;
-    if (index == 0) {
-      ret = _head.getCargo();
-      _head = _head.getNext();
-    }
-
-    else if (index == _size - 1) {
-      LLNode tmp = _head;
-      for (int i = 0; i < index - 1; i++) {
-        tmp = tmp.getNext();
-      }
-
-      ret = tmp.getCargo();
-      tmp.setNext(null);
-    }
-
-    else {
-      LLNode tmp = _head;
-      for (int i = 0; i < index - 1; i++) {
-        tmp = tmp.getNext();
-      }
-
-      ret = tmp.getCargo();
-      LLNode newNext = tmp.getNext().getNext(); 
-      //names the node that the prev node should point to
-      tmp.setNext(newNext);
-    }
-      
-      return ret;
-  }
-
-  /*
-    * if index is less than 0 or greater than the current size, return 
-    an error
-    * if you're trying to add a node to the first position, add(newVal)
-    * Otherwise create LLNode tmp and assign it the value of head before 
-      having tmp equal the next node for every node until you reach one 
-      before the targeted index. 
-    * create a new node and set its contents to newVal and have it point to 
-      the next node. Set temp to the new node and then increase the size. 
-  */
-  public void add(int index, String newVal) {
-    if (index < 0 || index >= size())
-      throw new IndexOutOfBoundsException();
-
-    if (index == 0) {
-      add(newVal);
-      return;
-    }
-
-    LLNode tmp = _head;
-    for (int i = 0; i < index - 1; i++) {
-      tmp = tmp.getNext();
-    }
-
-    LLNode newNode = new LLNode(newVal, tmp.getNext());
-    tmp.setNext(newNode);
-    _size++;
+  public int size()
+  {
+    return _size;
   }
 
   //--------------^  List interface methods  ^--------------
 
 
+
   // override inherited toString
   public String toString()
   {
-    String retStr = "HEAD->";
-    LLNode tmp = _head; //init tr
-    while( tmp != null ) {
-	    retStr += tmp.getCargo() + "->";
-	    tmp = tmp.getNext();
+    String ret = "[ ";
+    LLNode temp = _head;
+    while (temp != null) {
+      ret += temp.getCargo() + " ";
+      temp = temp.getNext();
     }
-    retStr += "NULL";
-    return retStr;
+    ret += "]";
+    return ret;
   }
 
 
   //main method for testing
   public static void main( String[] args )
   {
+    ///*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     LList james = new LList();
-
     System.out.println( james );
     System.out.println( "size: " + james.size() );
 
@@ -237,6 +220,29 @@ public class LList implements List //interface def must be in this dir
     System.out.println( "...and now 2nd item is: " + james.set(1,"got") );
 
     System.out.println( james );
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    james.remove(1);
+    System.out.println( james );
+    james.add(1, "got");
+    System.out.println( james );
+    while (james.size() > 0) {
+      james.remove(james.size()-1);
+      System.out.println(james);
+    }
+    james.add("beat");
+    james.add("a");
+    james.add("got");
+    james.add(0, "I");
+
+
+    System.out.println(james);
+    while (james.size() > 0) {
+      james.remove(0);
+      System.out.println(james);
+    }
+
+    LList last = new LList();
+    last.add("plefohev");
   }
 
 }//end class LList
