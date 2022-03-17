@@ -1,3 +1,30 @@
+// Under Pressure: Julia Kozak, Anjini Katari, Yat Long Chan
+// APCS pd08
+// HW78 -- Double Up
+// 2022-03-17
+// time spent: 0.5hrs
+// KTS used: 2
+
+/*
+  DISCO:    - An object with methods/values referenced cannot be null itself, but its attributes
+              can be set to null.
+            - No edge cases (except adding to the front) are needed for add(index).
+
+  QCC:      - Would it ever be useful to link the end back to _head?
+
+  ALGO ADD: If the index being added to is 0, call add(newVal). If index == _size, add element to the end.
+            Otherwise, create a newNode that will be added. Set a temporary reference, tmp, to _head, 
+            and set it to the next node until it is at index-1. 
+            Then, let tmp's next be newNode and newNode's previous be tmp,
+             and do the same for the other pair including newNode. 
+Increment _size.
+
+  ALGO REM: If the index being removed is 0, then let the list start at _head's next, and set the
+            previous node to null. Otherwise, create a reference, tmp, originally set to _head,
+            and set it to the next node until it is at index-1. Then, set tmp's next node to the
+            one that is two after it, then set its new next node's previous to tmp. Decrement _size.
+*/
+
 /*****************************************************
  * class LList
  * Implements a linked list of LLNodes, each containing String data
@@ -9,12 +36,14 @@ public class LList implements List //your List interface must be in same dir
 
   //instance vars
   private DLLNode _head;
+  private DLLNode _tail;
   private int _size;
 
   // constructor -- initializes instance vars
   public LList( )
   {
     _head = null; //at birth, a list has no elements
+    _tail = null;
     _size = 0;
   }
 
@@ -26,6 +55,7 @@ public class LList implements List //your List interface must be in same dir
     DLLNode tmp = new DLLNode( null, newVal, _head );
     if (_head != null) _head.setPrev(tmp);
     _head = tmp;
+    if (_tail == null) _tail = tmp;
     _size++;
     return true;
   }
@@ -86,6 +116,8 @@ public class LList implements List //your List interface must be in same dir
     //if index==0, insert node before head node
     if ( index == 0 ) 
 	    add( newVal );
+    else if (index == _size)
+      addLast(newVal);
     else {
 	    DLLNode tmp = _head; //create alias to head
 
@@ -144,6 +176,15 @@ public class LList implements List //your List interface must be in same dir
 
   //--------------^  List interface methods  ^--------------
 
+  public boolean addLast( String newVal )
+  {
+    DLLNode tmp = new DLLNode( _head, newVal, null );
+    if (_tail != null) _tail.setNext(tmp);
+    _tail = tmp;
+    if (_head == null) _head = tmp;
+    _size++;
+    return true;
+  }
 
   // override inherited toString
   public String toString()
