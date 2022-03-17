@@ -24,7 +24,7 @@ public class LList implements List //your List interface must be in same dir
   public boolean add( String newVal )
   {
     DLLNode tmp = new DLLNode( null, newVal, _head );
-    if (_size > 0) _head.setPrev(tmp);
+    if (_head != null) _head.setPrev(tmp);
     _head = tmp;
     _size++;
     return true;
@@ -96,6 +96,7 @@ public class LList implements List //your List interface must be in same dir
 	    //insert new node
 	    newNode.setNext( tmp.getNext() );
       newNode.setPrev(tmp);
+      tmp.getNext().setPrev(newNode);
 	    tmp.setNext( newNode );
 
 	    //increment size attribute
