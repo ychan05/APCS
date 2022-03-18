@@ -50,7 +50,13 @@ public class DeckTester {
 		System.out.println("  deal: " + d.deal());
 		System.out.println();
 		System.out.println();
-
-		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+		
+		String stdSuits[] = {"diamond", "spade", "club", "heart"};
+		String stdRanks[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
+		int stdVals[] = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+		Deck stdDeck = new Deck(stdRanks, stdSuits, stdVals);
+		System.out.println(stdDeck);
+		stdDeck.shuffle();
+		System.out.println(stdDeck);
 	}
 }
