@@ -1,3 +1,13 @@
+//<TNPG> -- Yat Long Chan, Weichen Liu, Hamim Seam
+/*
+1) a deck is a collection of cards
+2) 6 cards
+3) String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10",  "jack", "queen", "king", "ace"}; 
+   String[] suits = {"spades", "hearts", "diamonds", "clubs"}; 
+   int[] pointValues = {2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11};
+4) Order doesn't matter but ranks and pointValues should be ordered in the same way.
+*/
+
 import java.util.List;
 import java.util.ArrayList;
 

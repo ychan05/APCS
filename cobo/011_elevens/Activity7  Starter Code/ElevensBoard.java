@@ -1,3 +1,18 @@
+//<TNPG> -- Yat Long Chan, Weichen Liu, Hamim Seam
+/*
+1) Board, deck, cards placed
+2) Shuffle deck, place cards onto board, select cards, check if legal, deal card. Repeat until loss or win.
+3) Yes
+4a) newGame() and the constructor
+4b) isLegal(), anotherPlayIsPossible()
+4c) J, 6, 2, A, 4
+4d) 
+For (Integer i : cIndexes) {
+	System.out.println(cards[i])
+}
+4e) anotherPlayIsPossible() because it needs to check the board for remaining possible moves
+*/
+
 import java.util.List;
 import java.util.ArrayList;
 

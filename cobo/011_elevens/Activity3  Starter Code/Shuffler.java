@@ -1,3 +1,8 @@
+//<TNPG> -- Yat Long Chan, Weichen Liu, Hamim Seam
+/*
+3) 0,1,1
+*/
+
 /**
  * This class provides a convenient way to test shuffling methods.
  */

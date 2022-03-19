@@ -1,3 +1,11 @@
+//<TNPG> -- Yat Long Chan, Weichen Liu, Hamim Seam
+/*
+1) All three are based on finding pairs that add to a sum and specific group of faces.
+   The sums differ and the specific groups change.
+2) ElvensBoard inherits Board by with 'extends'
+3) No. The methods will have to be implemented differently for each game.
+*/
+
 import java.util.List;
 import java.util.ArrayList;
 

@@ -1,3 +1,10 @@
+//<TNPG> -- Yat Long Chan, Weichen Liu, Hamim Seam
+/*
+1) The percentages were fairly consistent with a majority being a 10% win.
+2) There is a little bit more variation but precentages are still around 10%
+3) It is fairly consistent at 100000 runs.
+*/
+
 /**
  * This is a class that plays noninteractive games of Elevens.
  * See accompanying documents for a description of how Elevens is played.
@@ -7,12 +14,12 @@ public class ElevensSimulation {
 	/**
 	 * The number of games of Elevens to play.
 	 */
-	private static final int GAMES_TO_PLAY = 1;
+	private static final int GAMES_TO_PLAY = 100000;
 
 	/**
 	 * Flag used to control debugging print statements.
 	 */
-	private static final boolean I_AM_DEBUGGING = true;
+	private static final boolean I_AM_DEBUGGING = false;
 
 
 	/**
