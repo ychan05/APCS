@@ -1,4 +1,5 @@
-//<TNPG> -- Yat Long Chan, Weichen Liu, Hamim Seam
+//Lobsters -- Yat Long Chan, Weichen Liu, Hamim Seam
+
 /*
 1) Board, deck, cards placed
 2) Shuffle deck, place cards onto board, select cards, check if legal, deal card. Repeat until loss or win.

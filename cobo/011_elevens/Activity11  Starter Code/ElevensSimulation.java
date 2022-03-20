@@ -1,4 +1,4 @@
-//<TNPG> -- Yat Long Chan, Weichen Liu, Hamim Seam
+//Lobsters -- Yat Long Chan, Weichen Liu, Hamim Seam
 /*
 1) The percentages were fairly consistent with a majority being a 10% win.
 2) There is a little bit more variation but precentages are still around 10%

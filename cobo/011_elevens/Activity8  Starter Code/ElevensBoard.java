@@ -1,4 +1,4 @@
-//<TNPG> -- Yat Long Chan, Weichen Liu, Hamim Seam
+//Lobsters -- Yat Long Chan, Weichen Liu, Hamim Seam
 /*
 1) All three are based on finding pairs that add to a sum and specific group of faces.
    The sums differ and the specific groups change.

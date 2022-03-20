@@ -1,4 +1,4 @@
-//<TNPG> -- Yat Long Chan, Weichen Liu, Hamim Seam
+//Lobsters -- Yat Long Chan, Weichen Liu, Hamim Seam
 
 
 import java.util.List;

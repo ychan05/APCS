@@ -1,4 +1,5 @@
-//<TNPG> -- Yat Long Chan, Weichen Liu, Hamim Seam
+//Lobsters -- Yat Long Chan, Weichen Liu, Hamim Seam
+
 /*
 1) size is only an integer that is passed to the constructor
 2) Selection of cards are done by the user

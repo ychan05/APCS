@@ -1,4 +1,5 @@
-//<TNPG> -- Yat Long Chan, Weichen Liu, Hamim Seam
+//Lobsters -- Yat Long Chan, Weichen Liu, Hamim Seam
+
 /*
 1) a deck is a collection of cards
 2) 6 cards
