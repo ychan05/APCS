@@ -2,7 +2,7 @@ Lobsters :: Yat Long Chan, Weichen Liu, Hamim Seam
 APCS
 lab07 -- But These Go Up To Eleven
 2022-03-19
-time spent: 1 hr
+time spent: 1 hour
 
 DISCO
 A lot of the lab was reading.
@@ -11,3 +11,4 @@ The manual was sometimes hard to understand.
 
 QCC
 We assume that the AP exam will also have a lot of reading.
+How are graphics made?
