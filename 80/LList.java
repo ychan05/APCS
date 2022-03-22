@@ -35,8 +35,8 @@ public class LList<T> implements List<T> //your List interface must be in same d
 { 
 
   //instance vars
-  private DLLNode _head;
-  private DLLNode _tail;
+  private DLLNode<T> _head;
+  private DLLNode<T> _tail;
   private int _size;
 
   // constructor -- initializes instance vars
@@ -85,7 +85,7 @@ public class LList<T> implements List<T> //your List interface must be in same d
     if ( index < 0 || index >= size() )
 	    throw new IndexOutOfBoundsException();
 
-    DLLNode tmp = _head; //create alias to head
+    DLLNode<T> tmp = _head; //create alias to head
 
     //walk to desired node
     for( int i=0; i < index; i++ )
@@ -111,7 +111,7 @@ public class LList<T> implements List<T> //your List interface must be in same d
     if ( index < 0 || index >= size() )
 	    throw new IndexOutOfBoundsException();
 
-    DLLNode newNode = new DLLNode( null, newVal, null );
+    DLLNode<T> newNode = new DLLNode<T>( null, newVal, null );
 
     //if index==0, insert node before head node
     if ( index == 0 ) 
@@ -119,7 +119,7 @@ public class LList<T> implements List<T> //your List interface must be in same d
     else if (index == _size)
       addLast(newVal);
     else {
-	    DLLNode tmp = _head; //create alias to head
+	    DLLNode<T> tmp = _head; //create alias to head
 
 	    //walk to node before desired node
 	    for( int i=0; i < index-1; i++ )
@@ -144,7 +144,7 @@ public class LList<T> implements List<T> //your List interface must be in same d
 	    throw new IndexOutOfBoundsException();
 
     T retVal;
-    DLLNode tmp = _head; //create alias to head
+    DLLNode<T> tmp = _head; //create alias to head
 
     //if index==0, remove head node
     if ( index == 0 ) {
@@ -178,7 +178,7 @@ public class LList<T> implements List<T> //your List interface must be in same d
 
   public boolean addLast( T newVal )
   {
-    DLLNode tmp = new DLLNode( _head, newVal, null );
+    DLLNode<T> tmp = new DLLNode<T>( _head, newVal, null );
     if (_tail != null) _tail.setNext(tmp);
     _tail = tmp;
     if (_head == null) _head = tmp;
@@ -190,7 +190,7 @@ public class LList<T> implements List<T> //your List interface must be in same d
   public String toString()
   {
     String retStr = "HEAD->";
-    DLLNode tmp = _head; //init tr
+    DLLNode<T> tmp = _head; //init tr
     while( tmp != null ) {
 	    retStr += tmp.getCargo() + "->";
 	    tmp = tmp.getNext();
