@@ -199,59 +199,6 @@ public class LList<T> implements List<T> //your List interface must be in same d
     return retStr;
   }
 
-
-  //main method for testing
-  public static void main( String[] args )
-  {
-
-    LList james = new LList();
-
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
-
-    james.add("beat");
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
-
-    james.add("a");
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
-
-    james.add("need");
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
-
-    james.add("I");
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
-
-    System.out.println( "2nd item is: " + james.get(1) );
-
-    System.out.println( "...and now 2nd item is: " + james.set(1,"got") );
-    System.out.println( james );
-
-    james.add(0,"whut");
-    System.out.println( "...after add(0,whut): " );
-    System.out.println( james );
-
-    james.add(4,"phat");
-    System.out.println( "...after add(4,phat): " );
-    System.out.println( james );
-    /*
-    System.out.println( "...after remove last: " 
-                        + james.remove( james._size-1) );
-    System.out.println( james );
-
-    System.out.println( "...after remove(0): " + james.remove(0) );
-    System.out.println( james );
-
-    System.out.println( "...after remove(0): " + james.remove(0) );
-    System.out.println( james );
-
-    System.out.println( "...after remove(0): " + james.remove(0) );
-    System.out.println( james ); */
-  }
-
 }//end class LList
 
 

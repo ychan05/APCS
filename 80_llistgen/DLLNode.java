@@ -54,37 +54,5 @@ public class DLLNode<T>
     // override inherited toString
     public String toString() { return _cargo.toString(); }
 
-
-    //main method for testing
-    public static void main( String[] args )
-    {
-
-	//Below is an exercise in creating a linked list...
-
-	//Create a node
-	DLLNode first = new DLLNode( null, "cat", null );
-
-	//Create a new node after the first
-	first.setNext( new DLLNode( null ,"dog", null ) );
-
-	//Create a third node after the second
-	first.getNext().setNext( new DLLNode(null, "cow", null ) );
-
-	/* A naive list traversal, has side effects.... ??
-	while( first != null ) {
-		System.out.println( first );
-		first = first.getNext();
-	}
-	*/
-
-	//Q: when head ptr moves to next node in list, what happens to the node it just left?
-
-	//...so better: ?
-	//
-	//
-	//
-	
-    }//end main
-
 }//end class LLNode
 
