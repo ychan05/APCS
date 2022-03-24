@@ -9,12 +9,18 @@ DISCO
 
 QCC
 
-SUMMARY 1
-Allows for obtaining elements 1 at a time. 
+SUMMARY THE FIRST:
+Iterator allows for obtaining elements 1 at a time. 
 hasNext() checks if a collection has another element.
 next() returns the next element in the collection.
 remove() removes the current element from iterator.
-SUMMARY 2
+
+SUMMARY THE SECOND:
+ItrWork is a class found() which indicates whether a given element is in a list of Integers 
+and odd() which return a list of all odd numbers in a given list. 
+Both methods have 2 different implementations using a FOREACH loop and Iterator.
+This class also contains removeEvens(), which will remove even integers in a given list.
+
 
 */
 
