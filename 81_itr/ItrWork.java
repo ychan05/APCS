@@ -4,6 +4,20 @@
 // 2022-03-24
 // time spent: 0.5hrs
 
+/*
+DISCO
+
+QCC
+
+SUMMARY 1
+Allows for obtaining elements 1 at a time. 
+hasNext() checks if a collection has another element.
+next() returns the next element in the collection.
+remove() removes the current element from iterator.
+SUMMARY 2
+
+*/
+
 /***
  * class ItrWork
  *  SKELETON
@@ -88,7 +102,7 @@ public class ItrWork
   {
     ///*~~~~~~~~~~~~~~~m~o~v~e~~m~e~~d~o~w~n~~~~~~~~~~~~~~
 
-    //var type: List   obj type: ?
+    //var type: List   obj type: ArrayList
     List<Integer> L = new ArrayList<Integer>();
 
     for( int i = 0; i < 10; i++ )
