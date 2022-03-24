@@ -33,7 +33,7 @@ public class ItrWork
   public static boolean foundB( Integer key,
                                 List<Integer> L )
   {
-    Iterator it = L.iterator();
+    Iterator<Integer> it = L.iterator();
     while (it.hasNext()) {
       if (it.next().equals(key)) {return true;}
     }
@@ -46,7 +46,7 @@ public class ItrWork
   {
     List<Integer> ret = new ArrayList<Integer>();
     for (Integer i : L) {
-      if ((int)(i) % 2 == 1) {
+      if (i % 2 == 1) {
         ret.add(i);
       }
     }
@@ -59,10 +59,10 @@ public class ItrWork
   public static List<Integer> oddsB( List<Integer> L )
   {
     List<Integer> ret = new ArrayList<Integer>();
-    Iterator it = L.iterator();
+    Iterator<Integer> it = L.iterator();
     while (it.hasNext()) {
       Integer i = (Integer)(it.next());
-      if ((int)(i) % 2 == 1) {
+      if ( i % 2 == 1) {
         ret.add(i);
       }
     }
@@ -74,9 +74,9 @@ public class ItrWork
   //modifies L s.t. it contains no evens
   public static void removeEvens( List<Integer> L )
   {
-    Iterator it = L.iterator();
+    Iterator<Integer> it = L.iterator();
     while (it.hasNext()) {
-      if ((int)(it.next()) % 2 == 0) {
+      if (it.next() % 2 == 0) {
         it.remove();
       }
     }
@@ -112,7 +112,7 @@ public class ItrWork
     // b) explicitly using an iterator
     System.out.println("Printing L w/ Iterator ...");
     ret = "{ ";
-    Iterator it = L.iterator();
+    Iterator<Integer> it = L.iterator();
     while (it.hasNext()) {
       ret += it.next() + ", ";
     }
