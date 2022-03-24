@@ -1,3 +1,9 @@
+// Under Pressure: Julia Kozak, Anjini Katari, Yat Long Chan
+// APCS pd08
+// HW81 -- Thank You, Next
+// 2022-03-24
+// time spent: 0.5hrs
+
 /***
  * class ItrWork
  *  SKELETON
@@ -16,7 +22,10 @@ public class ItrWork
   public static boolean foundA( Integer key,
                                 List<Integer> L )
   {
-    /*** YOUR IMPLEMENTATION HERE ***/
+    for (Integer i : L) {
+      if (i.equals(key)) {return true;}
+    }
+    return false;
   }
 
   //explicitly using an iterator
@@ -24,13 +33,24 @@ public class ItrWork
   public static boolean foundB( Integer key,
                                 List<Integer> L )
   {
-    /*** YOUR IMPLEMENTATION HERE ***/
+    Iterator it = L.iterator();
+    while (it.hasNext()) {
+      if (it.next().equals(key)) {return true;}
+    }
+    return false;
   }
 
   //using FOREACH loop
   //returns a list containing the odd numbers in L
   public static List<Integer> oddsA( List<Integer> L )
   {
+    List<Integer> ret = new ArrayList<Integer>();
+    for (Integer i : L) {
+      if ((int)(i) % 2 == 1) {
+        ret.add(i);
+      }
+    }
+    return ret;
     /*** YOUR IMPLEMENTATION HERE ***/
   }
 
@@ -38,7 +58,15 @@ public class ItrWork
   //returns a list containing the odd numbers in L
   public static List<Integer> oddsB( List<Integer> L )
   {
-    /*** YOUR IMPLEMENTATION HERE ***/
+    List<Integer> ret = new ArrayList<Integer>();
+    Iterator it = L.iterator();
+    while (it.hasNext()) {
+      Integer i = (Integer)(it.next());
+      if ((int)(i) % 2 == 1) {
+        ret.add(i);
+      }
+    }
+    return ret;
   }
 
 
@@ -46,16 +74,22 @@ public class ItrWork
   //modifies L s.t. it contains no evens
   public static void removeEvens( List<Integer> L )
   {
+    Iterator it = L.iterator();
+    while (it.hasNext()) {
+      if ((int)(it.next()) % 2 == 0) {
+        it.remove();
+      }
+    }
     /*** YOUR IMPLEMENTATION HERE ***/
   }
 
 
   public static void main( String [] args )
   {
-    /*~~~~~~~~~~~~~~~m~o~v~e~~m~e~~d~o~w~n~~~~~~~~~~~~~~
+    ///*~~~~~~~~~~~~~~~m~o~v~e~~m~e~~d~o~w~n~~~~~~~~~~~~~~
 
     //var type: List   obj type: ?
-    List<Integer> L =
+    List<Integer> L = new ArrayList<Integer>();
 
     for( int i = 0; i < 10; i++ )
       L.add(i);
@@ -64,9 +98,28 @@ public class ItrWork
     // TASK: write code to print the contents of L...
 
     // a) using a FOREACH loop
+    System.out.println("Printing L w/ FOREACH ...");
+    String ret = "{ ";
+    for (Integer i : L) {
+      ret += i + ", ";
+    }
+    ret = ret.substring(0, ret.length()-2);
+    ret += " }";
+    System.out.println(ret);
+
 
 
     // b) explicitly using an iterator
+    System.out.println("Printing L w/ Iterator ...");
+    ret = "{ ";
+    Iterator it = L.iterator();
+    while (it.hasNext()) {
+      ret += it.next() + ", ";
+    }
+    ret = ret.substring(0, ret.length()-2);
+    ret += " }";
+    System.out.println(ret);
+
 
 
     System.out.println("\nTesting foundA...");
@@ -88,7 +141,7 @@ public class ItrWork
     System.out.println("\nTesting removeEvens...");
     removeEvens(L);
     for( int n : L ) System.out.println(n);
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+      //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   }//end main
 
