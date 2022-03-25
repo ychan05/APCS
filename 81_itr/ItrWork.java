@@ -6,8 +6,11 @@
 
 /*
 DISCO
+Iterator is generically typed.
+On its first call, next() will return the first element.
 
 QCC
+Does the iterator() method in List initialize an Iterator that works for List?
 
 SUMMARY THE FIRST:
 Iterator allows for obtaining elements 1 at a time. 
