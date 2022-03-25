@@ -286,10 +286,10 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
     {
       if (!_okToRemove) {return;}
 
-      if (_dummy == _head) {
-        removeFirst();
-      } else if (_dummy == _tail) {
+      if (_dummy == null) {
         removeLast();
+      } else if (_dummy.getPrev() == _head) {
+        removeFirst();
       } else {
         _dummy.getPrev().setNext(_dummy.getNext());
         _dummy.getNext().setPrev(_dummy.getPrev());

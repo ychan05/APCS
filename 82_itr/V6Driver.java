@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 /***
  * class V6Driver
  * ...for testing implementation of Iterable interface
@@ -26,6 +28,20 @@ public class V6Driver
     for( String s : wu ) {
       System.out.println( s + " raps for the Wu");
     }
+
+    System.out.println("Testing iterator remove...");
+    System.out.println(wu);
+
+    Iterator<String> itr =  wu.iterator();
+
+    while (itr.hasNext()) {
+      itr.next();
+      itr.remove();
+      System.out.println(wu);
+
+    }
+
+
 
   }//end main()
 
