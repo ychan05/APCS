@@ -30,10 +30,10 @@ public class V6Driver
     }
 
     System.out.println("Testing iterator remove...");
-    System.out.println(wu);
+    System.out.println(wu);   
 
     Iterator<String> itr =  wu.iterator();
-
+    //itr.remove(); //IllegalStateException
     while (itr.hasNext()) {
       String s = itr.next();
       if ( s == "RZA" || s == "Raekwon the Chef" || s == "Ghostface") {
