@@ -284,15 +284,14 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
     //               (...so that hasNext() will not crash)
     public void remove()
     {
-      if (!_okToRemove) {return;}
+      if (!_okToRemove) {throw new IllegalStateException();}
 
       if (_dummy == null) {
         removeLast();
       } else if (_dummy.getPrev() == _head) {
         removeFirst();
       } else {
-        _dummy.getPrev().setNext(_dummy.getNext());
-        _dummy.getNext().setPrev(_dummy.getPrev());
+        _dummy.getPrev().getPrev().setNext(_dummy);
       }
       _okToRemove = false;
     }

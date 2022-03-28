@@ -35,10 +35,12 @@ public class V6Driver
     Iterator<String> itr =  wu.iterator();
 
     while (itr.hasNext()) {
-      itr.next();
-      itr.remove();
+      String s = itr.next();
+      if ( s == "RZA" || s == "Raekwon the Chef" || s == "Ghostface") {
+        System.out.println("Removing " + s);
+        itr.remove();
       System.out.println(wu);
-
+      }
     }
 
 
