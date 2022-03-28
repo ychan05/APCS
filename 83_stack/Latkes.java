@@ -1,3 +1,9 @@
+// Under Pressure: Julia Kozak, Yat Long Chan, Anjini Katari
+// APCS pd08
+// HW83 -- Stacks on Stacks
+// 2022-03-29
+// time spent: 0.5hrs
+
 /***
  * class Latkes
  * v1
@@ -6,10 +12,17 @@
  **/
 
 /***
-    DISCO
+    DISCO:
+    _stack can expand like ArrayList (if the stack reaches capacity, it copies
+    everything over to a larger array).
+    In a stack, you can only access/operate on the last element added.
 
-    QCC
-
+    QCC:
+    Should the index of each newly added element always be 0? (ie does stack add to 
+    the front of the array, or can we keep adding/removing from the end to increase 
+    efficiency?)
+    Can java stacks be typecasted as list types (ex. if you wanted to access any element,
+    could you typecast as an array/ArrayList)?
  **/
 
 
@@ -30,13 +43,15 @@ public class Latkes
   //means of insertion
   public void push( String s )
   {
-    if (isFull()) return;
-
-    for (int i = _stackSize - 1; i >= 0; i --) {
-      _stack[i + 1] = _stack[i];
+    if (isFull()) {
+      String[] _newStack = new String[_stackSize * 2];
+      for (int i=0; i<_stackSize; i++) {
+        _newStack[i] = _stack[i];
+      }
+      _stack = _newStack;
     }
-    _stack[0] = s;
-    _stackSize ++;
+    _stack[_stackSize] = s;
+    _stackSize++;
   }// O(n)
 
 
@@ -44,20 +59,11 @@ public class Latkes
   public String pop( )
   {
     if (isEmpty()) return null;
-
-    String s = _stack[0];
-
-    if (_stackSize == 1) {
-      _stack[0] = null;
-      return s;
-    }
-
-    for (int i = 1; i < _stackSize; i ++) {
-      _stack[i-1] = _stack[i];
-    }
-    _stackSize --;
-    return s;
-  }// O(n)
+    String ret = _stack[_stackSize-1];
+    _stack[_stackSize-1] = null;
+    _stackSize--;
+    return ret;
+  }// O(1)
 
 
   //chk for emptiness
@@ -77,9 +83,10 @@ public class Latkes
   //main method for testing
   public static void main( String[] args )
   {
-    
-    Latkes tastyStack = new Latkes(12);
-    
+    ///*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
+
+    Latkes tastyStack = new Latkes(10);
+
     tastyStack.push("aoo");
     tastyStack.push("boo");
     tastyStack.push("coo");
@@ -92,7 +99,7 @@ public class Latkes
     tastyStack.push("joo");
     tastyStack.push("coocoo");
     tastyStack.push("cachoo");
-    
+
     //cachoo
     System.out.println( tastyStack.pop() );
     //coocoo
@@ -117,11 +124,10 @@ public class Latkes
     System.out.println( tastyStack.pop() );
     //aoo
     System.out.println( tastyStack.pop() );
-    
+
     //stack empty by now; SOP(null)
     System.out.println( tastyStack.pop() );
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
-    ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
+      //^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
 
   }//end main()
 
