@@ -75,7 +75,7 @@ public class Latkes
   //chk for fullness
   public boolean isFull()
   {
-    return _stackSize == _stack.length;
+    return _stackSize >= _stack.length;
   }// O(1)
 
 
