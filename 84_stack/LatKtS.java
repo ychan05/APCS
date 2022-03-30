@@ -1,3 +1,17 @@
+// Under Pressure: Julia Kozak, Yat Long Chan, Anjini Katari
+// APCS pd08
+// HW84 -- Stack: What Is It Good For?
+// 2022-03-30
+// time spent: 0.5 hours
+
+/*
+DISCO:
+- open paren is removed from stack only if a matching closing paren is found
+
+QCC:
+- adding a peek() method to Latkes will help avoid having to push popped element back when "peeking"
+- allMatched() can't simply return true after iteration b/c extra parens can be in the stack
+
 /***
  * class LatKtS
  * SKELETON
@@ -19,8 +33,8 @@ public class LatKtS
     for (int i = 0; i < s.length(); i ++) {
       stack.push(s.substring(i, i +1));
     }
-    String ret = "";
-    while (!stack.isEmpty()) {ret += stack.pop();}
+    String ret = stack.pop();
+    while (!stack.isEmpty()) ret += stack.pop();
     return ret;
   }
 
@@ -33,24 +47,29 @@ public class LatKtS
    **/
   public static boolean allMatched( String s )
   {
-    if (s.isEmpty()) return true;
+    if (s.isEmpty()) return true; //no parens, return true
     Latkes stack = new Latkes(s.length());
     for (int i = 0; i < s.length(); i++) {
       String current = s.substring(i, i + 1);
+
       if (current.equals("(") || current.equals("[") || current.equals("{")) {
           stack.push(current);
       } else {
-        if (stack.isEmpty()) return false;
+        if (stack.isEmpty()) return false; //no open parens, return false
+        
+        //"peek"
         String top = stack.pop();
-        stack.push(top); //"peeking"
+        stack.push(top); 
+
+        //if open and closed dont match, return false
         if ( (current.equals(")") && !top.equals("(")) 
-          || (current.equals("]") && !top.equals("[")) 
-          || (current.equals("}") && !top.equals("{"))){
-            return false;
-          } else {stack.pop();}
+            || (current.equals("]") && !top.equals("[")) 
+            || (current.equals("}") && !top.equals("{"))){
+          return false;
+        } else {stack.pop();} //match, remove open paren from stack
       }
   }
-  return stack.isEmpty();
+  return stack.isEmpty(); //if no open parens left, all match
 }
 
 
