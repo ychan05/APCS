@@ -1,7 +1,9 @@
 import java.util.LinkedList;
 
 public class LLStack<PANCAKE> implements Stack<PANCAKE> {
-    private LinkedList<PANCAKE> _stack = new LinkedList<PANCAKE>();
+    private LinkedList<PANCAKE> _stack;
+
+    public LLStack() {_stack = new LinkedList<PANCAKE>();}
 
     public boolean isEmpty() {
         return _stack.size() == 0;

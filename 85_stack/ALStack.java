@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 
 public class ALStack<PANCAKE> implements Stack<PANCAKE>{
-    private ArrayList<PANCAKE> _stack = new ArrayList<PANCAKE>();
+    private ArrayList<PANCAKE> _stack;
+
+    public ALStack() {_stack = new ArrayList<PANCAKE>();}
 
     public boolean isEmpty() {
         return _stack.size() == 0;
