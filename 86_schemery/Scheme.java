@@ -25,7 +25,7 @@ QCC:
  *   3. Repeat 1 and 2 until entire expression is looked through.
  *   5. Simplified expression should be at the top of the stack.
  *
- * STACK OF CHOICE: LLStack by Under Pressure
+ * STACK OF CHOICE: LLStack by Clyde "Thluffy" Sinclair
  * b/c if ALStack reaches max capacity in the array encapsulated in the AL, an O(n) op is required to expand the capacity.
  *     This doesn't happen with LL and adding nodes to head/tail.
  **/
