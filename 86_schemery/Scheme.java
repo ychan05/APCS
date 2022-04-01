@@ -1,16 +1,33 @@
+//Under Pressure: Julia Kozak, Anjini Katari, Yat Long Chan
+//APCS pd08
+//HW86 -- What a Racket
+//2022-04-01
+//time spent: 0.6hrs
+
+/*
+DISCO:
+- Writing the code was super ez once we figured out the algo
+- closed paren should be popped after unloading
+
+QCC:
+- Which Stack implementation would be best?
+*/
+
+
 /***
  * class Scheme
  * Simulates a rudimentary Scheme interpreter
  *
  * ALGORITHM for EVALUATING A SCHEME EXPRESSION:
- *   1. Starting from end of expression. If char is not open paren or operation, add to stack.
+ *   1. Starting from end of expression. If char is not open paren or operation, push to stack.
  *   2. If char is open paren, operate on operands in stack using matching operation until top of stack is a close paren, 
- *      which can be removed. Then add result of operation to stack.
+ *      which is then removed. Push result of operation to stack.
  *   3. Repeat 1 and 2 until entire expression is looked through.
  *   5. Simplified expression should be at the top of the stack.
  *
- * STACK OF CHOICE: ____ by ____
- * b/c ...
+ * STACK OF CHOICE: LLStack by Under Pressure
+ * b/c if ALStack reaches max capacity in the array encapsulated in the AL, an O(n) op is required to expand the capacity.
+ *     This doesn't happen with LL and adding nodes to head/tail.
  **/
 
 public class Scheme
@@ -26,7 +43,7 @@ public class Scheme
    **/
   public static String evaluate( String expr )
   {
-    Stack<String> numbers = new ALStack<String>();
+    Stack<String> numbers = new LLStack<String>();
     String a[] = expr.split("\\s+");
     int op = 0;
 
@@ -62,7 +79,7 @@ public class Scheme
 
       if (op == 1) {res += Integer.parseInt(numbers.pop());}
       else if (op == 2) {res -= Integer.parseInt(numbers.pop());}
-      else if (op == 3) {res *= Integer.parseInt(numbers.pop());}
+      else {res *= Integer.parseInt(numbers.pop());}
     }
     return Integer.toString(res);
   }//end unload()
