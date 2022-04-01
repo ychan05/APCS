@@ -27,7 +27,7 @@ QCC:
  *
  * STACK OF CHOICE: LLStack by Clyde "Thluffy" Sinclair
  * b/c if ALStack reaches max capacity in the array encapsulated in the AL, an O(n) op is required to expand the capacity.
- *     This doesn't happen with LL and adding nodes to head/tail.
+ *     This doesn't happen with LL and adding nodes to head/tail. We are using Thluffy's version to ensure that LLStack is implemented properly.
  **/
 
 public class Scheme
