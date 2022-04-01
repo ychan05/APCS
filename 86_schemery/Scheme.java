@@ -75,8 +75,7 @@ public class Scheme
   {
     Integer res = Integer.parseInt(numbers.pop());
 
-    while (!( (numbers.peekTop()).equals(")") ) ) {
-
+    while ( !numbers.peekTop().equals(")") ) {
       if (op == 1) {res += Integer.parseInt(numbers.pop());}
       else if (op == 2) {res -= Integer.parseInt(numbers.pop());}
       else {res *= Integer.parseInt(numbers.pop());}
