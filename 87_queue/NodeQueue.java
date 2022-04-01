@@ -1,9 +1,9 @@
 public class NodeQueue<T> implements Queue<T> {
-    LLNode<T> _head;
+    Node<T> _head;
     int _size = 0;
 
     public NodeQueue() {
-        _head = new LLNode<T>(null, null);
+        _head = new Node<T>(null, null);
     }
  
     public void enqueue(T x) {
@@ -14,16 +14,16 @@ public class NodeQueue<T> implements Queue<T> {
         }
 
         if (_size == 1) {
-            _head.setNext( new LLNode<T>(x, null) );
+            _head.setNext( new Node<T>(x, null) );
             _size ++;
             return;
         }
 
-        LLNode<T> ptr = _head;
+        Node<T> ptr = _head;
         while (ptr.getNext() != null) {
             ptr = ptr.getNext();
         }
-        ptr.setNext( new LLNode<T>(x, null) );
+        ptr.setNext( new Node<T>(x, null) );
         _size ++;
     }
 

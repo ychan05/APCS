@@ -4,14 +4,14 @@
  * Stores its data as a String
  **/
 
-public class LLNode<T>
+public class Node<T>
 {
   //instance vars
   private T cargo;
-  private LLNode<T> next;
+  private Node<T> next;
 
   // constructor
-  public LLNode( T value, LLNode<T> next )
+  public Node( T value, Node<T> next )
   {
     cargo = value;
     this.next = next;
@@ -24,7 +24,7 @@ public class LLNode<T>
     return cargo;
   }
 
-  public LLNode<T> getNext()
+  public Node<T> getNext()
   {
     return next;
   }
@@ -39,9 +39,9 @@ public class LLNode<T>
     return ret;
   }
 
-  public LLNode<T> setNext( LLNode<T> newNext )
+  public Node<T> setNext( Node<T> newNext )
   {
-    LLNode<T> ret = next;
+    Node<T> ret = next;
     this.next = newNext;
     return ret;
   }
