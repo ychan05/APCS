@@ -1,5 +1,20 @@
+//Under Pressure: Julia Kozak, Anjini Katari, Yat Long Chan
+//APCS pd08
+//HW87 -- The English Do Not Wait In Line for Soup
+//2022-04-04
+//time spent: 0.4 hours
+
+/*
+DISCO:
+- Using an inner class means we can directly access cargo and next
+- When enqueue-ing an empty Queue, we have to account for _head pointing to null from previous dequeue
+
+QCC:
+none
+*/
+
 public class NodeQueue<T> implements Queue<T> {
-    
+
     // inner class Node()
     private class Node {
         private T cargo;
@@ -12,31 +27,30 @@ public class NodeQueue<T> implements Queue<T> {
     } // End inner class Node()
 
     private Node _head;
-    private int _size = 0;
+    private int _size;
 
     public NodeQueue() {
         _head = new Node(null, null);
+        _size = 0;
     }
 
     // add element
     public void enqueue(T x) {
-        if (isEmpty()) {
-            _head.cargo = (x);
-            _size++;
-            return;
+        if (_head == null) {
+            _head = new Node(x, null);
         }
-
-        if (_size == 1) {
+        else if (isEmpty()) {
+            _head.cargo = x;
+        }
+        else if (_size == 1) {
             _head.next = new Node(x, null);
-            _size++;
-            return;
         }
-
-        Node ptr = _head;
-        while (ptr.next != null) {
-            ptr = ptr.next;
+        else {
+            Node ptr = _head;
+            while (ptr.next != null)
+                ptr = ptr.next;
+            ptr.next = new Node(x, null);
         }
-        ptr.next = new Node(x, null);
         _size++;
     }
 
@@ -62,7 +76,6 @@ public class NodeQueue<T> implements Queue<T> {
         return _head.cargo;
     }
 
-
     public static void main(String[] args) {
         Queue<Object> q = new NodeQueue<Object>();
         q.enqueue(1);
@@ -77,5 +90,8 @@ public class NodeQueue<T> implements Queue<T> {
 
         q.dequeue();
         System.out.println(q.peekFront());
+        q.enqueue(2);
+        System.out.println(q.peekFront());
+
     }
 }
