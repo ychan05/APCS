@@ -1,3 +1,9 @@
+//Clyde Sinclair
+//APCS pd0
+//HW75 -- Node for a linked list
+//2022-03-11f
+//time spent: _h
+
 /***
  * class LLNode
  * Implements a node, for use in lists and other container classes.
@@ -7,26 +13,26 @@
 public class LLNode<T>
 {
   //instance vars
-  private T cargo;
-  private LLNode<T> next;
+  private T _cargo;
+  private LLNode<T> _nextNode;
 
   // constructor
   public LLNode( T value, LLNode<T> next )
   {
-    cargo = value;
-    this.next = next;
+    _cargo = value;
+    _nextNode = next;
   }
 
 
   //--------------v  ACCESSORS  v--------------
   public T getCargo()
   {
-    return cargo;
+    return _cargo;
   }
 
   public LLNode<T> getNext()
   {
-    return next;
+    return _nextNode;
   }
   //--------------^  ACCESSORS  ^--------------
 
@@ -34,20 +40,22 @@ public class LLNode<T>
   //--------------v  MUTATORS  v--------------
   public T setCargo( T newCargo )
   {
-    T ret = cargo;
-    this.cargo = newCargo;
-    return ret;
+    T foo = getCargo();
+    _cargo = newCargo;
+    return foo;
   }
 
   public LLNode<T> setNext( LLNode<T> newNext )
   {
-    LLNode<T> ret = next;
-    this.next = newNext;
-    return ret;
+    LLNode<T> foo = getNext();
+    _nextNode = newNext;
+    return foo;
   }
   //--------------^  MUTATORS  ^--------------
 
 
+  // override inherited toString
+  public String toString() { return _cargo.toString(); }
 
 
   //main method for testing
@@ -67,26 +75,22 @@ public class LLNode<T>
 
     /* A naive list traversal, has side effects.... ??
        while( first != null ) {
-       System.out.print( first );
-       first = first.getNext();
+         System.out.println( first );
+         first = first.getNext();
        }
-       */
-    //System.out.println(first.getNext());
-
+    */
 
     //Q: when head ptr moves to next node in list, what happens to the node it just left?
-    // That node becomes null (first gets set to null and you can no longer reference it)
+    //A: garbage collector reclaims that memory
 
-    //...so better: ?
-    // create a new reference
-    LLNode current = first;
-    while (current != null) {
-      System.out.println( current );
-      current = current.getNext();
-    }
-    System.out.println(first);
-    System.out.println(first.getNext());
-    System.out.println(first.getNext().getNext());
+    //  so, better: (w/o moving first)
+    /*
+      LLNode temp = first;
+      while( temp != null ) {
+        System.out.println( temp );
+        temp = temp.getNext();
+      }
+    */
 
   }//end main
 
