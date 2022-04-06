@@ -2,18 +2,33 @@ Team Phonebooth :: Yat Long Chan, Weichen Liu, Kevin Cheng
 APCS
 LAB08 -- America's Next Top Data Scientist
 2022-04-05
-time spent: <elapsed time in hours, rounded to nearest tenth>
+time spent: 1 hour
 
 
 DISCO
+Use -d to place class files in specific directory
 
 
 QCC
+Why does compiling Welcome03_List not work from upper level of tree?
 
 
-<TNPG>'s CSV FLOW:
-<insert your description of your tools and workflow in creating, editing CSV files>
+Activity 1
 
+Activity 2
 
-TRUBZ
-<this lab involves using tools that are likely to introduce hiccups; log any troubleshooting issues here>
+Activity 3
+
+1. Atlanta, Hartsfield Intl Airport. 57.0 F
+
+2. PADK. Adak Island, ADak Airport, Alaska, 33.0 F
+
+4. 3 Objects
+
+5. longitude
+
+6. Pago Pago, AS, Samoa
+
+7. sort weather stations by temp
+
+8. another inst var in WeatherStations and another loop in Welcome03_List.
