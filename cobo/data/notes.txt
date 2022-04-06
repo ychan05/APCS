@@ -1,4 +1,4 @@
-Team Phantom Tollbooth :: Yat Long Chan, Weichen Liu, Kevin Cheng
+Team Phonebooth :: Yat Long Chan, Weichen Liu, Kevin Cheng
 APCS
 LAB08 -- America's Next Top Data Scientist
 2022-04-05
