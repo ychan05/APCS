@@ -21,6 +21,10 @@ public class WeatherStation {
    public String getId() { 
       return id;
    }
+
+   public double getLat() {
+      return lat;
+   }
    
    /* Produce the name of this station */
    public String getName() { 

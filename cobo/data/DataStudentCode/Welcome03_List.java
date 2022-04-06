@@ -23,5 +23,12 @@ public class Welcome03_List {
             System.out.println("  " + ws.getId() + ": " + ws.getName());
          }
       }
+
+      double lat = allstns.get(0).getLat();
+      for (WeatherStation w : allstns) {
+         if (w.getLat() < lat) {
+            lat = 
+         }
+      }
    }
 }
