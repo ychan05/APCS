@@ -6,24 +6,21 @@
 
 /*
 DISCO
-- Implementations for both AL and LLQ are the same but time complexities are different
+- Implementations for both AL and LLQ are the same but time complexities are different.
 
 QCC
 - Would it be better to make the var type LinkedList so that we can use addLast and removeFirst? 
+- Is it fine to throw the IndexOutOfBoundsException of the List when dequeue() is run on an empty queue?
 */
 
-import java.util.List;
-import java.util.LinkedList;
+import java.util.*;
 
 public class LLQueue<T> implements Queue<T> {
+
     List<T> _queue;
 
     public LLQueue() {
         _queue = new LinkedList<T>();
-    }
-
-    public boolean isEmpty() {
-        return _queue.isEmpty();
     }
 
     public void enqueue(T x) {
@@ -31,9 +28,11 @@ public class LLQueue<T> implements Queue<T> {
     }
 
     public T dequeue() {
-        T retVal = _queue.get(0);
-        _queue.remove(0);
-        return retVal;
+        return _queue.remove(0);
+    }
+
+    public boolean isEmpty() {
+        return _queue.size() == 0;
     }
 
     public T peekFront() {
@@ -41,17 +40,29 @@ public class LLQueue<T> implements Queue<T> {
     }
 
     public static void main(String[] args) {
-        Queue q = new LLQueue();
-        
-        q.enqueue(1);
-        q.enqueue("f");
-        q.enqueue(2.3);        
-        q.enqueue(false);
-        System.out.println(q.peekFront());
-        
-        while (!q.isEmpty()) {
-            System.out.println(q.dequeue());
-        }      
+        System.out.println("~~~~~~~~~~ Testing que ~~~~~~~~~~");
+        Queue<Integer> que = new LLQueue<Integer>();
+        que.enqueue(35);
+        que.enqueue(70);
+        que.enqueue(105);
+        que.enqueue(140);
+        que.enqueue(175);
+        que.enqueue(210);
+        System.out.println(que.peekFront());
+        while (!que.isEmpty()) {
+            System.out.println(que.dequeue());
+        }
 
+        System.out.println("~~~~~~~~~~ Testing cue ~~~~~~~~~~");
+        Queue cue = new LLQueue();
+        cue.enqueue(1);
+        cue.enqueue(true);
+        cue.enqueue("three");
+        cue.enqueue(4.0);
+
+        System.out.println(cue.peekFront());
+        while(!cue.isEmpty()) {
+            System.out.println(cue.dequeue());
+        }
     }
 }
