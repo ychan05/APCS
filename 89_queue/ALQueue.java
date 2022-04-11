@@ -1,11 +1,24 @@
+//Under Pressure: Julia Kozak, Yat Long Chan, Anjini Katari
+//APCS pd08
+//HW89 -- Queue Two Ways
+//2022-04-11M
+//time spent: 0.4 hours
+
+/*
+DISCO
+- Implementations for both AL and LLQ are the same but time complexities are different
+
+QCC
+- Would it be better to make the var type LinkedList so that we can use addLast and removeFirst? 
+*/
+
 import java.util.List;
 import java.util.ArrayList;
 
-public class ALQ<T> implements Queue<T> {
-    
+public class ALQueue<T> implements Queue<T> {
     List<T> _queue;
 
-    public ALQ() {
+    public ALQueue() {
         _queue = new ArrayList<T>();
     }
 
@@ -28,13 +41,14 @@ public class ALQ<T> implements Queue<T> {
     }
 
     public static void main(String[] args) {
-        Queue q = new ALQ();
+        Queue q = new ALQueue();
         
         q.enqueue(1);
         q.enqueue("f");
         q.enqueue(2.3);        
         q.enqueue(false);
-        q.peekFront();
+        System.out.println(q.peekFront());
+
         while (!q.isEmpty()) {
             System.out.println(q.dequeue());
         }        
