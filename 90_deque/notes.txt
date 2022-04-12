@@ -6,7 +6,7 @@ time spent: 0.4 hours
 
 
 DISCO
-- LinkedList has all the same methods needed for a deque.
+- LinkedList has most of the methods needed for a deque.
 
 QCC
 - Are we supposed to make the class using nodes or can we just make a wrapper class?
