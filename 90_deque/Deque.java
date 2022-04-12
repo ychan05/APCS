@@ -16,9 +16,9 @@ public interface Deque<T> {
 
     public void addLast(T x);
 
-    public T removeFirst(T x);
+    public T removeFirst();
 
-    public T removeLast(T x);
+    public T removeLast();
 
     public T peek();
 

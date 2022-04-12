@@ -7,10 +7,10 @@
 
 import java.util.LinkedList;
 
-public class YourImplementationOfDeque<T> implements Deque<T> {
+public class LLDeque<T> implements Deque<T> {
     private LinkedList<T> _dequeue;
 
-    public YourImplementationOfDeque() {
+    public LLDeque() {
         _dequeue = new LinkedList<T>();
     }
 
@@ -34,11 +34,11 @@ public class YourImplementationOfDeque<T> implements Deque<T> {
         _dequeue.addLast(x);        
     }
 
-    public T removeFirst(T x) {
+    public T removeFirst() {
         return _dequeue.removeFirst();
     }
     
-    public T removeLast(T x) {
+    public T removeLast() {
         return _dequeue.removeLast();
     }
 
@@ -56,5 +56,23 @@ public class YourImplementationOfDeque<T> implements Deque<T> {
 
     public int size() {
         return _dequeue.size();
+    }
+
+    public static void main(String[] args) {
+        Deque dq = new LLDeque();
+        dq.add("x");
+        dq.addFirst(1);
+        dq.addLast(2.3);
+        System.out.println(dq.peekFirst()); // 1
+        System.out.println(dq.peek()); // 1
+        System.out.println(dq.peekLast()); // 2.3
+        System.out.println(dq.removeLast()); // 2.3
+
+        while (!dq.isEmpty()) {
+            System.out.println(dq.removeFirst()); // 1 x 
+        }
+
+        // System.out.println(dq.remove()); //exception
+
     }
 }
