@@ -1,4 +1,6 @@
-IMPLEMENTATION PRIORITY:
+# Under Pressure: Anjini Katari, Julia Kozak, Yat Long Chan 
+
+## METHOD IMPLEMENTATION PRIORITY:
 
 1. peekFirst()
 2. peekLast()
@@ -10,3 +12,4 @@ IMPLEMENTATION PRIORITY:
 8. peek()
 9. remove()
 10. add() 
+11. size()
