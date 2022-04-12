@@ -1,3 +1,9 @@
+//Under Pressure: Julia Kozak, Yat Long Chan, Anjini Katari
+//APCS pd08
+//HW89 -- Queue Two Ways
+//2022-04-11M
+//time spent: 0.4 hours
+
 /***
  * interface Queue
  * Includes only methods listed in AP subset of Java
