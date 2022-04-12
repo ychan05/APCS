@@ -23,7 +23,7 @@ public class LLDeque<T> implements Deque<T> {
     }
 
     public boolean isEmpty() {
-        return _dequeue.isEmpty();
+        return _dequeue.size() <= 0;
     }
 
     public void addFirst(T x) {
