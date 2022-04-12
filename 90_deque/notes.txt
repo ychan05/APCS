@@ -1,0 +1,12 @@
+Under Pressure: Julia Kozak, Yat Long Chan, Anjini Katari
+APCS pd08
+HW90 - Swabbing the Deque
+2022-04-11M
+time spent: 0.4 hours
+
+
+DISCO
+- LinkedList has all the same methods needed for a deque.
+
+QCC
+- Are we supposed to make the class using nodes or can we just make a wrapper class?
