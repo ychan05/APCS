@@ -1,7 +1,7 @@
 //Under Pressure: Julia Kozak, Yat Long Chan, Anjini Katari
 //APCS pd08
 //HW90 - Swabbing the Deque
-//2022-04-11M
+//2022-04-12T
 //time spent: 0.4 hours
 
 public interface Deque<T> {
