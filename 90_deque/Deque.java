@@ -3,8 +3,9 @@
 //HW90 - Swabbing the Deque
 //2022-04-12T
 //time spent: 0.4 hours
+import java.util.Iterator;
 
-public interface Deque<T> {
+public interface Deque<T> extends Iterable<T> {
     
     public T peekFirst();
 
@@ -23,6 +24,8 @@ public interface Deque<T> {
     public T peek();
 
     public T remove();
+
+    public Iterator<T> iterator();
 
     public boolean add(T x);
 
