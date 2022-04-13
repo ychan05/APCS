@@ -6,73 +6,62 @@
 
 
 import java.util.LinkedList;
+import java.util.Iterator;
 
 public class LLDeque<T> implements Deque<T> {
-    private LinkedList<T> _dequeue;
+    private LinkedList<T> _deque;
+
+
 
     public LLDeque() {
-        _dequeue = new LinkedList<T>();
+        _deque = new LinkedList<T>();
     }
 
     public T peekFirst() {
-        return _dequeue.peekFirst();
+        return _deque.peekFirst();
     }
 
     public T peekLast() {
-        return _dequeue.peekLast();
+        return _deque.peekLast();
     }
 
     public boolean isEmpty() {
-        return _dequeue.size() <= 0;
+        return _deque.size() <= 0;
     }
 
     public void addFirst(T x) {
-        _dequeue.addFirst(x);
+        _deque.addFirst(x);
     }
 
     public void addLast(T x) {
-        _dequeue.addLast(x);        
+        _deque.addLast(x);        
     }
 
     public T removeFirst() {
-        return _dequeue.removeFirst();
+        return _deque.removeFirst();
     }
     
     public T removeLast() {
-        return _dequeue.removeLast();
+        return _deque.removeLast();
     }
 
     public T peek() {
-        return _dequeue.peek();        
+        return _deque.peek();        
     }
 
     public boolean add(T x) {
-        return _dequeue.add(x);
+        return _deque.add(x);
     }
 
     public T remove() {
-        return _dequeue.remove();
+        return _deque.remove();
+    }
+
+    public Iterator<T> iterator() {
+        return _deque.iterator();
     }
 
     public int size() {
-        return _dequeue.size();
-    }
-
-    public static void main(String[] args) {
-        Deque dq = new LLDeque();
-        dq.add("x");
-        dq.addFirst(1);
-        dq.addLast(2.3);
-        System.out.println(dq.peekFirst()); // 1
-        System.out.println(dq.peek()); // 1
-        System.out.println(dq.peekLast()); // 2.3
-        System.out.println(dq.removeLast()); // 2.3
-
-        while (!dq.isEmpty()) {
-            System.out.println(dq.removeFirst()); // 1 x 
-        }
-
-        // System.out.println(dq.remove()); //exception
-
+        return _deque.size();
     }
 }
