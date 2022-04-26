@@ -18,11 +18,13 @@ public class LLDeque<T> implements Deque<T> {
     }
 
     public T peekFirst() {
-        return _deque.peekFirst();
+        if (isEmpty()) return null;
+        return _deque.getFirst();
     }
 
     public T peekLast() {
-        return _deque.peekLast();
+        if (isEmpty()) return null;
+        return _deque.getLast();
     }
 
     public boolean isEmpty() {
@@ -46,7 +48,8 @@ public class LLDeque<T> implements Deque<T> {
     }
 
     public T peek() {
-        return _deque.peek();        
+        if (isEmpty()) return null;
+        return _deque.getFirst();        
     }
 
     public boolean add(T x) {
