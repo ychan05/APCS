@@ -1,3 +1,15 @@
+Yatlongstan :: Yat Long, Gabriel, Weichen 
+APCS
+Lab09 -- Some Folks Call It A Charades
+2022-04-26
+time spent: 1.5 hours
+
+DISCO
+- JFrames have to be setVisible
+
+QCC
+- We should have read the Oracle doucmentation more carefully.
+
 ACTIVITY 1
 
 1. We would include a "Game" class, which will store the current game information,
@@ -78,4 +90,15 @@ ACTIVITY 4
 1. 
    Class Name: sportsCeleb
 
-   Atributes: String name, 
+   Atributes: String name, String clues, List clueList
+
+   Behaviors: split clues into individual clues. Void return type.
+              get a clue from list. Return String.
+
+17. @Override
+
+18. We can use the super keyword
+
+19. extends
+
+20. subclass constructor

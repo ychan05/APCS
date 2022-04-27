@@ -1,3 +1,4 @@
+// Yatlongstan :: Yat Long, Gabriel, Weichen 
 
 /**
  * Celebrity base class for the Celebrity game.
@@ -9,12 +10,12 @@ public class Celebrity
 	/**
 	 * The clue to determine the celebrity
 	 */
-	String _clue;
+	protected String _clue;
 
 	/**
 	 * The answer or name of the celebrity.
 	 */
-	String _answer;
+	protected String _answer;
 
 	/**
 	 * Creates a Celebrity instance with the supplied answer and clue

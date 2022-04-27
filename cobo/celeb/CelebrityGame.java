@@ -1,3 +1,4 @@
+// Yatlongstan :: Yat Long, Gabriel, Weichen 
 
 import java.util.ArrayList;
 
@@ -54,7 +55,7 @@ public class CelebrityGame
 	{
 		guess = guess.trim();
 		if (guess.equalsIgnoreCase(gameCelebrity.getAnswer())) {
-			celebGameList.remove(0);
+			if (celebGameList.size() > 0) celebGameList.remove(0);
 			return true;
 		}
 		return false;
@@ -84,6 +85,12 @@ public class CelebrityGame
 	public void addCelebrity(String name, String guess, String type)
 	{
 		if (validateCelebrity(name) && validateClue(guess, type)) {
+			if (type.trim().equalsIgnoreCase("literature")) {
+				celebGameList.add(new LiteratureCelebrity(name, guess));
+			} 
+			else if (type.trim().equalsIgnoreCase("sports")) {
+				celebGameList.add(new SportsCelebrity(name, guess));
+			} 
 		celebGameList.add(new Celebrity(name, guess));
 		}
 	}
@@ -109,6 +116,16 @@ public class CelebrityGame
 	public boolean validateClue(String clue, String type)
 	{
 		clue = clue.trim();
+		if (type.trim().equalsIgnoreCase("literature") || type.trim().equalsIgnoreCase("sports")) {
+				String[] temp = clue.split(",");
+				if (temp.length > 1) {
+					return true;
+				} 
+				else {
+					return false;
+				}
+			} 
+
 		return clue.length() >= 10;
 	}
 

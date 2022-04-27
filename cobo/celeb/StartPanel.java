@@ -1,3 +1,5 @@
+// Yatlongstan :: Yat Long, Gabriel, Weichen 
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -47,6 +49,7 @@ public class StartPanel extends JPanel
   /**
    * Customize the JRadioButton for the class created sub class
    */
+  private JRadioButton sportsRadio;
   
   /**
    * Label to guide the user to what should be inputted.
@@ -91,7 +94,7 @@ public class StartPanel extends JPanel
   /**
    * String to populate the clueLabel if Class Generated Celebrity is picked.
    */
-  
+  private String sportsClue;
   
   /**
    * String used for static text in label.
@@ -119,6 +122,8 @@ public class StartPanel extends JPanel
     this.typeGroup = new ButtonGroup();
     this.celebrityRadio = new JRadioButton("Celebrity");
     this.literatureRadio = new JRadioButton("Literature Celebrity");
+    this.sportsRadio = new JRadioButton("Sports Celebrity");
+    this.sportsClue= "Enter the clue for the sports celeb separated by commas";
     this.celebrityClue = "Enter the clue for the celebrity";
     this.literatureClue = "Enter the clues for the literature celeb separated by commas";
     this.clueLabel = new JLabel(celebrityClue);
@@ -156,6 +161,8 @@ public class StartPanel extends JPanel
     if (literatureRadio.isSelected())
     {
       validClue = controller.validateClue(clueText, "Literature");
+    } else if (sportsRadio.isSelected()) {
+      validClue = controller.validateClue(clueText, "sports");
     }
     else
     {
@@ -180,6 +187,7 @@ public class StartPanel extends JPanel
     this.add(clueLabel);
     this.add(celebrityRadio);
     this.add(literatureRadio);
+    this.add(sportsRadio);
     this.add(answerField);
     this.add(clueField);
     this.add(startButton);
@@ -191,6 +199,7 @@ public class StartPanel extends JPanel
     startButton.setEnabled(true);
     typeGroup.add(celebrityRadio);
     typeGroup.add(literatureRadio);
+    typeGroup.add(sportsRadio);
     
 
 
@@ -216,18 +225,18 @@ public class StartPanel extends JPanel
     
     //Put your custom radio button info here
     
-    panelLayout.putConstraint(SpringLayout.NORTH, literatureRadio, 10, SpringLayout.SOUTH, celebrityRadio);
-    panelLayout.putConstraint(SpringLayout.WEST, literatureRadio, 0, SpringLayout.WEST, celebrityRadio);
+    panelLayout.putConstraint(SpringLayout.NORTH, literatureRadio, 10, SpringLayout.SOUTH, sportsRadio);
+    panelLayout.putConstraint(SpringLayout.WEST, literatureRadio, 0, SpringLayout.WEST, sportsRadio);
     
     panelLayout.putConstraint(SpringLayout.NORTH, clueLabel, 10, SpringLayout.SOUTH, answerField);
     panelLayout.putConstraint(SpringLayout.NORTH, answerField, 40, SpringLayout.SOUTH, literatureRadio);
-    panelLayout.putConstraint(SpringLayout.WEST, answerField, 0, SpringLayout.WEST, celebrityRadio);
+    panelLayout.putConstraint(SpringLayout.WEST, answerField, 0, SpringLayout.WEST, sportsRadio);
     panelLayout.putConstraint(SpringLayout.EAST, answerField, -15, SpringLayout.EAST, this);
     
-    panelLayout.putConstraint(SpringLayout.WEST, clueField, 0, SpringLayout.WEST, celebrityRadio);
+    panelLayout.putConstraint(SpringLayout.WEST, clueField, 0, SpringLayout.WEST, sportsRadio);
     panelLayout.putConstraint(SpringLayout.SOUTH, clueField, 55, SpringLayout.SOUTH, answerField);
     panelLayout.putConstraint(SpringLayout.EAST, clueField, 0, SpringLayout.EAST, answerField);
-    panelLayout.putConstraint(SpringLayout.WEST, startButton, 0, SpringLayout.WEST, celebrityRadio);
+    panelLayout.putConstraint(SpringLayout.WEST, startButton, 0, SpringLayout.WEST, sportsRadio);
     panelLayout.putConstraint(SpringLayout.EAST, startButton, 0, SpringLayout.EAST, answerField);
     
   }
@@ -275,6 +284,8 @@ public class StartPanel extends JPanel
      */
     literatureRadio.addActionListener(select -> clueLabel.setText(literatureClue));
     celebrityRadio.addActionListener(select -> clueLabel.setText(celebrityClue));
+    sportsRadio.addActionListener(select -> clueLabel.setText(sportsClue));
+
     
   }
   
@@ -292,6 +303,8 @@ public class StartPanel extends JPanel
     if (literatureRadio.isSelected())
     {
       type = "Literature";
+    } else if (sportsRadio.isSelected()) {
+      type = "sports";
     }
     String answer = answerField.getText().trim();
     String clue = clueField.getText().trim();
