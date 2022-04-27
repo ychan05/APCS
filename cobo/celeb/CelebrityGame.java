@@ -52,6 +52,11 @@ public class CelebrityGame
 	 */
 	public boolean processGuess(String guess)
 	{
+		guess = guess.trim();
+		if (guess.equalsIgnoreCase(gameCelebrity.getAnswer())) {
+			celebGameList.remove(0);
+			return true;
+		}
 		return false;
 	}
 
@@ -62,7 +67,8 @@ public class CelebrityGame
 	 */
 	public void play()
 	{
-		
+		gameCelebrity = celebGameList.get(0);
+		gameWindow.replaceScreen("GAME");
 	}
 
 	/**
@@ -113,7 +119,7 @@ public class CelebrityGame
 	 */
 	public int getCelebrityGameSize()
 	{
-		return 0;
+		return celebGameList.size();
 	}
 
 	/**
@@ -124,7 +130,7 @@ public class CelebrityGame
 	 */
 	public String sendClue()
 	{
-		return null;
+		return gameCelebrity.getClue();
 	}
 
 	/**
@@ -135,6 +141,6 @@ public class CelebrityGame
 	 */
 	public String sendAnswer()
 	{
-		return null;
+		return gameCelebrity.getAnswer();
 	}
 }

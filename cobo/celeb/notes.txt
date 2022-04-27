@@ -67,3 +67,15 @@ ACTIVITY 3
 
 3. It's visibility should also be private, because it will be accessed via accessor methods
 
+12. celebrityGame
+
+13. nothing
+
+
+
+ACTIVITY 4 
+
+1. 
+   Class Name: sportsCeleb
+
+   Atributes: String name, 

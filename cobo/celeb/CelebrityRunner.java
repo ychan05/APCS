@@ -12,7 +12,7 @@ public class CelebrityRunner
 	 */
 	public static void main(String [] args)
 	{
-		CelebrityGame foo = new CelebrityGame();  
+		CelebrityGame app = new CelebrityGame();  
 
 	}
 }
