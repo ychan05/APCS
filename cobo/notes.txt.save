@@ -1,0 +1,17 @@
+1. We would include a "Game" class, which will store the current game information,
+   and a "Celebrity" class, which will store the name and information for a celebrity
+
+2. The list of celebrities, a score, and the chosen celebrity that you have to guess
+
+3. initialize() -- initialize the game
+   scorePoint() -- increment score by one
+   discard()    -- take the top celebrity off the deck
+
+4. We will make the behaviors from question 3 into methods
+
+5. ALGO:
+   1. Do the following until the list of celebrities is empty:
+       i. Take a random celebrity from the list (don't replace)
+      ii. Set guess count to 0
+     iii. Do the following until guess count = 5, or isCorrect() yields true
+           i. 

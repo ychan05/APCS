@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 
 /**
@@ -17,7 +16,7 @@ public class CelebrityGame
 	/**
 	 * The GUI frame for the Celebrity game.
 	 */
-	CelebrityFrame gameWindow;
+        public CelebrityFrame gameWindow;
 
 	/**
 	 * The ArrayList of Celebrity values that make up the game
@@ -29,8 +28,8 @@ public class CelebrityGame
 	 */
 	public CelebrityGame()
 	{
-	   celebGameList = new ArrayList<Celebrity>();
-		gameWindow = new CelebrityFrame(this);
+	  this.prepareGame();
+	  this.play();
 	}
 
 	/**
@@ -39,7 +38,11 @@ public class CelebrityGame
 	public void prepareGame()
 	{
           celebGameList = new ArrayList<Celebrity>();
+          gameWindow = new CelebrityFrame(this);
           gameWindow.replaceScreen("START");
+          for (int i = 0; i < 20; i++) {
+            this.addCelebrity("Aphex Twin", "electronic artist", "");
+          }
 	}
 
 	/**
@@ -62,7 +65,13 @@ public class CelebrityGame
 	 */
 	public void play()
 	{
-		
+		if (celebGameList != null && celebGameList.size() > 0)
+		{
+                        System.out.println("Should show GUI!");
+			this.gameCelebrity = celebGameList.get(0);
+			gameWindow.setVisible(true);
+			gameWindow.replaceScreen("GAME");
+		}
 	}
 
 	/**
@@ -77,9 +86,7 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-		if (validateCelebrity(name) && validateClue(guess, type)) {
 		celebGameList.add(new Celebrity(name, guess));
-		}
 	}
 
 	/**
@@ -89,7 +96,6 @@ public class CelebrityGame
 	 */
 	public boolean validateCelebrity(String name)
 	{
-		name = name.trim();
 		return name.length() >= 4;
 	}
 
@@ -102,7 +108,6 @@ public class CelebrityGame
 	 */
 	public boolean validateClue(String clue, String type)
 	{
-		clue = clue.trim();
 		return clue.length() >= 10;
 	}
 

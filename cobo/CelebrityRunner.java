@@ -1,4 +1,3 @@
-
 /**
  * Starts the Celebrity Game application
  * @author cody.henrichsen
@@ -13,6 +12,5 @@ public class CelebrityRunner
 	public static void main(String [] args)
 	{
 		CelebrityGame foo = new CelebrityGame();  
-
 	}
 }
