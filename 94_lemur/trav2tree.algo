@@ -8,6 +8,12 @@ time spent: 0.5 hrs
 DISCO
 ------------------------------------------------
 * You should Partition the given traversals into right and left subtrees. 
+* For any given node, pre-order traversal accesses the root node first, then
+  the left branch, then the right branch
+* For any given node, post-order traversal accesses the left branch first,
+  then the right branch, then the root node
+* For any given node, in-order traversal accesses the left branch first,     
+  then the root node, the the right branch
 ================================================
 
 
