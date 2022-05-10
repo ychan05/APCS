@@ -10,7 +10,6 @@ DISCO
 
 QCC
 - Would the time complexity of the insert method be O( log(n) )?
-- What should the value of the root be during construction?
 - Does L refer to the count of levels or the level index of a specific layer?
 
 L = level, d = depth, h = height

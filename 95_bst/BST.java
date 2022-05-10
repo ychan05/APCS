@@ -1,4 +1,8 @@
-
+//Yatlongstan :: Gabriel, Yat Long, Weichen 
+//APCS 
+//HW95 -- Algorithm as Data Structure 
+//2022-05-09m 
+//time spent: 0.8 hrs
 
 /**
  * class BST
@@ -26,7 +30,7 @@ public class BST
    */
   BST()
   {
-    _root = new TreeNode(0);
+    _root = null;
   }
 
 
@@ -37,6 +41,10 @@ public class BST
   public void insert( int newVal )
   {
     TreeNode newNode = new TreeNode( newVal );
+    if (_root == null) {
+      _root = newNode;
+      return;
+    }
     insert(_root, newNode);
   }
   //recursive helper for insert(int)
