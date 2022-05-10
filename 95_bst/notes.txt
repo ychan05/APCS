@@ -1,0 +1,20 @@
+Yatlongstan :: Gabriel, Yat Long, Weichen 
+APCS 
+HW95 -- Algorithm as Data Structure 
+2022-05-09m 
+time spent: 0.8 hrs
+
+DISCO
+- If a node we are trying to insert is already in the tree, we don't add it.
+- The different methods of traversal are the same 3 steps rearranged in different orders.
+
+QCC
+- Would the time complexity of the insert method be O( log(n) )?
+- What should the value of the root be during construction?
+- Does L refer to the count of levels or the level index of a specific layer?
+
+L = level, d = depth, h = height
+
+1. a perfect binary tree has 2^L - 1 nodes
+2. at each level, a perfect binary tree has 2^d nodes
+3. height of a complete binary tree w/ n nodes is Ceiling( log_2(n + 1) ) - 1
