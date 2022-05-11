@@ -1,0 +1,22 @@
+Team Yatlongstan (Yat Long Chan, Weichen Liu, Gabriel Thompson)
+APCS
+HW96 -- BSTs is the Perfect Place for Shade
+2022-05-10
+time spent: 
+
+DISCO:
+ - All the recursive methods we wrote ended up requiring helper methods which were not
+   included in the skeleton
+ - All of the methods we wrote involve only three different parts of the tree: the
+   current node, the left branch, and the right branch
+ - All of the methods we wrote followed a similar format -- having a recursive case
+   and a base case, both of which could be expressed concisely. Also, all three
+   methods had a "null" base case, but the way we wrote numLeavesHelper() included
+   a secondary base case for leaf nodes
+
+QCC:
+ - What other methods would be appropriate to add to binary search trees?
+ - Can the methods that we wrote be expressed through code that runs iteratively
+   rather than recursively?
+ - For numLeavesHelper(), is it possible to write the function with only one base case
+   instead of two base cases (one handling null cases and one handling leaf nodes)?
