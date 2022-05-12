@@ -1,0 +1,20 @@
+Team Yatlongstan (Yat Long Chan, Weichen Liu, Gabriel Thompson)
+APCS
+HW97 -- Prune Your Tree
+2022-05-11
+time spent: 1.3hrs
+
+DISCO:
+ - There's four cases for removing a node:
+    -> The node we're trying to remove has BOTH a left AND right connection
+    -> The node we're trying to remove has ONLY a left connection
+    -> The node we're trying to remove has ONLY a right connection
+    -> The node we're trying to remove has NO connections (it's alif node)
+ - Inside of each of the four cases, we have to account for if the current
+   node is a root, and if the current node is to the left or right of parent
+ - Nodes can be removed iteratively, rather than recursively (as the other
+   methods we've written for BSTs have been)
+
+QCC:
+ - Can we make our remove() function have less repetitive code?
+ - What's the time complexity of the remove() function?
