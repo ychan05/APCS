@@ -1,0 +1,12 @@
+Under Pressure: Julia Kozak, Anjini Katari, Yat Long Chan
+APCS pd08
+HW82 -- Roll Your Own Iterator
+2022-03-25
+time spent: 0.5 hours
+
+DISCO
+- next() returns previous node and not current
+
+
+QCC
+- none

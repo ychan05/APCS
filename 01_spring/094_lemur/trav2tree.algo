@@ -1,0 +1,91 @@
+Yatlongstan :: Gabriel, Yat Long, Weichen 
+APCS pd08
+HW94 -- reverse engineering
+2022-05-06f
+time spent: 0.5 hrs
+
+
+DISCO
+------------------------------------------------
+* You should Partition the given traversals into right and left subtrees. 
+* For any given node, pre-order traversal accesses the root node first, then
+  the left branch, then the right branch
+* For any given node, post-order traversal accesses the left branch first,
+  then the right branch, then the root node
+* For any given node, in-order traversal accesses the left branch first,     
+  then the root node, the the right branch
+================================================
+
+
+QCC
+------------------------------------------------
+* What is the most efficient way to create a tree given PRE and POST order traversals?
+================================================
+
+
+HOW KEEN ARE YOUR POWERS OF OBSERVATION?
+------------------------------------------------
+Q: For a given binary tree, how many unique pre-order traversals are there?
+A: One
+
+Q: For a given binary tree, how many unique in-order traversals are there?
+A: One
+
+Q: For a given binary tree, how many unique post-order traversals are there?
+A: One
+
+Q: For a given traversal, how many unique trees could have produced it?
+A: 2^(n-1). Other than the root, there are 2 ways to arrange each node  
+
+Q: Given a pre-order traversal, what can you infer about its tree?
+A: First node is root
+
+Q: Given a post-order traversal, what can you infer about its tree?
+A: Last node is root
+
+Q: What does "1-to-1" mean?
+A: Elements in one set are paired with ONLY one element in another.
+
+Q: What does "onto" mean?
+A: Every element in 2 different sets are used. 
+
+================================================
+
+
+ALGO for POST-ORDER + In-ORDER
+------------------------------------------------
+givens: the traversals of both on same tree
+
+procedure: 
+1. Find last node of POST-ORDER traversal. This is the root node.
+2. Find that corresponding node in the IN-ORDER and partition the right and left subtrees.
+3. pick the next node in POST-ORDER traversal. This is the root node of current subtree.
+4. Repeat 2 and 3 with right subtree until node can't be partitioned.
+5. Repeat 4 with left subtree.
+
+================================================
+
+ALGO for PRE-ORDER + IN-ORDER
+------------------------------------------------
+givens: the traversals of both on same tree
+
+procedure: 
+1. Find first node of PRE-ORDER traversal. This is the root node.
+2. Find that corresponding node in the IN-ORDER and partition the right and left subtrees.
+3. pick the next node in PRE-ORDER traversal. This is the root node of current subtree.
+4. Repeat 2 and 3 with left subtree until node can't be partitioned.
+5. Repeat 4 with right subtree.
+
+================================================
+
+ALGO for PRE-ORDER + POST-ORDER
+------------------------------------------------
+givens: the traversals of both on same tree
+
+procedure: 
+1. Find root node using the last node of POST-ORDER
+2. Find that corresponding node in the PRE-ORDER and look at the node to the left of it. That is the left child of the root.
+3. Partition left and right of that node. Every element to the right is the right subtree of the root. Every element to the left is in a subtree of current node.  
+5. Repeat for left subtree.
+6. Repeat for right subtree.
+================================================

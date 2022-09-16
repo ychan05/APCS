@@ -1,0 +1,12 @@
+MIN HEAP REMOVAL:
+
+delete node that you want deleted
+
+replace deleted node with right most node 
+
+if node < children 
+	you are done
+else if node > children
+	swap with smaller child
+	repeat from if statement 
+

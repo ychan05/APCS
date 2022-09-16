@@ -1,0 +1,9 @@
+MIN HEAP INSERTION: 
+
+if heap is empty
+	set node to root
+
+insert node after highest level
+
+while node value < parent value
+	swap the two
